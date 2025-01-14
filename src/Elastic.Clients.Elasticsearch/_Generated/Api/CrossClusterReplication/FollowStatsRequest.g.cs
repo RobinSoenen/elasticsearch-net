@@ -32,6 +32,12 @@ namespace Elastic.Clients.Elasticsearch.CrossClusterReplication;
 
 public sealed partial class FollowStatsRequestParameters : RequestParameters
 {
+	/// <summary>
+	/// <para>
+	/// Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.
+	/// </para>
+	/// </summary>
+	public Elastic.Clients.Elasticsearch.Duration? Timeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("timeout"); set => Q("timeout", value); }
 }
 
 /// <summary>
@@ -54,6 +60,14 @@ public sealed partial class FollowStatsRequest : PlainRequest<FollowStatsRequest
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.follow_stats";
+
+	/// <summary>
+	/// <para>
+	/// Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.
+	/// </para>
+	/// </summary>
+	[JsonIgnore]
+	public Elastic.Clients.Elasticsearch.Duration? Timeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("timeout"); set => Q("timeout", value); }
 }
 
 /// <summary>
@@ -82,6 +96,8 @@ public sealed partial class FollowStatsRequestDescriptor<TDocument> : RequestDes
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.follow_stats";
+
+	public FollowStatsRequestDescriptor<TDocument> Timeout(Elastic.Clients.Elasticsearch.Duration? timeout) => Qs("timeout", timeout);
 
 	public FollowStatsRequestDescriptor<TDocument> Indices(Elastic.Clients.Elasticsearch.Indices indices)
 	{
@@ -116,6 +132,8 @@ public sealed partial class FollowStatsRequestDescriptor : RequestDescriptor<Fol
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.follow_stats";
+
+	public FollowStatsRequestDescriptor Timeout(Elastic.Clients.Elasticsearch.Duration? timeout) => Qs("timeout", timeout);
 
 	public FollowStatsRequestDescriptor Indices(Elastic.Clients.Elasticsearch.Indices indices)
 	{

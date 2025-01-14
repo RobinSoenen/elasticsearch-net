@@ -29,9 +29,19 @@ namespace Elastic.Clients.Elasticsearch.Serverless.Snapshot;
 
 public sealed partial class GcsRepository : IRepository
 {
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("settings")]
 	public Elastic.Clients.Elasticsearch.Serverless.Snapshot.GcsRepositorySettings Settings { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The Google Cloud Storage repository type.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("type")]
 	public string Type => "gcs";
 
@@ -52,6 +62,11 @@ public sealed partial class GcsRepositoryDescriptor : SerializableDescriptor<Gcs
 	private Action<Elastic.Clients.Elasticsearch.Serverless.Snapshot.GcsRepositorySettingsDescriptor> SettingsDescriptorAction { get; set; }
 	private string? UuidValue { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// </summary>
 	public GcsRepositoryDescriptor Settings(Elastic.Clients.Elasticsearch.Serverless.Snapshot.GcsRepositorySettings settings)
 	{
 		SettingsDescriptor = null;

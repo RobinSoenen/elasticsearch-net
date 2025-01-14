@@ -56,13 +56,6 @@ public sealed partial class ListRequestParameters : RequestParameters
 
 	/// <summary>
 	/// <para>
-	/// Period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.
-	/// </para>
-	/// </summary>
-	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
-
-	/// <summary>
-	/// <para>
 	/// Comma-separated list of node IDs or names used to limit returned information.
 	/// </para>
 	/// </summary>
@@ -133,14 +126,6 @@ public sealed partial class ListRequest : PlainRequest<ListRequestParameters>
 
 	/// <summary>
 	/// <para>
-	/// Period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.
-	/// </para>
-	/// </summary>
-	[JsonIgnore]
-	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
-
-	/// <summary>
-	/// <para>
 	/// Comma-separated list of node IDs or names used to limit returned information.
 	/// </para>
 	/// </summary>
@@ -197,7 +182,6 @@ public sealed partial class ListRequestDescriptor : RequestDescriptor<ListReques
 	public ListRequestDescriptor Actions(ICollection<string>? actions) => Qs("actions", actions);
 	public ListRequestDescriptor Detailed(bool? detailed = true) => Qs("detailed", detailed);
 	public ListRequestDescriptor GroupBy(Elastic.Clients.Elasticsearch.Tasks.GroupBy? groupBy) => Qs("group_by", groupBy);
-	public ListRequestDescriptor MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 	public ListRequestDescriptor Nodes(Elastic.Clients.Elasticsearch.NodeIds? nodes) => Qs("nodes", nodes);
 	public ListRequestDescriptor ParentTaskId(Elastic.Clients.Elasticsearch.Id? parentTaskId) => Qs("parent_task_id", parentTaskId);
 	public ListRequestDescriptor Timeout(Elastic.Clients.Elasticsearch.Duration? timeout) => Qs("timeout", timeout);

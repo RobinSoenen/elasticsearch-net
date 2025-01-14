@@ -29,9 +29,19 @@ namespace Elastic.Clients.Elasticsearch.Serverless.Snapshot;
 
 public sealed partial class ReadOnlyUrlRepository : IRepository
 {
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("settings")]
 	public Elastic.Clients.Elasticsearch.Serverless.Snapshot.ReadOnlyUrlRepositorySettings Settings { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The read-only URL repository type.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("type")]
 	public string Type => "url";
 
@@ -52,6 +62,11 @@ public sealed partial class ReadOnlyUrlRepositoryDescriptor : SerializableDescri
 	private Action<Elastic.Clients.Elasticsearch.Serverless.Snapshot.ReadOnlyUrlRepositorySettingsDescriptor> SettingsDescriptorAction { get; set; }
 	private string? UuidValue { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// </summary>
 	public ReadOnlyUrlRepositoryDescriptor Settings(Elastic.Clients.Elasticsearch.Serverless.Snapshot.ReadOnlyUrlRepositorySettings settings)
 	{
 		SettingsDescriptor = null;

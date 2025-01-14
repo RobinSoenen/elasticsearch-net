@@ -66,22 +66,6 @@ public sealed partial class FieldUsageStatsRequestParameters : RequestParameters
 
 	/// <summary>
 	/// <para>
-	/// Period to wait for a connection to the master node.
-	/// If no response is received before the timeout expires, the request fails and returns an error.
-	/// </para>
-	/// </summary>
-	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
-
-	/// <summary>
-	/// <para>
-	/// Period to wait for a response.
-	/// If no response is received before the timeout expires, the request fails and returns an error.
-	/// </para>
-	/// </summary>
-	public Elastic.Clients.Elasticsearch.Duration? Timeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("timeout"); set => Q("timeout", value); }
-
-	/// <summary>
-	/// <para>
 	/// The number of shard copies that must be active before proceeding with the operation.
 	/// Set to all or any positive integer up to the total number of shards in the index (<c>number_of_replicas+1</c>).
 	/// </para>
@@ -95,6 +79,10 @@ public sealed partial class FieldUsageStatsRequestParameters : RequestParameters
 /// Get field usage information for each shard and field of an index.
 /// Field usage statistics are automatically captured when queries are running on a cluster.
 /// A shard-level search request that accesses a given field, even if multiple times during that request, is counted as a single use.
+/// </para>
+/// <para>
+/// The response body reports the per-shard usage count of the data structures that back the fields in the index.
+/// A given request will increment each count by a maximum value of 1, even if the request accesses the same field multiple times.
 /// </para>
 /// </summary>
 public sealed partial class FieldUsageStatsRequest : PlainRequest<FieldUsageStatsRequestParameters>
@@ -149,24 +137,6 @@ public sealed partial class FieldUsageStatsRequest : PlainRequest<FieldUsageStat
 
 	/// <summary>
 	/// <para>
-	/// Period to wait for a connection to the master node.
-	/// If no response is received before the timeout expires, the request fails and returns an error.
-	/// </para>
-	/// </summary>
-	[JsonIgnore]
-	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
-
-	/// <summary>
-	/// <para>
-	/// Period to wait for a response.
-	/// If no response is received before the timeout expires, the request fails and returns an error.
-	/// </para>
-	/// </summary>
-	[JsonIgnore]
-	public Elastic.Clients.Elasticsearch.Duration? Timeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("timeout"); set => Q("timeout", value); }
-
-	/// <summary>
-	/// <para>
 	/// The number of shard copies that must be active before proceeding with the operation.
 	/// Set to all or any positive integer up to the total number of shards in the index (<c>number_of_replicas+1</c>).
 	/// </para>
@@ -181,6 +151,10 @@ public sealed partial class FieldUsageStatsRequest : PlainRequest<FieldUsageStat
 /// Get field usage information for each shard and field of an index.
 /// Field usage statistics are automatically captured when queries are running on a cluster.
 /// A shard-level search request that accesses a given field, even if multiple times during that request, is counted as a single use.
+/// </para>
+/// <para>
+/// The response body reports the per-shard usage count of the data structures that back the fields in the index.
+/// A given request will increment each count by a maximum value of 1, even if the request accesses the same field multiple times.
 /// </para>
 /// </summary>
 public sealed partial class FieldUsageStatsRequestDescriptor<TDocument> : RequestDescriptor<FieldUsageStatsRequestDescriptor<TDocument>, FieldUsageStatsRequestParameters>
@@ -207,8 +181,6 @@ public sealed partial class FieldUsageStatsRequestDescriptor<TDocument> : Reques
 	public FieldUsageStatsRequestDescriptor<TDocument> ExpandWildcards(ICollection<Elastic.Clients.Elasticsearch.ExpandWildcard>? expandWildcards) => Qs("expand_wildcards", expandWildcards);
 	public FieldUsageStatsRequestDescriptor<TDocument> Fields(Elastic.Clients.Elasticsearch.Fields? fields) => Qs("fields", fields);
 	public FieldUsageStatsRequestDescriptor<TDocument> IgnoreUnavailable(bool? ignoreUnavailable = true) => Qs("ignore_unavailable", ignoreUnavailable);
-	public FieldUsageStatsRequestDescriptor<TDocument> MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
-	public FieldUsageStatsRequestDescriptor<TDocument> Timeout(Elastic.Clients.Elasticsearch.Duration? timeout) => Qs("timeout", timeout);
 	public FieldUsageStatsRequestDescriptor<TDocument> WaitForActiveShards(Elastic.Clients.Elasticsearch.WaitForActiveShards? waitForActiveShards) => Qs("wait_for_active_shards", waitForActiveShards);
 
 	public FieldUsageStatsRequestDescriptor<TDocument> Indices(Elastic.Clients.Elasticsearch.Indices indices)
@@ -228,6 +200,10 @@ public sealed partial class FieldUsageStatsRequestDescriptor<TDocument> : Reques
 /// Get field usage information for each shard and field of an index.
 /// Field usage statistics are automatically captured when queries are running on a cluster.
 /// A shard-level search request that accesses a given field, even if multiple times during that request, is counted as a single use.
+/// </para>
+/// <para>
+/// The response body reports the per-shard usage count of the data structures that back the fields in the index.
+/// A given request will increment each count by a maximum value of 1, even if the request accesses the same field multiple times.
 /// </para>
 /// </summary>
 public sealed partial class FieldUsageStatsRequestDescriptor : RequestDescriptor<FieldUsageStatsRequestDescriptor, FieldUsageStatsRequestParameters>
@@ -250,8 +226,6 @@ public sealed partial class FieldUsageStatsRequestDescriptor : RequestDescriptor
 	public FieldUsageStatsRequestDescriptor ExpandWildcards(ICollection<Elastic.Clients.Elasticsearch.ExpandWildcard>? expandWildcards) => Qs("expand_wildcards", expandWildcards);
 	public FieldUsageStatsRequestDescriptor Fields(Elastic.Clients.Elasticsearch.Fields? fields) => Qs("fields", fields);
 	public FieldUsageStatsRequestDescriptor IgnoreUnavailable(bool? ignoreUnavailable = true) => Qs("ignore_unavailable", ignoreUnavailable);
-	public FieldUsageStatsRequestDescriptor MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
-	public FieldUsageStatsRequestDescriptor Timeout(Elastic.Clients.Elasticsearch.Duration? timeout) => Qs("timeout", timeout);
 	public FieldUsageStatsRequestDescriptor WaitForActiveShards(Elastic.Clients.Elasticsearch.WaitForActiveShards? waitForActiveShards) => Qs("wait_for_active_shards", waitForActiveShards);
 
 	public FieldUsageStatsRequestDescriptor Indices(Elastic.Clients.Elasticsearch.Indices indices)

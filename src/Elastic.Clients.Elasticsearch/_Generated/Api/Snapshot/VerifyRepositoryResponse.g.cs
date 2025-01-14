@@ -28,6 +28,12 @@ namespace Elastic.Clients.Elasticsearch.Snapshot;
 
 public sealed partial class VerifyRepositoryResponse : ElasticsearchResponse
 {
+	/// <summary>
+	/// <para>
+	/// Information about the nodes connected to the snapshot repository.
+	/// The key is the ID of the node.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("nodes")]
 	public IReadOnlyDictionary<string, Elastic.Clients.Elasticsearch.Snapshot.CompactNodeInfo> Nodes { get; init; }
 }

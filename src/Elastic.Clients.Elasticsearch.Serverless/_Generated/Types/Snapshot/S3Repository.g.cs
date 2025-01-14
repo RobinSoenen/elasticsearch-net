@@ -29,9 +29,24 @@ namespace Elastic.Clients.Elasticsearch.Serverless.Snapshot;
 
 public sealed partial class S3Repository : IRepository
 {
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// <para>
+	/// NOTE: In addition to the specified settings, you can also use all non-secure client settings in the repository settings.
+	/// In this case, the client settings found in the repository settings will be merged with those of the named client used by the repository.
+	/// Conflicts between client and repository settings are resolved by the repository settings taking precedence over client settings.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("settings")]
 	public Elastic.Clients.Elasticsearch.Serverless.Snapshot.S3RepositorySettings Settings { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The S3 repository type.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("type")]
 	public string Type => "s3";
 
@@ -52,6 +67,16 @@ public sealed partial class S3RepositoryDescriptor : SerializableDescriptor<S3Re
 	private Action<Elastic.Clients.Elasticsearch.Serverless.Snapshot.S3RepositorySettingsDescriptor> SettingsDescriptorAction { get; set; }
 	private string? UuidValue { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// <para>
+	/// NOTE: In addition to the specified settings, you can also use all non-secure client settings in the repository settings.
+	/// In this case, the client settings found in the repository settings will be merged with those of the named client used by the repository.
+	/// Conflicts between client and repository settings are resolved by the repository settings taking precedence over client settings.
+	/// </para>
+	/// </summary>
 	public S3RepositoryDescriptor Settings(Elastic.Clients.Elasticsearch.Serverless.Snapshot.S3RepositorySettings settings)
 	{
 		SettingsDescriptor = null;

@@ -44,7 +44,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clean up the snapshot repository.
 	/// Trigger the review of the contents of a snapshot repository and delete any stale data not referenced by existing snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CleanupRepositoryResponse CleanupRepository(CleanupRepositoryRequest request)
@@ -58,7 +58,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clean up the snapshot repository.
 	/// Trigger the review of the contents of a snapshot repository and delete any stale data not referenced by existing snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CleanupRepositoryResponse> CleanupRepositoryAsync(CleanupRepositoryRequest request, CancellationToken cancellationToken = default)
 	{
@@ -71,7 +71,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clean up the snapshot repository.
 	/// Trigger the review of the contents of a snapshot repository and delete any stale data not referenced by existing snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CleanupRepositoryResponse CleanupRepository(CleanupRepositoryRequestDescriptor descriptor)
@@ -85,7 +85,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clean up the snapshot repository.
 	/// Trigger the review of the contents of a snapshot repository and delete any stale data not referenced by existing snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CleanupRepositoryResponse CleanupRepository(Elastic.Clients.Elasticsearch.Name name)
@@ -100,7 +100,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clean up the snapshot repository.
 	/// Trigger the review of the contents of a snapshot repository and delete any stale data not referenced by existing snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CleanupRepositoryResponse CleanupRepository(Elastic.Clients.Elasticsearch.Name name, Action<CleanupRepositoryRequestDescriptor> configureRequest)
@@ -116,7 +116,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clean up the snapshot repository.
 	/// Trigger the review of the contents of a snapshot repository and delete any stale data not referenced by existing snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CleanupRepositoryResponse> CleanupRepositoryAsync(CleanupRepositoryRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -129,7 +129,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clean up the snapshot repository.
 	/// Trigger the review of the contents of a snapshot repository and delete any stale data not referenced by existing snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CleanupRepositoryResponse> CleanupRepositoryAsync(Elastic.Clients.Elasticsearch.Name name, CancellationToken cancellationToken = default)
 	{
@@ -143,7 +143,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clean up the snapshot repository.
 	/// Trigger the review of the contents of a snapshot repository and delete any stale data not referenced by existing snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clean-up-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CleanupRepositoryResponse> CleanupRepositoryAsync(Elastic.Clients.Elasticsearch.Name name, Action<CleanupRepositoryRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -158,7 +158,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clone a snapshot.
 	/// Clone part of all of a snapshot into another snapshot in the same repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clone-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CloneSnapshotResponse Clone(CloneSnapshotRequest request)
@@ -172,7 +172,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clone a snapshot.
 	/// Clone part of all of a snapshot into another snapshot in the same repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clone-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CloneSnapshotResponse> CloneAsync(CloneSnapshotRequest request, CancellationToken cancellationToken = default)
 	{
@@ -185,7 +185,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clone a snapshot.
 	/// Clone part of all of a snapshot into another snapshot in the same repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clone-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CloneSnapshotResponse Clone(CloneSnapshotRequestDescriptor descriptor)
@@ -199,7 +199,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clone a snapshot.
 	/// Clone part of all of a snapshot into another snapshot in the same repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clone-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CloneSnapshotResponse Clone(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Elastic.Clients.Elasticsearch.Name targetSnapshot)
@@ -214,7 +214,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clone a snapshot.
 	/// Clone part of all of a snapshot into another snapshot in the same repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clone-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CloneSnapshotResponse Clone(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Elastic.Clients.Elasticsearch.Name targetSnapshot, Action<CloneSnapshotRequestDescriptor> configureRequest)
@@ -230,7 +230,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clone a snapshot.
 	/// Clone part of all of a snapshot into another snapshot in the same repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clone-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CloneSnapshotResponse> CloneAsync(CloneSnapshotRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -243,7 +243,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clone a snapshot.
 	/// Clone part of all of a snapshot into another snapshot in the same repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clone-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CloneSnapshotResponse> CloneAsync(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Elastic.Clients.Elasticsearch.Name targetSnapshot, CancellationToken cancellationToken = default)
 	{
@@ -257,7 +257,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Clone a snapshot.
 	/// Clone part of all of a snapshot into another snapshot in the same repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/clone-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CloneSnapshotResponse> CloneAsync(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Elastic.Clients.Elasticsearch.Name targetSnapshot, Action<CloneSnapshotRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -272,7 +272,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Create a snapshot.
 	/// Take a snapshot of a cluster or of data streams and indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/create-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CreateSnapshotResponse Create(CreateSnapshotRequest request)
@@ -286,7 +286,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Create a snapshot.
 	/// Take a snapshot of a cluster or of data streams and indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/create-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CreateSnapshotResponse> CreateAsync(CreateSnapshotRequest request, CancellationToken cancellationToken = default)
 	{
@@ -299,7 +299,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Create a snapshot.
 	/// Take a snapshot of a cluster or of data streams and indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/create-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CreateSnapshotResponse Create(CreateSnapshotRequestDescriptor descriptor)
@@ -313,7 +313,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Create a snapshot.
 	/// Take a snapshot of a cluster or of data streams and indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/create-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CreateSnapshotResponse Create(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot)
@@ -328,7 +328,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Create a snapshot.
 	/// Take a snapshot of a cluster or of data streams and indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/create-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CreateSnapshotResponse Create(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Action<CreateSnapshotRequestDescriptor> configureRequest)
@@ -344,7 +344,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Create a snapshot.
 	/// Take a snapshot of a cluster or of data streams and indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/create-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CreateSnapshotResponse> CreateAsync(CreateSnapshotRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -357,7 +357,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Create a snapshot.
 	/// Take a snapshot of a cluster or of data streams and indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/create-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CreateSnapshotResponse> CreateAsync(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, CancellationToken cancellationToken = default)
 	{
@@ -371,7 +371,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Create a snapshot.
 	/// Take a snapshot of a cluster or of data streams and indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/create-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CreateSnapshotResponse> CreateAsync(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Action<CreateSnapshotRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -388,7 +388,11 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// To register a snapshot repository, the cluster's global metadata must be writeable.
 	/// Ensure there are no cluster blocks (for example, <c>cluster.blocks.read_only</c> and <c>clsuter.blocks.read_only_allow_delete</c> settings) that prevent write access.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// Several options for this API can be specified using a query parameter or a request body parameter.
+	/// If both parameters are specified, only the query parameter is used.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
@@ -404,7 +408,11 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// To register a snapshot repository, the cluster's global metadata must be writeable.
 	/// Ensure there are no cluster blocks (for example, <c>cluster.blocks.read_only</c> and <c>clsuter.blocks.read_only_allow_delete</c> settings) that prevent write access.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// Several options for this API can be specified using a query parameter or a request body parameter.
+	/// If both parameters are specified, only the query parameter is used.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, CancellationToken cancellationToken = default)
 	{
@@ -419,7 +427,11 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// To register a snapshot repository, the cluster's global metadata must be writeable.
 	/// Ensure there are no cluster blocks (for example, <c>cluster.blocks.read_only</c> and <c>clsuter.blocks.read_only_allow_delete</c> settings) that prevent write access.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// Several options for this API can be specified using a query parameter or a request body parameter.
+	/// If both parameters are specified, only the query parameter is used.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequestDescriptor descriptor)
@@ -435,7 +447,11 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// To register a snapshot repository, the cluster's global metadata must be writeable.
 	/// Ensure there are no cluster blocks (for example, <c>cluster.blocks.read_only</c> and <c>clsuter.blocks.read_only_allow_delete</c> settings) that prevent write access.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// Several options for this API can be specified using a query parameter or a request body parameter.
+	/// If both parameters are specified, only the query parameter is used.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CreateRepositoryResponse CreateRepository(Elastic.Clients.Elasticsearch.Snapshot.IRepository repository, Elastic.Clients.Elasticsearch.Name name)
@@ -452,7 +468,11 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// To register a snapshot repository, the cluster's global metadata must be writeable.
 	/// Ensure there are no cluster blocks (for example, <c>cluster.blocks.read_only</c> and <c>clsuter.blocks.read_only_allow_delete</c> settings) that prevent write access.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// Several options for this API can be specified using a query parameter or a request body parameter.
+	/// If both parameters are specified, only the query parameter is used.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual CreateRepositoryResponse CreateRepository(Elastic.Clients.Elasticsearch.Snapshot.IRepository repository, Elastic.Clients.Elasticsearch.Name name, Action<CreateRepositoryRequestDescriptor> configureRequest)
@@ -470,7 +490,11 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// To register a snapshot repository, the cluster's global metadata must be writeable.
 	/// Ensure there are no cluster blocks (for example, <c>cluster.blocks.read_only</c> and <c>clsuter.blocks.read_only_allow_delete</c> settings) that prevent write access.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// Several options for this API can be specified using a query parameter or a request body parameter.
+	/// If both parameters are specified, only the query parameter is used.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -485,7 +509,11 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// To register a snapshot repository, the cluster's global metadata must be writeable.
 	/// Ensure there are no cluster blocks (for example, <c>cluster.blocks.read_only</c> and <c>clsuter.blocks.read_only_allow_delete</c> settings) that prevent write access.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// Several options for this API can be specified using a query parameter or a request body parameter.
+	/// If both parameters are specified, only the query parameter is used.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CreateRepositoryResponse> CreateRepositoryAsync(Elastic.Clients.Elasticsearch.Snapshot.IRepository repository, Elastic.Clients.Elasticsearch.Name name, CancellationToken cancellationToken = default)
 	{
@@ -501,7 +529,11 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// To register a snapshot repository, the cluster's global metadata must be writeable.
 	/// Ensure there are no cluster blocks (for example, <c>cluster.blocks.read_only</c> and <c>clsuter.blocks.read_only_allow_delete</c> settings) that prevent write access.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// Several options for this API can be specified using a query parameter or a request body parameter.
+	/// If both parameters are specified, only the query parameter is used.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<CreateRepositoryResponse> CreateRepositoryAsync(Elastic.Clients.Elasticsearch.Snapshot.IRepository repository, Elastic.Clients.Elasticsearch.Name name, Action<CreateRepositoryRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -515,7 +547,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Delete snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual DeleteSnapshotResponse Delete(DeleteSnapshotRequest request)
@@ -528,7 +560,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Delete snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteSnapshotResponse> DeleteAsync(DeleteSnapshotRequest request, CancellationToken cancellationToken = default)
 	{
@@ -540,7 +572,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Delete snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual DeleteSnapshotResponse Delete(DeleteSnapshotRequestDescriptor descriptor)
@@ -553,7 +585,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Delete snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual DeleteSnapshotResponse Delete(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot)
@@ -567,7 +599,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Delete snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual DeleteSnapshotResponse Delete(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Action<DeleteSnapshotRequestDescriptor> configureRequest)
@@ -582,7 +614,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Delete snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteSnapshotResponse> DeleteAsync(DeleteSnapshotRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -594,7 +626,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Delete snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteSnapshotResponse> DeleteAsync(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, CancellationToken cancellationToken = default)
 	{
@@ -607,7 +639,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Delete snapshots.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteSnapshotResponse> DeleteAsync(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Action<DeleteSnapshotRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -623,7 +655,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// When a repository is unregistered, Elasticsearch removes only the reference to the location where the repository is storing the snapshots.
 	/// The snapshots themselves are left untouched and in place.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
@@ -638,7 +670,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// When a repository is unregistered, Elasticsearch removes only the reference to the location where the repository is storing the snapshots.
 	/// The snapshots themselves are left untouched and in place.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, CancellationToken cancellationToken = default)
 	{
@@ -652,7 +684,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// When a repository is unregistered, Elasticsearch removes only the reference to the location where the repository is storing the snapshots.
 	/// The snapshots themselves are left untouched and in place.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequestDescriptor descriptor)
@@ -667,7 +699,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// When a repository is unregistered, Elasticsearch removes only the reference to the location where the repository is storing the snapshots.
 	/// The snapshots themselves are left untouched and in place.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual DeleteRepositoryResponse DeleteRepository(Elastic.Clients.Elasticsearch.Names name)
@@ -683,7 +715,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// When a repository is unregistered, Elasticsearch removes only the reference to the location where the repository is storing the snapshots.
 	/// The snapshots themselves are left untouched and in place.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual DeleteRepositoryResponse DeleteRepository(Elastic.Clients.Elasticsearch.Names name, Action<DeleteRepositoryRequestDescriptor> configureRequest)
@@ -700,7 +732,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// When a repository is unregistered, Elasticsearch removes only the reference to the location where the repository is storing the snapshots.
 	/// The snapshots themselves are left untouched and in place.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -714,7 +746,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// When a repository is unregistered, Elasticsearch removes only the reference to the location where the repository is storing the snapshots.
 	/// The snapshots themselves are left untouched and in place.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteRepositoryResponse> DeleteRepositoryAsync(Elastic.Clients.Elasticsearch.Names name, CancellationToken cancellationToken = default)
 	{
@@ -729,7 +761,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// When a repository is unregistered, Elasticsearch removes only the reference to the location where the repository is storing the snapshots.
 	/// The snapshots themselves are left untouched and in place.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/delete-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteRepositoryResponse> DeleteRepositoryAsync(Elastic.Clients.Elasticsearch.Names name, Action<DeleteRepositoryRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -743,7 +775,12 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// NOTE: The <c>after</c> parameter and <c>next</c> field enable you to iterate through snapshots with some consistency guarantees regarding concurrent creation or deletion of snapshots.
+	/// It is guaranteed that any snapshot that exists at the beginning of the iteration and is not concurrently deleted will be seen during the iteration.
+	/// Snapshots concurrently created may be seen during an iteration.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual GetSnapshotResponse Get(GetSnapshotRequest request)
@@ -756,7 +793,12 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// NOTE: The <c>after</c> parameter and <c>next</c> field enable you to iterate through snapshots with some consistency guarantees regarding concurrent creation or deletion of snapshots.
+	/// It is guaranteed that any snapshot that exists at the beginning of the iteration and is not concurrently deleted will be seen during the iteration.
+	/// Snapshots concurrently created may be seen during an iteration.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetSnapshotResponse> GetAsync(GetSnapshotRequest request, CancellationToken cancellationToken = default)
 	{
@@ -768,7 +810,12 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// NOTE: The <c>after</c> parameter and <c>next</c> field enable you to iterate through snapshots with some consistency guarantees regarding concurrent creation or deletion of snapshots.
+	/// It is guaranteed that any snapshot that exists at the beginning of the iteration and is not concurrently deleted will be seen during the iteration.
+	/// Snapshots concurrently created may be seen during an iteration.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual GetSnapshotResponse Get(GetSnapshotRequestDescriptor descriptor)
@@ -781,7 +828,12 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// NOTE: The <c>after</c> parameter and <c>next</c> field enable you to iterate through snapshots with some consistency guarantees regarding concurrent creation or deletion of snapshots.
+	/// It is guaranteed that any snapshot that exists at the beginning of the iteration and is not concurrently deleted will be seen during the iteration.
+	/// Snapshots concurrently created may be seen during an iteration.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual GetSnapshotResponse Get(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Names snapshot)
@@ -795,7 +847,12 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// NOTE: The <c>after</c> parameter and <c>next</c> field enable you to iterate through snapshots with some consistency guarantees regarding concurrent creation or deletion of snapshots.
+	/// It is guaranteed that any snapshot that exists at the beginning of the iteration and is not concurrently deleted will be seen during the iteration.
+	/// Snapshots concurrently created may be seen during an iteration.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual GetSnapshotResponse Get(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Names snapshot, Action<GetSnapshotRequestDescriptor> configureRequest)
@@ -810,7 +867,12 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// NOTE: The <c>after</c> parameter and <c>next</c> field enable you to iterate through snapshots with some consistency guarantees regarding concurrent creation or deletion of snapshots.
+	/// It is guaranteed that any snapshot that exists at the beginning of the iteration and is not concurrently deleted will be seen during the iteration.
+	/// Snapshots concurrently created may be seen during an iteration.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetSnapshotResponse> GetAsync(GetSnapshotRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -822,7 +884,12 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// NOTE: The <c>after</c> parameter and <c>next</c> field enable you to iterate through snapshots with some consistency guarantees regarding concurrent creation or deletion of snapshots.
+	/// It is guaranteed that any snapshot that exists at the beginning of the iteration and is not concurrently deleted will be seen during the iteration.
+	/// Snapshots concurrently created may be seen during an iteration.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetSnapshotResponse> GetAsync(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Names snapshot, CancellationToken cancellationToken = default)
 	{
@@ -835,7 +902,12 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// NOTE: The <c>after</c> parameter and <c>next</c> field enable you to iterate through snapshots with some consistency guarantees regarding concurrent creation or deletion of snapshots.
+	/// It is guaranteed that any snapshot that exists at the beginning of the iteration and is not concurrently deleted will be seen during the iteration.
+	/// Snapshots concurrently created may be seen during an iteration.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetSnapshotResponse> GetAsync(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Names snapshot, Action<GetSnapshotRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -849,7 +921,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual GetRepositoryResponse GetRepository(GetRepositoryRequest request)
@@ -862,7 +934,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, CancellationToken cancellationToken = default)
 	{
@@ -874,7 +946,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual GetRepositoryResponse GetRepository(GetRepositoryRequestDescriptor descriptor)
@@ -887,7 +959,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual GetRepositoryResponse GetRepository(Elastic.Clients.Elasticsearch.Names? name)
@@ -901,7 +973,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual GetRepositoryResponse GetRepository(Elastic.Clients.Elasticsearch.Names? name, Action<GetRepositoryRequestDescriptor> configureRequest)
@@ -916,7 +988,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual GetRepositoryResponse GetRepository()
@@ -930,7 +1002,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual GetRepositoryResponse GetRepository(Action<GetRepositoryRequestDescriptor> configureRequest)
@@ -945,7 +1017,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -957,7 +1029,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetRepositoryResponse> GetRepositoryAsync(Elastic.Clients.Elasticsearch.Names? name, CancellationToken cancellationToken = default)
 	{
@@ -970,7 +1042,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetRepositoryResponse> GetRepositoryAsync(Elastic.Clients.Elasticsearch.Names? name, Action<GetRepositoryRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -984,7 +1056,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetRepositoryResponse> GetRepositoryAsync(CancellationToken cancellationToken = default)
 	{
@@ -997,7 +1069,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get snapshot repository information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetRepositoryResponse> GetRepositoryAsync(Action<GetRepositoryRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1066,7 +1138,17 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// NOTE: This API may not work correctly in a mixed-version cluster.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// The default values for the parameters of this API are designed to limit the impact of the integrity verification on other activities in your cluster.
+	/// For instance, by default it will only use at most half of the <c>snapshot_meta</c> threads to verify the integrity of each snapshot, allowing other snapshot operations to use the other half of this thread pool.
+	/// If you modify these parameters to speed up the verification process, you risk disrupting other snapshot-related operations in your cluster.
+	/// For large repositories, consider setting up a separate single-node Elasticsearch cluster just for running the integrity verification API.
+	/// </para>
+	/// <para>
+	/// The response exposes implementation details of the analysis which may change from version to version.
+	/// The response body format is therefore not considered stable and may be different in newer versions.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-repo-integrity-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RepositoryVerifyIntegrityResponse RepositoryVerifyIntegrity(RepositoryVerifyIntegrityRequest request)
@@ -1134,7 +1216,17 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// NOTE: This API may not work correctly in a mixed-version cluster.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// The default values for the parameters of this API are designed to limit the impact of the integrity verification on other activities in your cluster.
+	/// For instance, by default it will only use at most half of the <c>snapshot_meta</c> threads to verify the integrity of each snapshot, allowing other snapshot operations to use the other half of this thread pool.
+	/// If you modify these parameters to speed up the verification process, you risk disrupting other snapshot-related operations in your cluster.
+	/// For large repositories, consider setting up a separate single-node Elasticsearch cluster just for running the integrity verification API.
+	/// </para>
+	/// <para>
+	/// The response exposes implementation details of the analysis which may change from version to version.
+	/// The response body format is therefore not considered stable and may be different in newer versions.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-repo-integrity-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RepositoryVerifyIntegrityResponse> RepositoryVerifyIntegrityAsync(RepositoryVerifyIntegrityRequest request, CancellationToken cancellationToken = default)
 	{
@@ -1201,7 +1293,17 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// NOTE: This API may not work correctly in a mixed-version cluster.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// The default values for the parameters of this API are designed to limit the impact of the integrity verification on other activities in your cluster.
+	/// For instance, by default it will only use at most half of the <c>snapshot_meta</c> threads to verify the integrity of each snapshot, allowing other snapshot operations to use the other half of this thread pool.
+	/// If you modify these parameters to speed up the verification process, you risk disrupting other snapshot-related operations in your cluster.
+	/// For large repositories, consider setting up a separate single-node Elasticsearch cluster just for running the integrity verification API.
+	/// </para>
+	/// <para>
+	/// The response exposes implementation details of the analysis which may change from version to version.
+	/// The response body format is therefore not considered stable and may be different in newer versions.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-repo-integrity-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RepositoryVerifyIntegrityResponse RepositoryVerifyIntegrity(RepositoryVerifyIntegrityRequestDescriptor descriptor)
@@ -1269,7 +1371,17 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// NOTE: This API may not work correctly in a mixed-version cluster.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// The default values for the parameters of this API are designed to limit the impact of the integrity verification on other activities in your cluster.
+	/// For instance, by default it will only use at most half of the <c>snapshot_meta</c> threads to verify the integrity of each snapshot, allowing other snapshot operations to use the other half of this thread pool.
+	/// If you modify these parameters to speed up the verification process, you risk disrupting other snapshot-related operations in your cluster.
+	/// For large repositories, consider setting up a separate single-node Elasticsearch cluster just for running the integrity verification API.
+	/// </para>
+	/// <para>
+	/// The response exposes implementation details of the analysis which may change from version to version.
+	/// The response body format is therefore not considered stable and may be different in newer versions.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-repo-integrity-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RepositoryVerifyIntegrityResponse RepositoryVerifyIntegrity(Elastic.Clients.Elasticsearch.Names name)
@@ -1338,7 +1450,17 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// NOTE: This API may not work correctly in a mixed-version cluster.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// The default values for the parameters of this API are designed to limit the impact of the integrity verification on other activities in your cluster.
+	/// For instance, by default it will only use at most half of the <c>snapshot_meta</c> threads to verify the integrity of each snapshot, allowing other snapshot operations to use the other half of this thread pool.
+	/// If you modify these parameters to speed up the verification process, you risk disrupting other snapshot-related operations in your cluster.
+	/// For large repositories, consider setting up a separate single-node Elasticsearch cluster just for running the integrity verification API.
+	/// </para>
+	/// <para>
+	/// The response exposes implementation details of the analysis which may change from version to version.
+	/// The response body format is therefore not considered stable and may be different in newer versions.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-repo-integrity-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RepositoryVerifyIntegrityResponse RepositoryVerifyIntegrity(Elastic.Clients.Elasticsearch.Names name, Action<RepositoryVerifyIntegrityRequestDescriptor> configureRequest)
@@ -1408,7 +1530,17 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// NOTE: This API may not work correctly in a mixed-version cluster.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// The default values for the parameters of this API are designed to limit the impact of the integrity verification on other activities in your cluster.
+	/// For instance, by default it will only use at most half of the <c>snapshot_meta</c> threads to verify the integrity of each snapshot, allowing other snapshot operations to use the other half of this thread pool.
+	/// If you modify these parameters to speed up the verification process, you risk disrupting other snapshot-related operations in your cluster.
+	/// For large repositories, consider setting up a separate single-node Elasticsearch cluster just for running the integrity verification API.
+	/// </para>
+	/// <para>
+	/// The response exposes implementation details of the analysis which may change from version to version.
+	/// The response body format is therefore not considered stable and may be different in newer versions.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-repo-integrity-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RepositoryVerifyIntegrityResponse> RepositoryVerifyIntegrityAsync(RepositoryVerifyIntegrityRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -1475,7 +1607,17 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// NOTE: This API may not work correctly in a mixed-version cluster.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// The default values for the parameters of this API are designed to limit the impact of the integrity verification on other activities in your cluster.
+	/// For instance, by default it will only use at most half of the <c>snapshot_meta</c> threads to verify the integrity of each snapshot, allowing other snapshot operations to use the other half of this thread pool.
+	/// If you modify these parameters to speed up the verification process, you risk disrupting other snapshot-related operations in your cluster.
+	/// For large repositories, consider setting up a separate single-node Elasticsearch cluster just for running the integrity verification API.
+	/// </para>
+	/// <para>
+	/// The response exposes implementation details of the analysis which may change from version to version.
+	/// The response body format is therefore not considered stable and may be different in newer versions.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-repo-integrity-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RepositoryVerifyIntegrityResponse> RepositoryVerifyIntegrityAsync(Elastic.Clients.Elasticsearch.Names name, CancellationToken cancellationToken = default)
 	{
@@ -1543,7 +1685,17 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// NOTE: This API may not work correctly in a mixed-version cluster.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// The default values for the parameters of this API are designed to limit the impact of the integrity verification on other activities in your cluster.
+	/// For instance, by default it will only use at most half of the <c>snapshot_meta</c> threads to verify the integrity of each snapshot, allowing other snapshot operations to use the other half of this thread pool.
+	/// If you modify these parameters to speed up the verification process, you risk disrupting other snapshot-related operations in your cluster.
+	/// For large repositories, consider setting up a separate single-node Elasticsearch cluster just for running the integrity verification API.
+	/// </para>
+	/// <para>
+	/// The response exposes implementation details of the analysis which may change from version to version.
+	/// The response body format is therefore not considered stable and may be different in newer versions.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-repo-integrity-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RepositoryVerifyIntegrityResponse> RepositoryVerifyIntegrityAsync(Elastic.Clients.Elasticsearch.Names name, Action<RepositoryVerifyIntegrityRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1578,7 +1730,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RestoreResponse Restore(RestoreRequest request)
@@ -1612,7 +1764,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RestoreResponse> RestoreAsync(RestoreRequest request, CancellationToken cancellationToken = default)
 	{
@@ -1645,7 +1797,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RestoreResponse Restore<TDocument>(RestoreRequestDescriptor<TDocument> descriptor)
@@ -1679,7 +1831,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RestoreResponse Restore<TDocument>(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot)
@@ -1714,7 +1866,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RestoreResponse Restore<TDocument>(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Action<RestoreRequestDescriptor<TDocument>> configureRequest)
@@ -1750,7 +1902,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RestoreResponse Restore(RestoreRequestDescriptor descriptor)
@@ -1784,7 +1936,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RestoreResponse Restore(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot)
@@ -1819,7 +1971,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual RestoreResponse Restore(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Action<RestoreRequestDescriptor> configureRequest)
@@ -1855,7 +2007,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RestoreResponse> RestoreAsync<TDocument>(RestoreRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -1888,7 +2040,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RestoreResponse> RestoreAsync<TDocument>(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, CancellationToken cancellationToken = default)
 	{
@@ -1922,7 +2074,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RestoreResponse> RestoreAsync<TDocument>(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Action<RestoreRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1957,7 +2109,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RestoreResponse> RestoreAsync(RestoreRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -1990,7 +2142,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RestoreResponse> RestoreAsync(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, CancellationToken cancellationToken = default)
 	{
@@ -2024,7 +2176,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// If your snapshot contains data from App Search or Workplace Search, you must restore the Enterprise Search encryption key before you restore the snapshot.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/restore-snapshot-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RestoreResponse> RestoreAsync(Elastic.Clients.Elasticsearch.Name repository, Elastic.Clients.Elasticsearch.Name snapshot, Action<RestoreRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2038,8 +2190,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2050,7 +2209,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual SnapshotStatusResponse Status(SnapshotStatusRequest request)
@@ -2063,8 +2222,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2075,7 +2241,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SnapshotStatusResponse> StatusAsync(SnapshotStatusRequest request, CancellationToken cancellationToken = default)
 	{
@@ -2087,8 +2253,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2099,7 +2272,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual SnapshotStatusResponse Status(SnapshotStatusRequestDescriptor descriptor)
@@ -2112,8 +2285,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2124,7 +2304,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual SnapshotStatusResponse Status(Elastic.Clients.Elasticsearch.Name? repository, Elastic.Clients.Elasticsearch.Names? snapshot)
@@ -2138,8 +2318,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2150,7 +2337,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual SnapshotStatusResponse Status(Elastic.Clients.Elasticsearch.Name? repository, Elastic.Clients.Elasticsearch.Names? snapshot, Action<SnapshotStatusRequestDescriptor> configureRequest)
@@ -2165,8 +2352,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2177,7 +2371,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual SnapshotStatusResponse Status()
@@ -2191,8 +2385,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2203,7 +2404,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual SnapshotStatusResponse Status(Action<SnapshotStatusRequestDescriptor> configureRequest)
@@ -2218,8 +2419,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2230,7 +2438,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SnapshotStatusResponse> StatusAsync(SnapshotStatusRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -2242,8 +2450,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2254,7 +2469,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SnapshotStatusResponse> StatusAsync(Elastic.Clients.Elasticsearch.Name? repository, Elastic.Clients.Elasticsearch.Names? snapshot, CancellationToken cancellationToken = default)
 	{
@@ -2267,8 +2482,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2279,7 +2501,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SnapshotStatusResponse> StatusAsync(Elastic.Clients.Elasticsearch.Name? repository, Elastic.Clients.Elasticsearch.Names? snapshot, Action<SnapshotStatusRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2293,8 +2515,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2305,7 +2534,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SnapshotStatusResponse> StatusAsync(CancellationToken cancellationToken = default)
 	{
@@ -2318,8 +2547,15 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Get the snapshot status.
 	/// Get a detailed description of the current state for each shard participating in the snapshot.
+	/// </para>
+	/// <para>
 	/// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 	/// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+	/// </para>
+	/// <para>
+	/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+	/// This usage is preferred.
+	/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 	/// </para>
 	/// <para>
 	/// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -2330,7 +2566,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Depending on the latency of your storage, such requests can take an extremely long time to return results.
 	/// These requests can also tax machine resources and, when using cloud storage, incur high processing costs.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/get-snapshot-status-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SnapshotStatusResponse> StatusAsync(Action<SnapshotStatusRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2345,7 +2581,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Verify a snapshot repository.
 	/// Check for common misconfigurations in a snapshot repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual VerifyRepositoryResponse VerifyRepository(VerifyRepositoryRequest request)
@@ -2359,7 +2595,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Verify a snapshot repository.
 	/// Check for common misconfigurations in a snapshot repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<VerifyRepositoryResponse> VerifyRepositoryAsync(VerifyRepositoryRequest request, CancellationToken cancellationToken = default)
 	{
@@ -2372,7 +2608,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Verify a snapshot repository.
 	/// Check for common misconfigurations in a snapshot repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual VerifyRepositoryResponse VerifyRepository(VerifyRepositoryRequestDescriptor descriptor)
@@ -2386,7 +2622,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Verify a snapshot repository.
 	/// Check for common misconfigurations in a snapshot repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual VerifyRepositoryResponse VerifyRepository(Elastic.Clients.Elasticsearch.Name name)
@@ -2401,7 +2637,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Verify a snapshot repository.
 	/// Check for common misconfigurations in a snapshot repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual VerifyRepositoryResponse VerifyRepository(Elastic.Clients.Elasticsearch.Name name, Action<VerifyRepositoryRequestDescriptor> configureRequest)
@@ -2417,7 +2653,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Verify a snapshot repository.
 	/// Check for common misconfigurations in a snapshot repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<VerifyRepositoryResponse> VerifyRepositoryAsync(VerifyRepositoryRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -2430,7 +2666,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Verify a snapshot repository.
 	/// Check for common misconfigurations in a snapshot repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<VerifyRepositoryResponse> VerifyRepositoryAsync(Elastic.Clients.Elasticsearch.Name name, CancellationToken cancellationToken = default)
 	{
@@ -2444,7 +2680,7 @@ public partial class SnapshotNamespacedClient : NamespacedClientProxy
 	/// Verify a snapshot repository.
 	/// Check for common misconfigurations in a snapshot repository.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/modules-snapshots.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/verify-snapshot-repo-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<VerifyRepositoryResponse> VerifyRepositoryAsync(Elastic.Clients.Elasticsearch.Name name, Action<VerifyRepositoryRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{

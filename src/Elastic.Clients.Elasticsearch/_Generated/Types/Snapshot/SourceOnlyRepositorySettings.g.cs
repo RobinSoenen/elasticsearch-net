@@ -138,12 +138,76 @@ internal sealed partial class SourceOnlyRepositorySettingsConverter : JsonConver
 [JsonConverter(typeof(SourceOnlyRepositorySettingsConverter))]
 public sealed partial class SourceOnlyRepositorySettings
 {
+	/// <summary>
+	/// <para>
+	/// Big files can be broken down into multiple smaller blobs in the blob store during snapshotting.
+	/// It is not recommended to change this value from its default unless there is an explicit reason for limiting the size of blobs in the repository.
+	/// Setting a value lower than the default can result in an increased number of API calls to the blob store during snapshot create and restore operations compared to using the default value and thus make both operations slower and more costly.
+	/// Specify the chunk size as a byte unit, for example: <c>10MB</c>, <c>5KB</c>, 500B.
+	/// The default varies by repository type.
+	/// </para>
+	/// </summary>
 	public Elastic.Clients.Elasticsearch.ByteSize? ChunkSize { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// When set to <c>true</c>, metadata files are stored in compressed format.
+	/// This setting doesn't affect index files that are already compressed by default.
+	/// </para>
+	/// </summary>
 	public bool? Compress { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The delegated repository type. For valid values, refer to the <c>type</c> parameter.
+	/// Source repositories can use <c>settings</c> properties for its delegated repository type.
+	/// </para>
+	/// </summary>
 	public string? DelegateType { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The maximum number of snapshots the repository can contain.
+	/// The default is <c>Integer.MAX_VALUE</c>, which is 2^31-1 or <c>2147483647</c>.
+	/// </para>
+	/// </summary>
 	public int? MaxNumberOfSnapshots { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The maximum snapshot restore rate per node.
+	/// It defaults to unlimited.
+	/// Note that restores are also throttled through recovery settings.
+	/// </para>
+	/// </summary>
 	public Elastic.Clients.Elasticsearch.ByteSize? MaxRestoreBytesPerSec { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The maximum snapshot creation rate per node.
+	/// It defaults to 40mb per second.
+	/// Note that if the recovery settings for managed services are set, then it defaults to unlimited, and the rate is additionally throttled through recovery settings.
+	/// </para>
+	/// </summary>
 	public Elastic.Clients.Elasticsearch.ByteSize? MaxSnapshotBytesPerSec { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, the repository is read-only.
+	/// The cluster can retrieve and restore snapshots from the repository but not write to the repository or create snapshots in it.
+	/// </para>
+	/// <para>
+	/// Only a cluster with write access can create snapshots in the repository.
+	/// All other clusters connected to the repository should have the <c>readonly</c> parameter set to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// If <c>false</c>, the cluster can write to the repository and create snapshots in it.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you register the same snapshot repository with multiple clusters, only one cluster should have write access to the repository.
+	/// Having multiple clusters write to the repository at the same time risks corrupting the contents of the repository.
+	/// </para>
+	/// </summary>
 	public bool? ReadOnly { get; set; }
 }
 
@@ -163,42 +227,100 @@ public sealed partial class SourceOnlyRepositorySettingsDescriptor : Serializabl
 	private Elastic.Clients.Elasticsearch.ByteSize? MaxSnapshotBytesPerSecValue { get; set; }
 	private bool? ReadOnlyValue { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// Big files can be broken down into multiple smaller blobs in the blob store during snapshotting.
+	/// It is not recommended to change this value from its default unless there is an explicit reason for limiting the size of blobs in the repository.
+	/// Setting a value lower than the default can result in an increased number of API calls to the blob store during snapshot create and restore operations compared to using the default value and thus make both operations slower and more costly.
+	/// Specify the chunk size as a byte unit, for example: <c>10MB</c>, <c>5KB</c>, 500B.
+	/// The default varies by repository type.
+	/// </para>
+	/// </summary>
 	public SourceOnlyRepositorySettingsDescriptor ChunkSize(Elastic.Clients.Elasticsearch.ByteSize? chunkSize)
 	{
 		ChunkSizeValue = chunkSize;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// When set to <c>true</c>, metadata files are stored in compressed format.
+	/// This setting doesn't affect index files that are already compressed by default.
+	/// </para>
+	/// </summary>
 	public SourceOnlyRepositorySettingsDescriptor Compress(bool? compress = true)
 	{
 		CompressValue = compress;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The delegated repository type. For valid values, refer to the <c>type</c> parameter.
+	/// Source repositories can use <c>settings</c> properties for its delegated repository type.
+	/// </para>
+	/// </summary>
 	public SourceOnlyRepositorySettingsDescriptor DelegateType(string? delegateType)
 	{
 		DelegateTypeValue = delegateType;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The maximum number of snapshots the repository can contain.
+	/// The default is <c>Integer.MAX_VALUE</c>, which is 2^31-1 or <c>2147483647</c>.
+	/// </para>
+	/// </summary>
 	public SourceOnlyRepositorySettingsDescriptor MaxNumberOfSnapshots(int? maxNumberOfSnapshots)
 	{
 		MaxNumberOfSnapshotsValue = maxNumberOfSnapshots;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The maximum snapshot restore rate per node.
+	/// It defaults to unlimited.
+	/// Note that restores are also throttled through recovery settings.
+	/// </para>
+	/// </summary>
 	public SourceOnlyRepositorySettingsDescriptor MaxRestoreBytesPerSec(Elastic.Clients.Elasticsearch.ByteSize? maxRestoreBytesPerSec)
 	{
 		MaxRestoreBytesPerSecValue = maxRestoreBytesPerSec;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The maximum snapshot creation rate per node.
+	/// It defaults to 40mb per second.
+	/// Note that if the recovery settings for managed services are set, then it defaults to unlimited, and the rate is additionally throttled through recovery settings.
+	/// </para>
+	/// </summary>
 	public SourceOnlyRepositorySettingsDescriptor MaxSnapshotBytesPerSec(Elastic.Clients.Elasticsearch.ByteSize? maxSnapshotBytesPerSec)
 	{
 		MaxSnapshotBytesPerSecValue = maxSnapshotBytesPerSec;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, the repository is read-only.
+	/// The cluster can retrieve and restore snapshots from the repository but not write to the repository or create snapshots in it.
+	/// </para>
+	/// <para>
+	/// Only a cluster with write access can create snapshots in the repository.
+	/// All other clusters connected to the repository should have the <c>readonly</c> parameter set to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// If <c>false</c>, the cluster can write to the repository and create snapshots in it.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you register the same snapshot repository with multiple clusters, only one cluster should have write access to the repository.
+	/// Having multiple clusters write to the repository at the same time risks corrupting the contents of the repository.
+	/// </para>
+	/// </summary>
 	public SourceOnlyRepositorySettingsDescriptor ReadOnly(bool? readOnly = true)
 	{
 		ReadOnlyValue = readOnly;

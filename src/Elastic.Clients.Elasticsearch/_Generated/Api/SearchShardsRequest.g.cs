@@ -67,6 +67,13 @@ public sealed partial class SearchShardsRequestParameters : RequestParameters
 
 	/// <summary>
 	/// <para>
+	/// Period to wait for a connection to the master node.
+	/// </para>
+	/// </summary>
+	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
+
+	/// <summary>
+	/// <para>
 	/// Specifies the node or shard the operation should be performed on.
 	/// Random by default.
 	/// </para>
@@ -148,6 +155,14 @@ public sealed partial class SearchShardsRequest : PlainRequest<SearchShardsReque
 
 	/// <summary>
 	/// <para>
+	/// Period to wait for a connection to the master node.
+	/// </para>
+	/// </summary>
+	[JsonIgnore]
+	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
+
+	/// <summary>
+	/// <para>
 	/// Specifies the node or shard the operation should be performed on.
 	/// Random by default.
 	/// </para>
@@ -198,6 +213,7 @@ public sealed partial class SearchShardsRequestDescriptor<TDocument> : RequestDe
 	public SearchShardsRequestDescriptor<TDocument> ExpandWildcards(ICollection<Elastic.Clients.Elasticsearch.ExpandWildcard>? expandWildcards) => Qs("expand_wildcards", expandWildcards);
 	public SearchShardsRequestDescriptor<TDocument> IgnoreUnavailable(bool? ignoreUnavailable = true) => Qs("ignore_unavailable", ignoreUnavailable);
 	public SearchShardsRequestDescriptor<TDocument> Local(bool? local = true) => Qs("local", local);
+	public SearchShardsRequestDescriptor<TDocument> MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 	public SearchShardsRequestDescriptor<TDocument> Preference(string? preference) => Qs("preference", preference);
 	public SearchShardsRequestDescriptor<TDocument> Routing(Elastic.Clients.Elasticsearch.Routing? routing) => Qs("routing", routing);
 
@@ -246,6 +262,7 @@ public sealed partial class SearchShardsRequestDescriptor : RequestDescriptor<Se
 	public SearchShardsRequestDescriptor ExpandWildcards(ICollection<Elastic.Clients.Elasticsearch.ExpandWildcard>? expandWildcards) => Qs("expand_wildcards", expandWildcards);
 	public SearchShardsRequestDescriptor IgnoreUnavailable(bool? ignoreUnavailable = true) => Qs("ignore_unavailable", ignoreUnavailable);
 	public SearchShardsRequestDescriptor Local(bool? local = true) => Qs("local", local);
+	public SearchShardsRequestDescriptor MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 	public SearchShardsRequestDescriptor Preference(string? preference) => Qs("preference", preference);
 	public SearchShardsRequestDescriptor Routing(Elastic.Clients.Elasticsearch.Routing? routing) => Qs("routing", routing);
 

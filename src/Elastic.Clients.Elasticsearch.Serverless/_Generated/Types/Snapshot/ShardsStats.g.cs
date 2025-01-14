@@ -29,16 +29,51 @@ namespace Elastic.Clients.Elasticsearch.Serverless.Snapshot;
 
 public sealed partial class ShardsStats
 {
+	/// <summary>
+	/// <para>
+	/// The number of shards that initialized, started, and finalized successfully.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("done")]
 	public long Done { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The number of shards that failed to be included in the snapshot.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("failed")]
 	public long Failed { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The number of shards that are finalizing but are not done.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("finalizing")]
 	public long Finalizing { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The number of shards that are still initializing.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("initializing")]
 	public long Initializing { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The number of shards that have started but are not finalized.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("started")]
 	public long Started { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The total number of shards included in the snapshot.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("total")]
 	public long Total { get; init; }
 }

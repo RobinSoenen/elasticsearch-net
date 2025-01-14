@@ -29,9 +29,19 @@ namespace Elastic.Clients.Elasticsearch.Snapshot;
 
 public sealed partial class SharedFileSystemRepository : IRepository
 {
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("settings")]
 	public Elastic.Clients.Elasticsearch.Snapshot.SharedFileSystemRepositorySettings Settings { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The shared file system repository type.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("type")]
 	public string Type => "fs";
 
@@ -52,6 +62,11 @@ public sealed partial class SharedFileSystemRepositoryDescriptor : SerializableD
 	private Action<Elastic.Clients.Elasticsearch.Snapshot.SharedFileSystemRepositorySettingsDescriptor> SettingsDescriptorAction { get; set; }
 	private string? UuidValue { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// </summary>
 	public SharedFileSystemRepositoryDescriptor Settings(Elastic.Clients.Elasticsearch.Snapshot.SharedFileSystemRepositorySettings settings)
 	{
 		SettingsDescriptor = null;

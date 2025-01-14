@@ -29,22 +29,93 @@ namespace Elastic.Clients.Elasticsearch.Snapshot;
 
 public sealed partial class GcsRepositorySettings
 {
-	[JsonInclude, JsonPropertyName("application_name")]
-	public string? ApplicationName { get; set; }
+	/// <summary>
+	/// <para>
+	/// The path to the repository data within the bucket.
+	/// It defaults to the root of the bucket.
+	/// </para>
+	/// <para>
+	/// NOTE: Don't set <c>base_path</c> when configuring a snapshot repository for Elastic Cloud Enterprise.
+	/// Elastic Cloud Enterprise automatically generates the <c>base_path</c> for each deployment so that multiple deployments can share the same bucket.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("base_path")]
 	public string? BasePath { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The name of the bucket to be used for snapshots.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("bucket")]
 	public string Bucket { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// Big files can be broken down into multiple smaller blobs in the blob store during snapshotting.
+	/// It is not recommended to change this value from its default unless there is an explicit reason for limiting the size of blobs in the repository.
+	/// Setting a value lower than the default can result in an increased number of API calls to the blob store during snapshot create and restore operations compared to using the default value and thus make both operations slower and more costly.
+	/// Specify the chunk size as a byte unit, for example: <c>10MB</c>, <c>5KB</c>, 500B.
+	/// The default varies by repository type.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("chunk_size")]
 	public Elastic.Clients.Elasticsearch.ByteSize? ChunkSize { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The name of the client to use to connect to Google Cloud Storage.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("client")]
 	public string? Client { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// When set to <c>true</c>, metadata files are stored in compressed format.
+	/// This setting doesn't affect index files that are already compressed by default.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("compress")]
 	public bool? Compress { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The maximum snapshot restore rate per node.
+	/// It defaults to unlimited.
+	/// Note that restores are also throttled through recovery settings.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("max_restore_bytes_per_sec")]
 	public Elastic.Clients.Elasticsearch.ByteSize? MaxRestoreBytesPerSec { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The maximum snapshot creation rate per node.
+	/// It defaults to 40mb per second.
+	/// Note that if the recovery settings for managed services are set, then it defaults to unlimited, and the rate is additionally throttled through recovery settings.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("max_snapshot_bytes_per_sec")]
 	public Elastic.Clients.Elasticsearch.ByteSize? MaxSnapshotBytesPerSec { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, the repository is read-only.
+	/// The cluster can retrieve and restore snapshots from the repository but not write to the repository or create snapshots in it.
+	/// </para>
+	/// <para>
+	/// Only a cluster with write access can create snapshots in the repository.
+	/// All other clusters connected to the repository should have the <c>readonly</c> parameter set to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// If <c>false</c>, the cluster can write to the repository and create snapshots in it.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you register the same snapshot repository with multiple clusters, only one cluster should have write access to the repository.
+	/// Having multiple clusters write to the repository at the same time risks corrupting the contents of the repository.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("readonly")]
 	public bool? Readonly { get; set; }
 }
@@ -57,7 +128,6 @@ public sealed partial class GcsRepositorySettingsDescriptor : SerializableDescri
 	{
 	}
 
-	private string? ApplicationNameValue { get; set; }
 	private string? BasePathValue { get; set; }
 	private string BucketValue { get; set; }
 	private Elastic.Clients.Elasticsearch.ByteSize? ChunkSizeValue { get; set; }
@@ -67,54 +137,114 @@ public sealed partial class GcsRepositorySettingsDescriptor : SerializableDescri
 	private Elastic.Clients.Elasticsearch.ByteSize? MaxSnapshotBytesPerSecValue { get; set; }
 	private bool? ReadonlyValue { get; set; }
 
-	public GcsRepositorySettingsDescriptor ApplicationName(string? applicationName)
-	{
-		ApplicationNameValue = applicationName;
-		return Self;
-	}
-
+	/// <summary>
+	/// <para>
+	/// The path to the repository data within the bucket.
+	/// It defaults to the root of the bucket.
+	/// </para>
+	/// <para>
+	/// NOTE: Don't set <c>base_path</c> when configuring a snapshot repository for Elastic Cloud Enterprise.
+	/// Elastic Cloud Enterprise automatically generates the <c>base_path</c> for each deployment so that multiple deployments can share the same bucket.
+	/// </para>
+	/// </summary>
 	public GcsRepositorySettingsDescriptor BasePath(string? basePath)
 	{
 		BasePathValue = basePath;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The name of the bucket to be used for snapshots.
+	/// </para>
+	/// </summary>
 	public GcsRepositorySettingsDescriptor Bucket(string bucket)
 	{
 		BucketValue = bucket;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// Big files can be broken down into multiple smaller blobs in the blob store during snapshotting.
+	/// It is not recommended to change this value from its default unless there is an explicit reason for limiting the size of blobs in the repository.
+	/// Setting a value lower than the default can result in an increased number of API calls to the blob store during snapshot create and restore operations compared to using the default value and thus make both operations slower and more costly.
+	/// Specify the chunk size as a byte unit, for example: <c>10MB</c>, <c>5KB</c>, 500B.
+	/// The default varies by repository type.
+	/// </para>
+	/// </summary>
 	public GcsRepositorySettingsDescriptor ChunkSize(Elastic.Clients.Elasticsearch.ByteSize? chunkSize)
 	{
 		ChunkSizeValue = chunkSize;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The name of the client to use to connect to Google Cloud Storage.
+	/// </para>
+	/// </summary>
 	public GcsRepositorySettingsDescriptor Client(string? client)
 	{
 		ClientValue = client;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// When set to <c>true</c>, metadata files are stored in compressed format.
+	/// This setting doesn't affect index files that are already compressed by default.
+	/// </para>
+	/// </summary>
 	public GcsRepositorySettingsDescriptor Compress(bool? compress = true)
 	{
 		CompressValue = compress;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The maximum snapshot restore rate per node.
+	/// It defaults to unlimited.
+	/// Note that restores are also throttled through recovery settings.
+	/// </para>
+	/// </summary>
 	public GcsRepositorySettingsDescriptor MaxRestoreBytesPerSec(Elastic.Clients.Elasticsearch.ByteSize? maxRestoreBytesPerSec)
 	{
 		MaxRestoreBytesPerSecValue = maxRestoreBytesPerSec;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The maximum snapshot creation rate per node.
+	/// It defaults to 40mb per second.
+	/// Note that if the recovery settings for managed services are set, then it defaults to unlimited, and the rate is additionally throttled through recovery settings.
+	/// </para>
+	/// </summary>
 	public GcsRepositorySettingsDescriptor MaxSnapshotBytesPerSec(Elastic.Clients.Elasticsearch.ByteSize? maxSnapshotBytesPerSec)
 	{
 		MaxSnapshotBytesPerSecValue = maxSnapshotBytesPerSec;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, the repository is read-only.
+	/// The cluster can retrieve and restore snapshots from the repository but not write to the repository or create snapshots in it.
+	/// </para>
+	/// <para>
+	/// Only a cluster with write access can create snapshots in the repository.
+	/// All other clusters connected to the repository should have the <c>readonly</c> parameter set to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// If <c>false</c>, the cluster can write to the repository and create snapshots in it.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you register the same snapshot repository with multiple clusters, only one cluster should have write access to the repository.
+	/// Having multiple clusters write to the repository at the same time risks corrupting the contents of the repository.
+	/// </para>
+	/// </summary>
 	public GcsRepositorySettingsDescriptor Readonly(bool? value = true)
 	{
 		ReadonlyValue = value;
@@ -124,12 +254,6 @@ public sealed partial class GcsRepositorySettingsDescriptor : SerializableDescri
 	protected override void Serialize(Utf8JsonWriter writer, JsonSerializerOptions options, IElasticsearchClientSettings settings)
 	{
 		writer.WriteStartObject();
-		if (!string.IsNullOrEmpty(ApplicationNameValue))
-		{
-			writer.WritePropertyName("application_name");
-			writer.WriteStringValue(ApplicationNameValue);
-		}
-
 		if (!string.IsNullOrEmpty(BasePathValue))
 		{
 			writer.WritePropertyName("base_path");

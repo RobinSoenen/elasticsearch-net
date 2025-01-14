@@ -42,7 +42,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -55,7 +61,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -68,7 +80,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -82,7 +100,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -97,7 +121,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -111,7 +141,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -126,7 +162,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -139,7 +181,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -153,7 +201,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -168,7 +222,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -182,7 +242,13 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get tokens from text analysis.
-	/// The analyze API performs <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html">analysis</a> on a text string and returns the resulting tokens.
+	/// The analyze API performs analysis on a text string and returns the resulting tokens.
+	/// </para>
+	/// <para>
+	/// Generating excessive amount of tokens may cause a node to run out of memory.
+	/// The <c>index.analyze.max_token_count</c> setting enables you to limit the number of tokens that can be produced.
+	/// If more than this limit of tokens gets generated, an error occurs.
+	/// The <c>_analyze</c> endpoint without a specified index will always use <c>10000</c> as its limit.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-analyze.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -200,6 +266,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
 	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
+	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ClearCacheResponse> ClearCacheAsync(ClearCacheRequest request, CancellationToken cancellationToken = default)
@@ -213,6 +284,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache.
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
+	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -228,6 +304,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
 	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
+	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ClearCacheResponse> ClearCacheAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
@@ -242,6 +323,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache.
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
+	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -259,6 +345,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
 	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
+	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ClearCacheResponse> ClearCacheAsync<TDocument>(CancellationToken cancellationToken = default)
@@ -273,6 +364,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache.
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
+	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -290,6 +386,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
 	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
+	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ClearCacheResponse> ClearCacheAsync(ClearCacheRequestDescriptor descriptor, CancellationToken cancellationToken = default)
@@ -303,6 +404,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache.
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
+	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -318,6 +424,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache.
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
+	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -335,6 +446,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
 	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
+	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ClearCacheResponse> ClearCacheAsync(CancellationToken cancellationToken = default)
@@ -349,6 +465,11 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Clear the cache.
 	/// Clear the cache of one or more indices.
 	/// For data streams, the API clears the caches of the stream's backing indices.
+	/// </para>
+	/// <para>
+	/// By default, the clear cache API clears all caches.
+	/// To clear only specific caches, use the <c>fielddata</c>, <c>query</c>, or <c>request</c> parameters.
+	/// To clear the cache only of specific fields, use the <c>fields</c> parameter.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-clearcache.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -669,7 +790,41 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Create an index.
-	/// Creates a new index.
+	/// You can use the create index API to add a new index to an Elasticsearch cluster.
+	/// When creating an index, you can specify the following:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Settings for the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Mappings for fields in the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index aliases
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// <strong>Wait for active shards</strong>
+	/// </para>
+	/// <para>
+	/// By default, index creation will only return a response to the client when the primary copies of each shard have been started, or the request times out.
+	/// The index creation response will indicate what happened.
+	/// For example, <c>acknowledged</c> indicates whether the index was successfully created in the cluster, <c>while shards_acknowledged</c> indicates whether the requisite number of shard copies were started for each shard in the index before timing out.
+	/// Note that it is still possible for either <c>acknowledged</c> or <c>shards_acknowledged</c> to be <c>false</c>, but for the index creation to be successful.
+	/// These values simply indicate whether the operation completed before the timeout.
+	/// If <c>acknowledged</c> is false, the request timed out before the cluster state was updated with the newly created index, but it probably will be created sometime soon.
+	/// If <c>shards_acknowledged</c> is false, then the request timed out before the requisite number of shards were started (by default just the primaries), even if the cluster state was successfully updated to reflect the newly created index (that is to say, <c>acknowledged</c> is <c>true</c>).
+	/// </para>
+	/// <para>
+	/// You can change the default of only waiting for the primary shards to start through the index setting <c>index.write.wait_for_active_shards</c>.
+	/// Note that changing this setting will also affect the <c>wait_for_active_shards</c> value on all subsequent write operations.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-create-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -682,7 +837,41 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Create an index.
-	/// Creates a new index.
+	/// You can use the create index API to add a new index to an Elasticsearch cluster.
+	/// When creating an index, you can specify the following:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Settings for the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Mappings for fields in the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index aliases
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// <strong>Wait for active shards</strong>
+	/// </para>
+	/// <para>
+	/// By default, index creation will only return a response to the client when the primary copies of each shard have been started, or the request times out.
+	/// The index creation response will indicate what happened.
+	/// For example, <c>acknowledged</c> indicates whether the index was successfully created in the cluster, <c>while shards_acknowledged</c> indicates whether the requisite number of shard copies were started for each shard in the index before timing out.
+	/// Note that it is still possible for either <c>acknowledged</c> or <c>shards_acknowledged</c> to be <c>false</c>, but for the index creation to be successful.
+	/// These values simply indicate whether the operation completed before the timeout.
+	/// If <c>acknowledged</c> is false, the request timed out before the cluster state was updated with the newly created index, but it probably will be created sometime soon.
+	/// If <c>shards_acknowledged</c> is false, then the request timed out before the requisite number of shards were started (by default just the primaries), even if the cluster state was successfully updated to reflect the newly created index (that is to say, <c>acknowledged</c> is <c>true</c>).
+	/// </para>
+	/// <para>
+	/// You can change the default of only waiting for the primary shards to start through the index setting <c>index.write.wait_for_active_shards</c>.
+	/// Note that changing this setting will also affect the <c>wait_for_active_shards</c> value on all subsequent write operations.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-create-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -695,7 +884,41 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Create an index.
-	/// Creates a new index.
+	/// You can use the create index API to add a new index to an Elasticsearch cluster.
+	/// When creating an index, you can specify the following:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Settings for the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Mappings for fields in the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index aliases
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// <strong>Wait for active shards</strong>
+	/// </para>
+	/// <para>
+	/// By default, index creation will only return a response to the client when the primary copies of each shard have been started, or the request times out.
+	/// The index creation response will indicate what happened.
+	/// For example, <c>acknowledged</c> indicates whether the index was successfully created in the cluster, <c>while shards_acknowledged</c> indicates whether the requisite number of shard copies were started for each shard in the index before timing out.
+	/// Note that it is still possible for either <c>acknowledged</c> or <c>shards_acknowledged</c> to be <c>false</c>, but for the index creation to be successful.
+	/// These values simply indicate whether the operation completed before the timeout.
+	/// If <c>acknowledged</c> is false, the request timed out before the cluster state was updated with the newly created index, but it probably will be created sometime soon.
+	/// If <c>shards_acknowledged</c> is false, then the request timed out before the requisite number of shards were started (by default just the primaries), even if the cluster state was successfully updated to reflect the newly created index (that is to say, <c>acknowledged</c> is <c>true</c>).
+	/// </para>
+	/// <para>
+	/// You can change the default of only waiting for the primary shards to start through the index setting <c>index.write.wait_for_active_shards</c>.
+	/// Note that changing this setting will also affect the <c>wait_for_active_shards</c> value on all subsequent write operations.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-create-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -709,7 +932,41 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Create an index.
-	/// Creates a new index.
+	/// You can use the create index API to add a new index to an Elasticsearch cluster.
+	/// When creating an index, you can specify the following:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Settings for the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Mappings for fields in the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index aliases
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// <strong>Wait for active shards</strong>
+	/// </para>
+	/// <para>
+	/// By default, index creation will only return a response to the client when the primary copies of each shard have been started, or the request times out.
+	/// The index creation response will indicate what happened.
+	/// For example, <c>acknowledged</c> indicates whether the index was successfully created in the cluster, <c>while shards_acknowledged</c> indicates whether the requisite number of shard copies were started for each shard in the index before timing out.
+	/// Note that it is still possible for either <c>acknowledged</c> or <c>shards_acknowledged</c> to be <c>false</c>, but for the index creation to be successful.
+	/// These values simply indicate whether the operation completed before the timeout.
+	/// If <c>acknowledged</c> is false, the request timed out before the cluster state was updated with the newly created index, but it probably will be created sometime soon.
+	/// If <c>shards_acknowledged</c> is false, then the request timed out before the requisite number of shards were started (by default just the primaries), even if the cluster state was successfully updated to reflect the newly created index (that is to say, <c>acknowledged</c> is <c>true</c>).
+	/// </para>
+	/// <para>
+	/// You can change the default of only waiting for the primary shards to start through the index setting <c>index.write.wait_for_active_shards</c>.
+	/// Note that changing this setting will also affect the <c>wait_for_active_shards</c> value on all subsequent write operations.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-create-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -724,7 +981,41 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Create an index.
-	/// Creates a new index.
+	/// You can use the create index API to add a new index to an Elasticsearch cluster.
+	/// When creating an index, you can specify the following:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Settings for the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Mappings for fields in the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index aliases
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// <strong>Wait for active shards</strong>
+	/// </para>
+	/// <para>
+	/// By default, index creation will only return a response to the client when the primary copies of each shard have been started, or the request times out.
+	/// The index creation response will indicate what happened.
+	/// For example, <c>acknowledged</c> indicates whether the index was successfully created in the cluster, <c>while shards_acknowledged</c> indicates whether the requisite number of shard copies were started for each shard in the index before timing out.
+	/// Note that it is still possible for either <c>acknowledged</c> or <c>shards_acknowledged</c> to be <c>false</c>, but for the index creation to be successful.
+	/// These values simply indicate whether the operation completed before the timeout.
+	/// If <c>acknowledged</c> is false, the request timed out before the cluster state was updated with the newly created index, but it probably will be created sometime soon.
+	/// If <c>shards_acknowledged</c> is false, then the request timed out before the requisite number of shards were started (by default just the primaries), even if the cluster state was successfully updated to reflect the newly created index (that is to say, <c>acknowledged</c> is <c>true</c>).
+	/// </para>
+	/// <para>
+	/// You can change the default of only waiting for the primary shards to start through the index setting <c>index.write.wait_for_active_shards</c>.
+	/// Note that changing this setting will also affect the <c>wait_for_active_shards</c> value on all subsequent write operations.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-create-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -738,7 +1029,41 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Create an index.
-	/// Creates a new index.
+	/// You can use the create index API to add a new index to an Elasticsearch cluster.
+	/// When creating an index, you can specify the following:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Settings for the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Mappings for fields in the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index aliases
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// <strong>Wait for active shards</strong>
+	/// </para>
+	/// <para>
+	/// By default, index creation will only return a response to the client when the primary copies of each shard have been started, or the request times out.
+	/// The index creation response will indicate what happened.
+	/// For example, <c>acknowledged</c> indicates whether the index was successfully created in the cluster, <c>while shards_acknowledged</c> indicates whether the requisite number of shard copies were started for each shard in the index before timing out.
+	/// Note that it is still possible for either <c>acknowledged</c> or <c>shards_acknowledged</c> to be <c>false</c>, but for the index creation to be successful.
+	/// These values simply indicate whether the operation completed before the timeout.
+	/// If <c>acknowledged</c> is false, the request timed out before the cluster state was updated with the newly created index, but it probably will be created sometime soon.
+	/// If <c>shards_acknowledged</c> is false, then the request timed out before the requisite number of shards were started (by default just the primaries), even if the cluster state was successfully updated to reflect the newly created index (that is to say, <c>acknowledged</c> is <c>true</c>).
+	/// </para>
+	/// <para>
+	/// You can change the default of only waiting for the primary shards to start through the index setting <c>index.write.wait_for_active_shards</c>.
+	/// Note that changing this setting will also affect the <c>wait_for_active_shards</c> value on all subsequent write operations.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-create-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -753,7 +1078,41 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Create an index.
-	/// Creates a new index.
+	/// You can use the create index API to add a new index to an Elasticsearch cluster.
+	/// When creating an index, you can specify the following:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Settings for the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Mappings for fields in the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index aliases
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// <strong>Wait for active shards</strong>
+	/// </para>
+	/// <para>
+	/// By default, index creation will only return a response to the client when the primary copies of each shard have been started, or the request times out.
+	/// The index creation response will indicate what happened.
+	/// For example, <c>acknowledged</c> indicates whether the index was successfully created in the cluster, <c>while shards_acknowledged</c> indicates whether the requisite number of shard copies were started for each shard in the index before timing out.
+	/// Note that it is still possible for either <c>acknowledged</c> or <c>shards_acknowledged</c> to be <c>false</c>, but for the index creation to be successful.
+	/// These values simply indicate whether the operation completed before the timeout.
+	/// If <c>acknowledged</c> is false, the request timed out before the cluster state was updated with the newly created index, but it probably will be created sometime soon.
+	/// If <c>shards_acknowledged</c> is false, then the request timed out before the requisite number of shards were started (by default just the primaries), even if the cluster state was successfully updated to reflect the newly created index (that is to say, <c>acknowledged</c> is <c>true</c>).
+	/// </para>
+	/// <para>
+	/// You can change the default of only waiting for the primary shards to start through the index setting <c>index.write.wait_for_active_shards</c>.
+	/// Note that changing this setting will also affect the <c>wait_for_active_shards</c> value on all subsequent write operations.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-create-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -766,7 +1125,41 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Create an index.
-	/// Creates a new index.
+	/// You can use the create index API to add a new index to an Elasticsearch cluster.
+	/// When creating an index, you can specify the following:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Settings for the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Mappings for fields in the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index aliases
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// <strong>Wait for active shards</strong>
+	/// </para>
+	/// <para>
+	/// By default, index creation will only return a response to the client when the primary copies of each shard have been started, or the request times out.
+	/// The index creation response will indicate what happened.
+	/// For example, <c>acknowledged</c> indicates whether the index was successfully created in the cluster, <c>while shards_acknowledged</c> indicates whether the requisite number of shard copies were started for each shard in the index before timing out.
+	/// Note that it is still possible for either <c>acknowledged</c> or <c>shards_acknowledged</c> to be <c>false</c>, but for the index creation to be successful.
+	/// These values simply indicate whether the operation completed before the timeout.
+	/// If <c>acknowledged</c> is false, the request timed out before the cluster state was updated with the newly created index, but it probably will be created sometime soon.
+	/// If <c>shards_acknowledged</c> is false, then the request timed out before the requisite number of shards were started (by default just the primaries), even if the cluster state was successfully updated to reflect the newly created index (that is to say, <c>acknowledged</c> is <c>true</c>).
+	/// </para>
+	/// <para>
+	/// You can change the default of only waiting for the primary shards to start through the index setting <c>index.write.wait_for_active_shards</c>.
+	/// Note that changing this setting will also affect the <c>wait_for_active_shards</c> value on all subsequent write operations.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-create-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -780,7 +1173,41 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Create an index.
-	/// Creates a new index.
+	/// You can use the create index API to add a new index to an Elasticsearch cluster.
+	/// When creating an index, you can specify the following:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Settings for the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Mappings for fields in the index.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index aliases
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// <strong>Wait for active shards</strong>
+	/// </para>
+	/// <para>
+	/// By default, index creation will only return a response to the client when the primary copies of each shard have been started, or the request times out.
+	/// The index creation response will indicate what happened.
+	/// For example, <c>acknowledged</c> indicates whether the index was successfully created in the cluster, <c>while shards_acknowledged</c> indicates whether the requisite number of shard copies were started for each shard in the index before timing out.
+	/// Note that it is still possible for either <c>acknowledged</c> or <c>shards_acknowledged</c> to be <c>false</c>, but for the index creation to be successful.
+	/// These values simply indicate whether the operation completed before the timeout.
+	/// If <c>acknowledged</c> is false, the request timed out before the cluster state was updated with the newly created index, but it probably will be created sometime soon.
+	/// If <c>shards_acknowledged</c> is false, then the request timed out before the requisite number of shards were started (by default just the primaries), even if the cluster state was successfully updated to reflect the newly created index (that is to say, <c>acknowledged</c> is <c>true</c>).
+	/// </para>
+	/// <para>
+	/// You can change the default of only waiting for the primary shards to start through the index setting <c>index.write.wait_for_active_shards</c>.
+	/// Note that changing this setting will also affect the <c>wait_for_active_shards</c> value on all subsequent write operations.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-create-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -938,9 +1365,15 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Delete indices.
-	/// Deletes one or more indices.
+	/// Deleting an index deletes its documents, shards, and metadata.
+	/// It does not delete related Kibana components, such as data views, visualizations, or dashboards.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// You cannot delete the current write index of a data stream.
+	/// To delete the index, you must roll over the data stream so a new write index is created.
+	/// You can then use the delete index API to delete the previous write index.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexResponse> DeleteAsync(DeleteIndexRequest request, CancellationToken cancellationToken = default)
 	{
@@ -951,9 +1384,15 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Delete indices.
-	/// Deletes one or more indices.
+	/// Deleting an index deletes its documents, shards, and metadata.
+	/// It does not delete related Kibana components, such as data views, visualizations, or dashboards.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// You cannot delete the current write index of a data stream.
+	/// To delete the index, you must roll over the data stream so a new write index is created.
+	/// You can then use the delete index API to delete the previous write index.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexResponse> DeleteAsync<TDocument>(DeleteIndexRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -964,9 +1403,15 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Delete indices.
-	/// Deletes one or more indices.
+	/// Deleting an index deletes its documents, shards, and metadata.
+	/// It does not delete related Kibana components, such as data views, visualizations, or dashboards.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// You cannot delete the current write index of a data stream.
+	/// To delete the index, you must roll over the data stream so a new write index is created.
+	/// You can then use the delete index API to delete the previous write index.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexResponse> DeleteAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, CancellationToken cancellationToken = default)
 	{
@@ -978,9 +1423,15 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Delete indices.
-	/// Deletes one or more indices.
+	/// Deleting an index deletes its documents, shards, and metadata.
+	/// It does not delete related Kibana components, such as data views, visualizations, or dashboards.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// You cannot delete the current write index of a data stream.
+	/// To delete the index, you must roll over the data stream so a new write index is created.
+	/// You can then use the delete index API to delete the previous write index.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexResponse> DeleteAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Action<DeleteIndexRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -993,9 +1444,15 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Delete indices.
-	/// Deletes one or more indices.
+	/// Deleting an index deletes its documents, shards, and metadata.
+	/// It does not delete related Kibana components, such as data views, visualizations, or dashboards.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// You cannot delete the current write index of a data stream.
+	/// To delete the index, you must roll over the data stream so a new write index is created.
+	/// You can then use the delete index API to delete the previous write index.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexResponse> DeleteAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -1007,9 +1464,15 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Delete indices.
-	/// Deletes one or more indices.
+	/// Deleting an index deletes its documents, shards, and metadata.
+	/// It does not delete related Kibana components, such as data views, visualizations, or dashboards.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// You cannot delete the current write index of a data stream.
+	/// To delete the index, you must roll over the data stream so a new write index is created.
+	/// You can then use the delete index API to delete the previous write index.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexResponse> DeleteAsync<TDocument>(Action<DeleteIndexRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1022,9 +1485,15 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Delete indices.
-	/// Deletes one or more indices.
+	/// Deleting an index deletes its documents, shards, and metadata.
+	/// It does not delete related Kibana components, such as data views, visualizations, or dashboards.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// You cannot delete the current write index of a data stream.
+	/// To delete the index, you must roll over the data stream so a new write index is created.
+	/// You can then use the delete index API to delete the previous write index.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexResponse> DeleteAsync(DeleteIndexRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -1035,9 +1504,15 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Delete indices.
-	/// Deletes one or more indices.
+	/// Deleting an index deletes its documents, shards, and metadata.
+	/// It does not delete related Kibana components, such as data views, visualizations, or dashboards.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// You cannot delete the current write index of a data stream.
+	/// To delete the index, you must roll over the data stream so a new write index is created.
+	/// You can then use the delete index API to delete the previous write index.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexResponse> DeleteAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, CancellationToken cancellationToken = default)
 	{
@@ -1049,9 +1524,15 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Delete indices.
-	/// Deletes one or more indices.
+	/// Deleting an index deletes its documents, shards, and metadata.
+	/// It does not delete related Kibana components, such as data views, visualizations, or dashboards.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// You cannot delete the current write index of a data stream.
+	/// To delete the index, you must roll over the data stream so a new write index is created.
+	/// You can then use the delete index API to delete the previous write index.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexResponse> DeleteAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Action<DeleteIndexRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1066,7 +1547,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Delete an alias.
 	/// Removes a data stream or index from an alias.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-alias.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, CancellationToken cancellationToken = default)
 	{
@@ -1079,7 +1560,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Delete an alias.
 	/// Removes a data stream or index from an alias.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-alias.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteAliasResponse> DeleteAliasAsync<TDocument>(DeleteAliasRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -1092,7 +1573,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Delete an alias.
 	/// Removes a data stream or index from an alias.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-alias.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteAliasResponse> DeleteAliasAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Elastic.Clients.Elasticsearch.Serverless.Names name, CancellationToken cancellationToken = default)
 	{
@@ -1106,7 +1587,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Delete an alias.
 	/// Removes a data stream or index from an alias.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-alias.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteAliasResponse> DeleteAliasAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Elastic.Clients.Elasticsearch.Serverless.Names name, Action<DeleteAliasRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1121,7 +1602,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Delete an alias.
 	/// Removes a data stream or index from an alias.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-alias.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteAliasResponse> DeleteAliasAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Names name, CancellationToken cancellationToken = default)
 	{
@@ -1135,7 +1616,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Delete an alias.
 	/// Removes a data stream or index from an alias.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-alias.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteAliasResponse> DeleteAliasAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Names name, Action<DeleteAliasRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1150,7 +1631,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Delete an alias.
 	/// Removes a data stream or index from an alias.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-alias.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -1163,7 +1644,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Delete an alias.
 	/// Removes a data stream or index from an alias.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-alias.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteAliasResponse> DeleteAliasAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Elastic.Clients.Elasticsearch.Serverless.Names name, CancellationToken cancellationToken = default)
 	{
@@ -1177,7 +1658,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Delete an alias.
 	/// Removes a data stream or index from an alias.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-alias.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteAliasResponse> DeleteAliasAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Elastic.Clients.Elasticsearch.Serverless.Names name, Action<DeleteAliasRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1304,7 +1785,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// names are specified then there is no wildcard support and the provided names should match completely with
 	/// existing templates.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexTemplateResponse> DeleteIndexTemplateAsync(DeleteIndexTemplateRequest request, CancellationToken cancellationToken = default)
 	{
@@ -1319,7 +1800,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// names are specified then there is no wildcard support and the provided names should match completely with
 	/// existing templates.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexTemplateResponse> DeleteIndexTemplateAsync(DeleteIndexTemplateRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -1334,7 +1815,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// names are specified then there is no wildcard support and the provided names should match completely with
 	/// existing templates.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexTemplateResponse> DeleteIndexTemplateAsync(Elastic.Clients.Elasticsearch.Serverless.Names name, CancellationToken cancellationToken = default)
 	{
@@ -1350,7 +1831,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// names are specified then there is no wildcard support and the provided names should match completely with
 	/// existing templates.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-delete-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-delete-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<DeleteIndexTemplateResponse> DeleteIndexTemplateAsync(Elastic.Clients.Elasticsearch.Serverless.Names name, Action<DeleteIndexTemplateRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1363,9 +1844,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Check indices.
-	/// Checks if one or more indices, index aliases, or data streams exist.
+	/// Check if one or more indices, index aliases, or data streams exist.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ExistsResponse> ExistsAsync(ExistsRequest request, CancellationToken cancellationToken = default)
 	{
@@ -1376,9 +1857,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Check indices.
-	/// Checks if one or more indices, index aliases, or data streams exist.
+	/// Check if one or more indices, index aliases, or data streams exist.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ExistsResponse> ExistsAsync<TDocument>(ExistsRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -1389,9 +1870,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Check indices.
-	/// Checks if one or more indices, index aliases, or data streams exist.
+	/// Check if one or more indices, index aliases, or data streams exist.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ExistsResponse> ExistsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, CancellationToken cancellationToken = default)
 	{
@@ -1403,9 +1884,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Check indices.
-	/// Checks if one or more indices, index aliases, or data streams exist.
+	/// Check if one or more indices, index aliases, or data streams exist.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ExistsResponse> ExistsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Action<ExistsRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1418,9 +1899,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Check indices.
-	/// Checks if one or more indices, index aliases, or data streams exist.
+	/// Check if one or more indices, index aliases, or data streams exist.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ExistsResponse> ExistsAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -1432,9 +1913,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Check indices.
-	/// Checks if one or more indices, index aliases, or data streams exist.
+	/// Check if one or more indices, index aliases, or data streams exist.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ExistsResponse> ExistsAsync<TDocument>(Action<ExistsRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -1447,9 +1928,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Check indices.
-	/// Checks if one or more indices, index aliases, or data streams exist.
+	/// Check if one or more indices, index aliases, or data streams exist.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ExistsResponse> ExistsAsync(ExistsRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -1460,9 +1941,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Check indices.
-	/// Checks if one or more indices, index aliases, or data streams exist.
+	/// Check if one or more indices, index aliases, or data streams exist.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ExistsResponse> ExistsAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, CancellationToken cancellationToken = default)
 	{
@@ -1474,9 +1955,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Check indices.
-	/// Checks if one or more indices, index aliases, or data streams exist.
+	/// Check if one or more indices, index aliases, or data streams exist.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-exists.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ExistsResponse> ExistsAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Action<ExistsRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2116,7 +2597,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync(ForcemergeRequest request, CancellationToken cancellationToken = default)
 	{
@@ -2142,7 +2689,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync<TDocument>(ForcemergeRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -2168,7 +2781,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -2195,7 +2874,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<ForcemergeRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2223,7 +2968,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -2250,7 +3061,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync<TDocument>(Action<ForcemergeRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2278,7 +3155,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync(ForcemergeRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -2304,7 +3247,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -2331,7 +3340,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<ForcemergeRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2359,7 +3434,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync(CancellationToken cancellationToken = default)
 	{
@@ -2386,7 +3527,73 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// So the number of soft-deleted documents can then grow rapidly, resulting in higher disk usage and worse search performance.
 	/// If you regularly force merge an index receiving writes, this can also make snapshots more expensive, since the new documents can't be backed up incrementally.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Blocks during a force merge</strong>
+	/// </para>
+	/// <para>
+	/// Calls to this API block until the merge is complete (unless request contains <c>wait_for_completion=false</c>).
+	/// If the client connection is lost before completion then the force merge process will continue in the background.
+	/// Any new requests to force merge the same indices will also block until the ongoing force merge is complete.
+	/// </para>
+	/// <para>
+	/// <strong>Running force merge asynchronously</strong>
+	/// </para>
+	/// <para>
+	/// If the request contains <c>wait_for_completion=false</c>, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to get the status of the task.
+	/// However, you can not cancel this task as the force merge task is not cancelable.
+	/// Elasticsearch creates a record of this task as a document at <c>_tasks/&lt;task_id></c>.
+	/// When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.
+	/// </para>
+	/// <para>
+	/// <strong>Force merging multiple indices</strong>
+	/// </para>
+	/// <para>
+	/// You can force merge multiple indices with a single request by targeting:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// One or more data streams that contain multiple backing indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Multiple indices
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// One or more aliases
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// All data streams and indices in a cluster
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// Each targeted shard is force-merged separately using the force_merge threadpool.
+	/// By default each node only has a single <c>force_merge</c> thread which means that the shards on that node are force-merged one at a time.
+	/// If you expand the <c>force_merge</c> threadpool on a node then it will force merge its shards in parallel
+	/// </para>
+	/// <para>
+	/// Force merge makes the storage for the shard being merged temporarily increase, as it may require free space up to triple its size in case <c>max_num_segments parameter</c> is set to <c>1</c>, to rewrite all segments into a new one.
+	/// </para>
+	/// <para>
+	/// <strong>Data streams and time-based indices</strong>
+	/// </para>
+	/// <para>
+	/// Force-merging is useful for managing a data stream's older backing indices and other time-based indices, particularly after a rollover.
+	/// In these cases, each index only receives indexing traffic for a certain period of time.
+	/// Once an index receive no more writes, its shards can be force-merged to a single segment.
+	/// This can be a good idea because single-segment shards can sometimes use simpler and more efficient data structures to perform searches.
+	/// For example:
+	/// </para>
+	/// <code>
+	/// POST /.ds-my-data-stream-2099.03.07-000001/_forcemerge?max_num_segments=1
+	/// </code>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-forcemerge.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ForcemergeResponse> ForcemergeAsync(Action<ForcemergeRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2399,10 +3606,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index information.
-	/// Returns information about one or more indices. For data streams, the API returns information about the
+	/// Get information about one or more indices. For data streams, the API returns information about the
 	/// stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexResponse> GetAsync(GetIndexRequest request, CancellationToken cancellationToken = default)
 	{
@@ -2413,10 +3620,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index information.
-	/// Returns information about one or more indices. For data streams, the API returns information about the
+	/// Get information about one or more indices. For data streams, the API returns information about the
 	/// stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexResponse> GetAsync<TDocument>(GetIndexRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -2427,10 +3634,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index information.
-	/// Returns information about one or more indices. For data streams, the API returns information about the
+	/// Get information about one or more indices. For data streams, the API returns information about the
 	/// stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexResponse> GetAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, CancellationToken cancellationToken = default)
 	{
@@ -2442,10 +3649,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index information.
-	/// Returns information about one or more indices. For data streams, the API returns information about the
+	/// Get information about one or more indices. For data streams, the API returns information about the
 	/// stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexResponse> GetAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Action<GetIndexRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2458,10 +3665,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index information.
-	/// Returns information about one or more indices. For data streams, the API returns information about the
+	/// Get information about one or more indices. For data streams, the API returns information about the
 	/// stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexResponse> GetAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -2473,10 +3680,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index information.
-	/// Returns information about one or more indices. For data streams, the API returns information about the
+	/// Get information about one or more indices. For data streams, the API returns information about the
 	/// stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexResponse> GetAsync<TDocument>(Action<GetIndexRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2489,10 +3696,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index information.
-	/// Returns information about one or more indices. For data streams, the API returns information about the
+	/// Get information about one or more indices. For data streams, the API returns information about the
 	/// stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexResponse> GetAsync(GetIndexRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -2503,10 +3710,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index information.
-	/// Returns information about one or more indices. For data streams, the API returns information about the
+	/// Get information about one or more indices. For data streams, the API returns information about the
 	/// stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexResponse> GetAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, CancellationToken cancellationToken = default)
 	{
@@ -2518,10 +3725,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index information.
-	/// Returns information about one or more indices. For data streams, the API returns information about the
+	/// Get information about one or more indices. For data streams, the API returns information about the
 	/// stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexResponse> GetAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Action<GetIndexRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2536,7 +3743,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, CancellationToken cancellationToken = default)
 	{
@@ -2549,7 +3755,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync<TDocument>(GetAliasRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -2562,7 +3767,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Names? name, CancellationToken cancellationToken = default)
 	{
@@ -2576,7 +3780,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Names? name, Action<GetAliasRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2591,7 +3794,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -2605,7 +3807,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync<TDocument>(Action<GetAliasRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2620,7 +3821,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync(GetAliasRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -2633,7 +3833,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Names? name, CancellationToken cancellationToken = default)
 	{
@@ -2647,7 +3846,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Names? name, Action<GetAliasRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2662,7 +3860,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync(CancellationToken cancellationToken = default)
 	{
@@ -2676,7 +3873,6 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get aliases.
 	/// Retrieves information for one or more data stream or index aliases.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-aliases.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetAliasResponse> GetAliasAsync(Action<GetAliasRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2828,9 +4024,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index templates.
-	/// Returns information about one or more index templates.
+	/// Get information about one or more index templates.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexTemplateResponse> GetIndexTemplateAsync(GetIndexTemplateRequest request, CancellationToken cancellationToken = default)
 	{
@@ -2841,9 +4037,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index templates.
-	/// Returns information about one or more index templates.
+	/// Get information about one or more index templates.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexTemplateResponse> GetIndexTemplateAsync(GetIndexTemplateRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -2854,9 +4050,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index templates.
-	/// Returns information about one or more index templates.
+	/// Get information about one or more index templates.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexTemplateResponse> GetIndexTemplateAsync(Elastic.Clients.Elasticsearch.Serverless.Name? name, CancellationToken cancellationToken = default)
 	{
@@ -2868,9 +4064,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index templates.
-	/// Returns information about one or more index templates.
+	/// Get information about one or more index templates.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexTemplateResponse> GetIndexTemplateAsync(Elastic.Clients.Elasticsearch.Serverless.Name? name, Action<GetIndexTemplateRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2883,9 +4079,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index templates.
-	/// Returns information about one or more index templates.
+	/// Get information about one or more index templates.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexTemplateResponse> GetIndexTemplateAsync(CancellationToken cancellationToken = default)
 	{
@@ -2897,9 +4093,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index templates.
-	/// Returns information about one or more index templates.
+	/// Get information about one or more index templates.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndexTemplateResponse> GetIndexTemplateAsync(Action<GetIndexTemplateRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2912,10 +4108,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync(GetMappingRequest request, CancellationToken cancellationToken = default)
 	{
@@ -2926,10 +4121,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync<TDocument>(GetMappingRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -2940,10 +4134,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -2955,10 +4148,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<GetMappingRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -2971,10 +4163,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -2986,10 +4177,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync<TDocument>(Action<GetMappingRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3002,10 +4192,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync(GetMappingRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -3016,10 +4205,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -3031,10 +4219,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<GetMappingRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3047,10 +4234,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync(CancellationToken cancellationToken = default)
 	{
@@ -3062,10 +4248,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get mapping definitions.
-	/// Retrieves mapping definitions for one or more indices.
 	/// For data streams, the API retrieves mappings for the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetMappingResponse> GetMappingAsync(Action<GetMappingRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3078,10 +4263,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync(GetIndicesSettingsRequest request, CancellationToken cancellationToken = default)
 	{
@@ -3092,10 +4277,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync<TDocument>(GetIndicesSettingsRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -3106,10 +4291,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Names? name, CancellationToken cancellationToken = default)
 	{
@@ -3121,10 +4306,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Names? name, Action<GetIndicesSettingsRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3137,10 +4322,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -3152,10 +4337,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync<TDocument>(Action<GetIndicesSettingsRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3168,10 +4353,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync(GetIndicesSettingsRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -3182,10 +4367,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Names? name, CancellationToken cancellationToken = default)
 	{
@@ -3197,10 +4382,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Names? name, Action<GetIndicesSettingsRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3213,10 +4398,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync(CancellationToken cancellationToken = default)
 	{
@@ -3228,10 +4413,10 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Get index settings.
-	/// Returns setting information for one or more indices. For data streams,
-	/// returns setting information for the stream’s backing indices.
+	/// Get setting information for one or more indices.
+	/// For data streams, it returns setting information for the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-get-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<GetIndicesSettingsResponse> GetSettingsAsync(Action<GetIndicesSettingsRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3389,10 +4574,37 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Opens a closed index.
+	/// Open a closed index.
 	/// For data streams, the API opens any closed backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// A closed index is blocked for read/write operations and does not allow all operations that opened indices allow.
+	/// It is not possible to index documents or to search for documents in a closed index.
+	/// This allows closed indices to not have to maintain internal data structures for indexing or searching documents, resulting in a smaller overhead on the cluster.
+	/// </para>
+	/// <para>
+	/// When opening or closing an index, the master is responsible for restarting the index shards to reflect the new state of the index.
+	/// The shards will then go through the normal recovery process.
+	/// The data of opened or closed indices is automatically replicated by the cluster to ensure that enough shard copies are safely kept around at all times.
+	/// </para>
+	/// <para>
+	/// You can open and close multiple indices.
+	/// An error is thrown if the request explicitly refers to a missing index.
+	/// This behavior can be turned off by using the <c>ignore_unavailable=true</c> parameter.
+	/// </para>
+	/// <para>
+	/// By default, you must explicitly name the indices you are opening or closing.
+	/// To open or close indices with <c>_all</c>, <c>*</c>, or other wildcard expressions, change the <c>action.destructive_requires_name</c> setting to <c>false</c>.
+	/// This setting can also be changed with the cluster update settings API.
+	/// </para>
+	/// <para>
+	/// Closed indices consume a significant amount of disk-space which can cause problems in managed environments.
+	/// Closing indices can be turned off with the cluster settings API by setting <c>cluster.indices.close.enable</c> to <c>false</c>.
+	/// </para>
+	/// <para>
+	/// Because opening or closing an index allocates its shards, the <c>wait_for_active_shards</c> setting on index creation applies to the <c>_open</c> and <c>_close</c> index actions as well.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<OpenIndexResponse> OpenAsync(OpenIndexRequest request, CancellationToken cancellationToken = default)
 	{
@@ -3402,10 +4614,37 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Opens a closed index.
+	/// Open a closed index.
 	/// For data streams, the API opens any closed backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// A closed index is blocked for read/write operations and does not allow all operations that opened indices allow.
+	/// It is not possible to index documents or to search for documents in a closed index.
+	/// This allows closed indices to not have to maintain internal data structures for indexing or searching documents, resulting in a smaller overhead on the cluster.
+	/// </para>
+	/// <para>
+	/// When opening or closing an index, the master is responsible for restarting the index shards to reflect the new state of the index.
+	/// The shards will then go through the normal recovery process.
+	/// The data of opened or closed indices is automatically replicated by the cluster to ensure that enough shard copies are safely kept around at all times.
+	/// </para>
+	/// <para>
+	/// You can open and close multiple indices.
+	/// An error is thrown if the request explicitly refers to a missing index.
+	/// This behavior can be turned off by using the <c>ignore_unavailable=true</c> parameter.
+	/// </para>
+	/// <para>
+	/// By default, you must explicitly name the indices you are opening or closing.
+	/// To open or close indices with <c>_all</c>, <c>*</c>, or other wildcard expressions, change the <c>action.destructive_requires_name</c> setting to <c>false</c>.
+	/// This setting can also be changed with the cluster update settings API.
+	/// </para>
+	/// <para>
+	/// Closed indices consume a significant amount of disk-space which can cause problems in managed environments.
+	/// Closing indices can be turned off with the cluster settings API by setting <c>cluster.indices.close.enable</c> to <c>false</c>.
+	/// </para>
+	/// <para>
+	/// Because opening or closing an index allocates its shards, the <c>wait_for_active_shards</c> setting on index creation applies to the <c>_open</c> and <c>_close</c> index actions as well.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<OpenIndexResponse> OpenAsync<TDocument>(OpenIndexRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -3415,10 +4654,37 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Opens a closed index.
+	/// Open a closed index.
 	/// For data streams, the API opens any closed backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// A closed index is blocked for read/write operations and does not allow all operations that opened indices allow.
+	/// It is not possible to index documents or to search for documents in a closed index.
+	/// This allows closed indices to not have to maintain internal data structures for indexing or searching documents, resulting in a smaller overhead on the cluster.
+	/// </para>
+	/// <para>
+	/// When opening or closing an index, the master is responsible for restarting the index shards to reflect the new state of the index.
+	/// The shards will then go through the normal recovery process.
+	/// The data of opened or closed indices is automatically replicated by the cluster to ensure that enough shard copies are safely kept around at all times.
+	/// </para>
+	/// <para>
+	/// You can open and close multiple indices.
+	/// An error is thrown if the request explicitly refers to a missing index.
+	/// This behavior can be turned off by using the <c>ignore_unavailable=true</c> parameter.
+	/// </para>
+	/// <para>
+	/// By default, you must explicitly name the indices you are opening or closing.
+	/// To open or close indices with <c>_all</c>, <c>*</c>, or other wildcard expressions, change the <c>action.destructive_requires_name</c> setting to <c>false</c>.
+	/// This setting can also be changed with the cluster update settings API.
+	/// </para>
+	/// <para>
+	/// Closed indices consume a significant amount of disk-space which can cause problems in managed environments.
+	/// Closing indices can be turned off with the cluster settings API by setting <c>cluster.indices.close.enable</c> to <c>false</c>.
+	/// </para>
+	/// <para>
+	/// Because opening or closing an index allocates its shards, the <c>wait_for_active_shards</c> setting on index creation applies to the <c>_open</c> and <c>_close</c> index actions as well.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<OpenIndexResponse> OpenAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, CancellationToken cancellationToken = default)
 	{
@@ -3429,10 +4695,37 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Opens a closed index.
+	/// Open a closed index.
 	/// For data streams, the API opens any closed backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// A closed index is blocked for read/write operations and does not allow all operations that opened indices allow.
+	/// It is not possible to index documents or to search for documents in a closed index.
+	/// This allows closed indices to not have to maintain internal data structures for indexing or searching documents, resulting in a smaller overhead on the cluster.
+	/// </para>
+	/// <para>
+	/// When opening or closing an index, the master is responsible for restarting the index shards to reflect the new state of the index.
+	/// The shards will then go through the normal recovery process.
+	/// The data of opened or closed indices is automatically replicated by the cluster to ensure that enough shard copies are safely kept around at all times.
+	/// </para>
+	/// <para>
+	/// You can open and close multiple indices.
+	/// An error is thrown if the request explicitly refers to a missing index.
+	/// This behavior can be turned off by using the <c>ignore_unavailable=true</c> parameter.
+	/// </para>
+	/// <para>
+	/// By default, you must explicitly name the indices you are opening or closing.
+	/// To open or close indices with <c>_all</c>, <c>*</c>, or other wildcard expressions, change the <c>action.destructive_requires_name</c> setting to <c>false</c>.
+	/// This setting can also be changed with the cluster update settings API.
+	/// </para>
+	/// <para>
+	/// Closed indices consume a significant amount of disk-space which can cause problems in managed environments.
+	/// Closing indices can be turned off with the cluster settings API by setting <c>cluster.indices.close.enable</c> to <c>false</c>.
+	/// </para>
+	/// <para>
+	/// Because opening or closing an index allocates its shards, the <c>wait_for_active_shards</c> setting on index creation applies to the <c>_open</c> and <c>_close</c> index actions as well.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<OpenIndexResponse> OpenAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Action<OpenIndexRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3444,10 +4737,37 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Opens a closed index.
+	/// Open a closed index.
 	/// For data streams, the API opens any closed backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// A closed index is blocked for read/write operations and does not allow all operations that opened indices allow.
+	/// It is not possible to index documents or to search for documents in a closed index.
+	/// This allows closed indices to not have to maintain internal data structures for indexing or searching documents, resulting in a smaller overhead on the cluster.
+	/// </para>
+	/// <para>
+	/// When opening or closing an index, the master is responsible for restarting the index shards to reflect the new state of the index.
+	/// The shards will then go through the normal recovery process.
+	/// The data of opened or closed indices is automatically replicated by the cluster to ensure that enough shard copies are safely kept around at all times.
+	/// </para>
+	/// <para>
+	/// You can open and close multiple indices.
+	/// An error is thrown if the request explicitly refers to a missing index.
+	/// This behavior can be turned off by using the <c>ignore_unavailable=true</c> parameter.
+	/// </para>
+	/// <para>
+	/// By default, you must explicitly name the indices you are opening or closing.
+	/// To open or close indices with <c>_all</c>, <c>*</c>, or other wildcard expressions, change the <c>action.destructive_requires_name</c> setting to <c>false</c>.
+	/// This setting can also be changed with the cluster update settings API.
+	/// </para>
+	/// <para>
+	/// Closed indices consume a significant amount of disk-space which can cause problems in managed environments.
+	/// Closing indices can be turned off with the cluster settings API by setting <c>cluster.indices.close.enable</c> to <c>false</c>.
+	/// </para>
+	/// <para>
+	/// Because opening or closing an index allocates its shards, the <c>wait_for_active_shards</c> setting on index creation applies to the <c>_open</c> and <c>_close</c> index actions as well.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<OpenIndexResponse> OpenAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -3458,10 +4778,37 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Opens a closed index.
+	/// Open a closed index.
 	/// For data streams, the API opens any closed backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// A closed index is blocked for read/write operations and does not allow all operations that opened indices allow.
+	/// It is not possible to index documents or to search for documents in a closed index.
+	/// This allows closed indices to not have to maintain internal data structures for indexing or searching documents, resulting in a smaller overhead on the cluster.
+	/// </para>
+	/// <para>
+	/// When opening or closing an index, the master is responsible for restarting the index shards to reflect the new state of the index.
+	/// The shards will then go through the normal recovery process.
+	/// The data of opened or closed indices is automatically replicated by the cluster to ensure that enough shard copies are safely kept around at all times.
+	/// </para>
+	/// <para>
+	/// You can open and close multiple indices.
+	/// An error is thrown if the request explicitly refers to a missing index.
+	/// This behavior can be turned off by using the <c>ignore_unavailable=true</c> parameter.
+	/// </para>
+	/// <para>
+	/// By default, you must explicitly name the indices you are opening or closing.
+	/// To open or close indices with <c>_all</c>, <c>*</c>, or other wildcard expressions, change the <c>action.destructive_requires_name</c> setting to <c>false</c>.
+	/// This setting can also be changed with the cluster update settings API.
+	/// </para>
+	/// <para>
+	/// Closed indices consume a significant amount of disk-space which can cause problems in managed environments.
+	/// Closing indices can be turned off with the cluster settings API by setting <c>cluster.indices.close.enable</c> to <c>false</c>.
+	/// </para>
+	/// <para>
+	/// Because opening or closing an index allocates its shards, the <c>wait_for_active_shards</c> setting on index creation applies to the <c>_open</c> and <c>_close</c> index actions as well.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<OpenIndexResponse> OpenAsync<TDocument>(Action<OpenIndexRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3473,10 +4820,37 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Opens a closed index.
+	/// Open a closed index.
 	/// For data streams, the API opens any closed backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// A closed index is blocked for read/write operations and does not allow all operations that opened indices allow.
+	/// It is not possible to index documents or to search for documents in a closed index.
+	/// This allows closed indices to not have to maintain internal data structures for indexing or searching documents, resulting in a smaller overhead on the cluster.
+	/// </para>
+	/// <para>
+	/// When opening or closing an index, the master is responsible for restarting the index shards to reflect the new state of the index.
+	/// The shards will then go through the normal recovery process.
+	/// The data of opened or closed indices is automatically replicated by the cluster to ensure that enough shard copies are safely kept around at all times.
+	/// </para>
+	/// <para>
+	/// You can open and close multiple indices.
+	/// An error is thrown if the request explicitly refers to a missing index.
+	/// This behavior can be turned off by using the <c>ignore_unavailable=true</c> parameter.
+	/// </para>
+	/// <para>
+	/// By default, you must explicitly name the indices you are opening or closing.
+	/// To open or close indices with <c>_all</c>, <c>*</c>, or other wildcard expressions, change the <c>action.destructive_requires_name</c> setting to <c>false</c>.
+	/// This setting can also be changed with the cluster update settings API.
+	/// </para>
+	/// <para>
+	/// Closed indices consume a significant amount of disk-space which can cause problems in managed environments.
+	/// Closing indices can be turned off with the cluster settings API by setting <c>cluster.indices.close.enable</c> to <c>false</c>.
+	/// </para>
+	/// <para>
+	/// Because opening or closing an index allocates its shards, the <c>wait_for_active_shards</c> setting on index creation applies to the <c>_open</c> and <c>_close</c> index actions as well.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<OpenIndexResponse> OpenAsync(OpenIndexRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -3486,10 +4860,37 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Opens a closed index.
+	/// Open a closed index.
 	/// For data streams, the API opens any closed backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// A closed index is blocked for read/write operations and does not allow all operations that opened indices allow.
+	/// It is not possible to index documents or to search for documents in a closed index.
+	/// This allows closed indices to not have to maintain internal data structures for indexing or searching documents, resulting in a smaller overhead on the cluster.
+	/// </para>
+	/// <para>
+	/// When opening or closing an index, the master is responsible for restarting the index shards to reflect the new state of the index.
+	/// The shards will then go through the normal recovery process.
+	/// The data of opened or closed indices is automatically replicated by the cluster to ensure that enough shard copies are safely kept around at all times.
+	/// </para>
+	/// <para>
+	/// You can open and close multiple indices.
+	/// An error is thrown if the request explicitly refers to a missing index.
+	/// This behavior can be turned off by using the <c>ignore_unavailable=true</c> parameter.
+	/// </para>
+	/// <para>
+	/// By default, you must explicitly name the indices you are opening or closing.
+	/// To open or close indices with <c>_all</c>, <c>*</c>, or other wildcard expressions, change the <c>action.destructive_requires_name</c> setting to <c>false</c>.
+	/// This setting can also be changed with the cluster update settings API.
+	/// </para>
+	/// <para>
+	/// Closed indices consume a significant amount of disk-space which can cause problems in managed environments.
+	/// Closing indices can be turned off with the cluster settings API by setting <c>cluster.indices.close.enable</c> to <c>false</c>.
+	/// </para>
+	/// <para>
+	/// Because opening or closing an index allocates its shards, the <c>wait_for_active_shards</c> setting on index creation applies to the <c>_open</c> and <c>_close</c> index actions as well.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<OpenIndexResponse> OpenAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, CancellationToken cancellationToken = default)
 	{
@@ -3500,10 +4901,37 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Opens a closed index.
+	/// Open a closed index.
 	/// For data streams, the API opens any closed backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// A closed index is blocked for read/write operations and does not allow all operations that opened indices allow.
+	/// It is not possible to index documents or to search for documents in a closed index.
+	/// This allows closed indices to not have to maintain internal data structures for indexing or searching documents, resulting in a smaller overhead on the cluster.
+	/// </para>
+	/// <para>
+	/// When opening or closing an index, the master is responsible for restarting the index shards to reflect the new state of the index.
+	/// The shards will then go through the normal recovery process.
+	/// The data of opened or closed indices is automatically replicated by the cluster to ensure that enough shard copies are safely kept around at all times.
+	/// </para>
+	/// <para>
+	/// You can open and close multiple indices.
+	/// An error is thrown if the request explicitly refers to a missing index.
+	/// This behavior can be turned off by using the <c>ignore_unavailable=true</c> parameter.
+	/// </para>
+	/// <para>
+	/// By default, you must explicitly name the indices you are opening or closing.
+	/// To open or close indices with <c>_all</c>, <c>*</c>, or other wildcard expressions, change the <c>action.destructive_requires_name</c> setting to <c>false</c>.
+	/// This setting can also be changed with the cluster update settings API.
+	/// </para>
+	/// <para>
+	/// Closed indices consume a significant amount of disk-space which can cause problems in managed environments.
+	/// Closing indices can be turned off with the cluster settings API by setting <c>cluster.indices.close.enable</c> to <c>false</c>.
+	/// </para>
+	/// <para>
+	/// Because opening or closing an index allocates its shards, the <c>wait_for_active_shards</c> setting on index creation applies to the <c>_open</c> and <c>_close</c> index actions as well.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-open-close.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<OpenIndexResponse> OpenAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Action<OpenIndexRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3699,6 +5127,39 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Create or update an index template.
 	/// Index templates define settings, mappings, and aliases that can be applied automatically to new indices.
 	/// </para>
+	/// <para>
+	/// Elasticsearch applies templates to new indices based on an wildcard pattern that matches the index name.
+	/// Index templates are applied during data stream or index creation.
+	/// For data streams, these settings and mappings are applied when the stream's backing indices are created.
+	/// Settings and mappings specified in a create index API request override any settings or mappings specified in an index template.
+	/// Changes to index templates do not affect existing indices, including the existing backing indices of a data stream.
+	/// </para>
+	/// <para>
+	/// You can use C-style <c>/* *\/</c> block comments in index templates.
+	/// You can include comments anywhere in the request body, except before the opening curly bracket.
+	/// </para>
+	/// <para>
+	/// <strong>Multiple matching templates</strong>
+	/// </para>
+	/// <para>
+	/// If multiple index templates match the name of a new index or data stream, the template with the highest priority is used.
+	/// </para>
+	/// <para>
+	/// Multiple templates with overlapping index patterns at the same priority are not allowed and an error will be thrown when attempting to create a template matching an existing index template at identical priorities.
+	/// </para>
+	/// <para>
+	/// <strong>Composing aliases, mappings, and settings</strong>
+	/// </para>
+	/// <para>
+	/// When multiple component templates are specified in the <c>composed_of</c> field for an index template, they are merged in the order specified, meaning that later component templates override earlier component templates.
+	/// Any mappings, settings, or aliases from the parent index template are merged in next.
+	/// Finally, any configuration on the index request itself is merged.
+	/// Mapping definitions are merged recursively, which means that later mapping components can introduce new field mappings and update the mapping configuration.
+	/// If a field mapping is already contained in an earlier component, its definition will be completely overwritten by the later one.
+	/// This recursive merging strategy applies not only to field mappings, but also root options like <c>dynamic_templates</c> and <c>meta</c>.
+	/// If an earlier component contains a <c>dynamic_templates</c> block, then by default new <c>dynamic_templates</c> entries are appended onto the end.
+	/// If an entry already exists with the same key, then it is overwritten by the new definition.
+	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndexTemplateResponse> PutIndexTemplateAsync(PutIndexTemplateRequest request, CancellationToken cancellationToken = default)
@@ -3711,6 +5172,39 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Create or update an index template.
 	/// Index templates define settings, mappings, and aliases that can be applied automatically to new indices.
+	/// </para>
+	/// <para>
+	/// Elasticsearch applies templates to new indices based on an wildcard pattern that matches the index name.
+	/// Index templates are applied during data stream or index creation.
+	/// For data streams, these settings and mappings are applied when the stream's backing indices are created.
+	/// Settings and mappings specified in a create index API request override any settings or mappings specified in an index template.
+	/// Changes to index templates do not affect existing indices, including the existing backing indices of a data stream.
+	/// </para>
+	/// <para>
+	/// You can use C-style <c>/* *\/</c> block comments in index templates.
+	/// You can include comments anywhere in the request body, except before the opening curly bracket.
+	/// </para>
+	/// <para>
+	/// <strong>Multiple matching templates</strong>
+	/// </para>
+	/// <para>
+	/// If multiple index templates match the name of a new index or data stream, the template with the highest priority is used.
+	/// </para>
+	/// <para>
+	/// Multiple templates with overlapping index patterns at the same priority are not allowed and an error will be thrown when attempting to create a template matching an existing index template at identical priorities.
+	/// </para>
+	/// <para>
+	/// <strong>Composing aliases, mappings, and settings</strong>
+	/// </para>
+	/// <para>
+	/// When multiple component templates are specified in the <c>composed_of</c> field for an index template, they are merged in the order specified, meaning that later component templates override earlier component templates.
+	/// Any mappings, settings, or aliases from the parent index template are merged in next.
+	/// Finally, any configuration on the index request itself is merged.
+	/// Mapping definitions are merged recursively, which means that later mapping components can introduce new field mappings and update the mapping configuration.
+	/// If a field mapping is already contained in an earlier component, its definition will be completely overwritten by the later one.
+	/// This recursive merging strategy applies not only to field mappings, but also root options like <c>dynamic_templates</c> and <c>meta</c>.
+	/// If an earlier component contains a <c>dynamic_templates</c> block, then by default new <c>dynamic_templates</c> entries are appended onto the end.
+	/// If an entry already exists with the same key, then it is overwritten by the new definition.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -3725,6 +5219,39 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Create or update an index template.
 	/// Index templates define settings, mappings, and aliases that can be applied automatically to new indices.
 	/// </para>
+	/// <para>
+	/// Elasticsearch applies templates to new indices based on an wildcard pattern that matches the index name.
+	/// Index templates are applied during data stream or index creation.
+	/// For data streams, these settings and mappings are applied when the stream's backing indices are created.
+	/// Settings and mappings specified in a create index API request override any settings or mappings specified in an index template.
+	/// Changes to index templates do not affect existing indices, including the existing backing indices of a data stream.
+	/// </para>
+	/// <para>
+	/// You can use C-style <c>/* *\/</c> block comments in index templates.
+	/// You can include comments anywhere in the request body, except before the opening curly bracket.
+	/// </para>
+	/// <para>
+	/// <strong>Multiple matching templates</strong>
+	/// </para>
+	/// <para>
+	/// If multiple index templates match the name of a new index or data stream, the template with the highest priority is used.
+	/// </para>
+	/// <para>
+	/// Multiple templates with overlapping index patterns at the same priority are not allowed and an error will be thrown when attempting to create a template matching an existing index template at identical priorities.
+	/// </para>
+	/// <para>
+	/// <strong>Composing aliases, mappings, and settings</strong>
+	/// </para>
+	/// <para>
+	/// When multiple component templates are specified in the <c>composed_of</c> field for an index template, they are merged in the order specified, meaning that later component templates override earlier component templates.
+	/// Any mappings, settings, or aliases from the parent index template are merged in next.
+	/// Finally, any configuration on the index request itself is merged.
+	/// Mapping definitions are merged recursively, which means that later mapping components can introduce new field mappings and update the mapping configuration.
+	/// If a field mapping is already contained in an earlier component, its definition will be completely overwritten by the later one.
+	/// This recursive merging strategy applies not only to field mappings, but also root options like <c>dynamic_templates</c> and <c>meta</c>.
+	/// If an earlier component contains a <c>dynamic_templates</c> block, then by default new <c>dynamic_templates</c> entries are appended onto the end.
+	/// If an entry already exists with the same key, then it is overwritten by the new definition.
+	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndexTemplateResponse> PutIndexTemplateAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Name name, CancellationToken cancellationToken = default)
@@ -3738,6 +5265,39 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Create or update an index template.
 	/// Index templates define settings, mappings, and aliases that can be applied automatically to new indices.
+	/// </para>
+	/// <para>
+	/// Elasticsearch applies templates to new indices based on an wildcard pattern that matches the index name.
+	/// Index templates are applied during data stream or index creation.
+	/// For data streams, these settings and mappings are applied when the stream's backing indices are created.
+	/// Settings and mappings specified in a create index API request override any settings or mappings specified in an index template.
+	/// Changes to index templates do not affect existing indices, including the existing backing indices of a data stream.
+	/// </para>
+	/// <para>
+	/// You can use C-style <c>/* *\/</c> block comments in index templates.
+	/// You can include comments anywhere in the request body, except before the opening curly bracket.
+	/// </para>
+	/// <para>
+	/// <strong>Multiple matching templates</strong>
+	/// </para>
+	/// <para>
+	/// If multiple index templates match the name of a new index or data stream, the template with the highest priority is used.
+	/// </para>
+	/// <para>
+	/// Multiple templates with overlapping index patterns at the same priority are not allowed and an error will be thrown when attempting to create a template matching an existing index template at identical priorities.
+	/// </para>
+	/// <para>
+	/// <strong>Composing aliases, mappings, and settings</strong>
+	/// </para>
+	/// <para>
+	/// When multiple component templates are specified in the <c>composed_of</c> field for an index template, they are merged in the order specified, meaning that later component templates override earlier component templates.
+	/// Any mappings, settings, or aliases from the parent index template are merged in next.
+	/// Finally, any configuration on the index request itself is merged.
+	/// Mapping definitions are merged recursively, which means that later mapping components can introduce new field mappings and update the mapping configuration.
+	/// If a field mapping is already contained in an earlier component, its definition will be completely overwritten by the later one.
+	/// This recursive merging strategy applies not only to field mappings, but also root options like <c>dynamic_templates</c> and <c>meta</c>.
+	/// If an earlier component contains a <c>dynamic_templates</c> block, then by default new <c>dynamic_templates</c> entries are appended onto the end.
+	/// If an entry already exists with the same key, then it is overwritten by the new definition.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -3754,6 +5314,39 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Create or update an index template.
 	/// Index templates define settings, mappings, and aliases that can be applied automatically to new indices.
 	/// </para>
+	/// <para>
+	/// Elasticsearch applies templates to new indices based on an wildcard pattern that matches the index name.
+	/// Index templates are applied during data stream or index creation.
+	/// For data streams, these settings and mappings are applied when the stream's backing indices are created.
+	/// Settings and mappings specified in a create index API request override any settings or mappings specified in an index template.
+	/// Changes to index templates do not affect existing indices, including the existing backing indices of a data stream.
+	/// </para>
+	/// <para>
+	/// You can use C-style <c>/* *\/</c> block comments in index templates.
+	/// You can include comments anywhere in the request body, except before the opening curly bracket.
+	/// </para>
+	/// <para>
+	/// <strong>Multiple matching templates</strong>
+	/// </para>
+	/// <para>
+	/// If multiple index templates match the name of a new index or data stream, the template with the highest priority is used.
+	/// </para>
+	/// <para>
+	/// Multiple templates with overlapping index patterns at the same priority are not allowed and an error will be thrown when attempting to create a template matching an existing index template at identical priorities.
+	/// </para>
+	/// <para>
+	/// <strong>Composing aliases, mappings, and settings</strong>
+	/// </para>
+	/// <para>
+	/// When multiple component templates are specified in the <c>composed_of</c> field for an index template, they are merged in the order specified, meaning that later component templates override earlier component templates.
+	/// Any mappings, settings, or aliases from the parent index template are merged in next.
+	/// Finally, any configuration on the index request itself is merged.
+	/// Mapping definitions are merged recursively, which means that later mapping components can introduce new field mappings and update the mapping configuration.
+	/// If a field mapping is already contained in an earlier component, its definition will be completely overwritten by the later one.
+	/// This recursive merging strategy applies not only to field mappings, but also root options like <c>dynamic_templates</c> and <c>meta</c>.
+	/// If an earlier component contains a <c>dynamic_templates</c> block, then by default new <c>dynamic_templates</c> entries are appended onto the end.
+	/// If an entry already exists with the same key, then it is overwritten by the new definition.
+	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndexTemplateResponse> PutIndexTemplateAsync(PutIndexTemplateRequestDescriptor descriptor, CancellationToken cancellationToken = default)
@@ -3766,6 +5359,39 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Create or update an index template.
 	/// Index templates define settings, mappings, and aliases that can be applied automatically to new indices.
+	/// </para>
+	/// <para>
+	/// Elasticsearch applies templates to new indices based on an wildcard pattern that matches the index name.
+	/// Index templates are applied during data stream or index creation.
+	/// For data streams, these settings and mappings are applied when the stream's backing indices are created.
+	/// Settings and mappings specified in a create index API request override any settings or mappings specified in an index template.
+	/// Changes to index templates do not affect existing indices, including the existing backing indices of a data stream.
+	/// </para>
+	/// <para>
+	/// You can use C-style <c>/* *\/</c> block comments in index templates.
+	/// You can include comments anywhere in the request body, except before the opening curly bracket.
+	/// </para>
+	/// <para>
+	/// <strong>Multiple matching templates</strong>
+	/// </para>
+	/// <para>
+	/// If multiple index templates match the name of a new index or data stream, the template with the highest priority is used.
+	/// </para>
+	/// <para>
+	/// Multiple templates with overlapping index patterns at the same priority are not allowed and an error will be thrown when attempting to create a template matching an existing index template at identical priorities.
+	/// </para>
+	/// <para>
+	/// <strong>Composing aliases, mappings, and settings</strong>
+	/// </para>
+	/// <para>
+	/// When multiple component templates are specified in the <c>composed_of</c> field for an index template, they are merged in the order specified, meaning that later component templates override earlier component templates.
+	/// Any mappings, settings, or aliases from the parent index template are merged in next.
+	/// Finally, any configuration on the index request itself is merged.
+	/// Mapping definitions are merged recursively, which means that later mapping components can introduce new field mappings and update the mapping configuration.
+	/// If a field mapping is already contained in an earlier component, its definition will be completely overwritten by the later one.
+	/// This recursive merging strategy applies not only to field mappings, but also root options like <c>dynamic_templates</c> and <c>meta</c>.
+	/// If an earlier component contains a <c>dynamic_templates</c> block, then by default new <c>dynamic_templates</c> entries are appended onto the end.
+	/// If an entry already exists with the same key, then it is overwritten by the new definition.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -3781,6 +5407,39 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Create or update an index template.
 	/// Index templates define settings, mappings, and aliases that can be applied automatically to new indices.
 	/// </para>
+	/// <para>
+	/// Elasticsearch applies templates to new indices based on an wildcard pattern that matches the index name.
+	/// Index templates are applied during data stream or index creation.
+	/// For data streams, these settings and mappings are applied when the stream's backing indices are created.
+	/// Settings and mappings specified in a create index API request override any settings or mappings specified in an index template.
+	/// Changes to index templates do not affect existing indices, including the existing backing indices of a data stream.
+	/// </para>
+	/// <para>
+	/// You can use C-style <c>/* *\/</c> block comments in index templates.
+	/// You can include comments anywhere in the request body, except before the opening curly bracket.
+	/// </para>
+	/// <para>
+	/// <strong>Multiple matching templates</strong>
+	/// </para>
+	/// <para>
+	/// If multiple index templates match the name of a new index or data stream, the template with the highest priority is used.
+	/// </para>
+	/// <para>
+	/// Multiple templates with overlapping index patterns at the same priority are not allowed and an error will be thrown when attempting to create a template matching an existing index template at identical priorities.
+	/// </para>
+	/// <para>
+	/// <strong>Composing aliases, mappings, and settings</strong>
+	/// </para>
+	/// <para>
+	/// When multiple component templates are specified in the <c>composed_of</c> field for an index template, they are merged in the order specified, meaning that later component templates override earlier component templates.
+	/// Any mappings, settings, or aliases from the parent index template are merged in next.
+	/// Finally, any configuration on the index request itself is merged.
+	/// Mapping definitions are merged recursively, which means that later mapping components can introduce new field mappings and update the mapping configuration.
+	/// If a field mapping is already contained in an earlier component, its definition will be completely overwritten by the later one.
+	/// This recursive merging strategy applies not only to field mappings, but also root options like <c>dynamic_templates</c> and <c>meta</c>.
+	/// If an earlier component contains a <c>dynamic_templates</c> block, then by default new <c>dynamic_templates</c> entries are appended onto the end.
+	/// If an entry already exists with the same key, then it is overwritten by the new definition.
+	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndexTemplateResponse> PutIndexTemplateAsync(Elastic.Clients.Elasticsearch.Serverless.Name name, Action<PutIndexTemplateRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
@@ -3794,11 +5453,45 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update field mappings.
-	/// Adds new fields to an existing data stream or index.
-	/// You can also use this API to change the search settings of existing fields.
+	/// Add new fields to an existing data stream or index.
+	/// You can also use this API to change the search settings of existing fields and add new properties to existing object fields.
 	/// For data streams, these changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Add multi-fields to an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Multi-fields let you index the same field in different ways.
+	/// You can use this API to update the fields mapping parameter and enable multi-fields for an existing field.
+	/// WARNING: If an index (or data stream) contains documents when you add a multi-field, those documents will not have values for the new multi-field.
+	/// You can populate the new multi-field with the update by query API.
+	/// </para>
+	/// <para>
+	/// <strong>Change supported mapping parameters for an existing field</strong>
+	/// </para>
+	/// <para>
+	/// The documentation for each mapping parameter indicates whether you can update it for an existing field using this API.
+	/// For example, you can use the update mapping API to update the <c>ignore_above</c> parameter.
+	/// </para>
+	/// <para>
+	/// <strong>Change the mapping of an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Except for supported mapping parameters, you can't change the mapping or field type of an existing field.
+	/// Changing an existing field could invalidate data that's already indexed.
+	/// </para>
+	/// <para>
+	/// If you need to change the mapping of a field in a data stream's backing indices, refer to documentation about modifying data streams.
+	/// If you need to change the mapping of a field in other indices, create a new index with the correct mapping and reindex your data into that index.
+	/// </para>
+	/// <para>
+	/// <strong>Rename a field</strong>
+	/// </para>
+	/// <para>
+	/// Renaming a field would invalidate data already indexed under the old field name.
+	/// Instead, add an alias field to create an alternate field name.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutMappingResponse> PutMappingAsync(PutMappingRequest request, CancellationToken cancellationToken = default)
 	{
@@ -3809,11 +5502,45 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update field mappings.
-	/// Adds new fields to an existing data stream or index.
-	/// You can also use this API to change the search settings of existing fields.
+	/// Add new fields to an existing data stream or index.
+	/// You can also use this API to change the search settings of existing fields and add new properties to existing object fields.
 	/// For data streams, these changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Add multi-fields to an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Multi-fields let you index the same field in different ways.
+	/// You can use this API to update the fields mapping parameter and enable multi-fields for an existing field.
+	/// WARNING: If an index (or data stream) contains documents when you add a multi-field, those documents will not have values for the new multi-field.
+	/// You can populate the new multi-field with the update by query API.
+	/// </para>
+	/// <para>
+	/// <strong>Change supported mapping parameters for an existing field</strong>
+	/// </para>
+	/// <para>
+	/// The documentation for each mapping parameter indicates whether you can update it for an existing field using this API.
+	/// For example, you can use the update mapping API to update the <c>ignore_above</c> parameter.
+	/// </para>
+	/// <para>
+	/// <strong>Change the mapping of an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Except for supported mapping parameters, you can't change the mapping or field type of an existing field.
+	/// Changing an existing field could invalidate data that's already indexed.
+	/// </para>
+	/// <para>
+	/// If you need to change the mapping of a field in a data stream's backing indices, refer to documentation about modifying data streams.
+	/// If you need to change the mapping of a field in other indices, create a new index with the correct mapping and reindex your data into that index.
+	/// </para>
+	/// <para>
+	/// <strong>Rename a field</strong>
+	/// </para>
+	/// <para>
+	/// Renaming a field would invalidate data already indexed under the old field name.
+	/// Instead, add an alias field to create an alternate field name.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutMappingResponse> PutMappingAsync<TDocument>(PutMappingRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -3824,11 +5551,45 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update field mappings.
-	/// Adds new fields to an existing data stream or index.
-	/// You can also use this API to change the search settings of existing fields.
+	/// Add new fields to an existing data stream or index.
+	/// You can also use this API to change the search settings of existing fields and add new properties to existing object fields.
 	/// For data streams, these changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Add multi-fields to an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Multi-fields let you index the same field in different ways.
+	/// You can use this API to update the fields mapping parameter and enable multi-fields for an existing field.
+	/// WARNING: If an index (or data stream) contains documents when you add a multi-field, those documents will not have values for the new multi-field.
+	/// You can populate the new multi-field with the update by query API.
+	/// </para>
+	/// <para>
+	/// <strong>Change supported mapping parameters for an existing field</strong>
+	/// </para>
+	/// <para>
+	/// The documentation for each mapping parameter indicates whether you can update it for an existing field using this API.
+	/// For example, you can use the update mapping API to update the <c>ignore_above</c> parameter.
+	/// </para>
+	/// <para>
+	/// <strong>Change the mapping of an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Except for supported mapping parameters, you can't change the mapping or field type of an existing field.
+	/// Changing an existing field could invalidate data that's already indexed.
+	/// </para>
+	/// <para>
+	/// If you need to change the mapping of a field in a data stream's backing indices, refer to documentation about modifying data streams.
+	/// If you need to change the mapping of a field in other indices, create a new index with the correct mapping and reindex your data into that index.
+	/// </para>
+	/// <para>
+	/// <strong>Rename a field</strong>
+	/// </para>
+	/// <para>
+	/// Renaming a field would invalidate data already indexed under the old field name.
+	/// Instead, add an alias field to create an alternate field name.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutMappingResponse> PutMappingAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, CancellationToken cancellationToken = default)
 	{
@@ -3840,11 +5601,45 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update field mappings.
-	/// Adds new fields to an existing data stream or index.
-	/// You can also use this API to change the search settings of existing fields.
+	/// Add new fields to an existing data stream or index.
+	/// You can also use this API to change the search settings of existing fields and add new properties to existing object fields.
 	/// For data streams, these changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Add multi-fields to an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Multi-fields let you index the same field in different ways.
+	/// You can use this API to update the fields mapping parameter and enable multi-fields for an existing field.
+	/// WARNING: If an index (or data stream) contains documents when you add a multi-field, those documents will not have values for the new multi-field.
+	/// You can populate the new multi-field with the update by query API.
+	/// </para>
+	/// <para>
+	/// <strong>Change supported mapping parameters for an existing field</strong>
+	/// </para>
+	/// <para>
+	/// The documentation for each mapping parameter indicates whether you can update it for an existing field using this API.
+	/// For example, you can use the update mapping API to update the <c>ignore_above</c> parameter.
+	/// </para>
+	/// <para>
+	/// <strong>Change the mapping of an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Except for supported mapping parameters, you can't change the mapping or field type of an existing field.
+	/// Changing an existing field could invalidate data that's already indexed.
+	/// </para>
+	/// <para>
+	/// If you need to change the mapping of a field in a data stream's backing indices, refer to documentation about modifying data streams.
+	/// If you need to change the mapping of a field in other indices, create a new index with the correct mapping and reindex your data into that index.
+	/// </para>
+	/// <para>
+	/// <strong>Rename a field</strong>
+	/// </para>
+	/// <para>
+	/// Renaming a field would invalidate data already indexed under the old field name.
+	/// Instead, add an alias field to create an alternate field name.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutMappingResponse> PutMappingAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Action<PutMappingRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3857,11 +5652,45 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update field mappings.
-	/// Adds new fields to an existing data stream or index.
-	/// You can also use this API to change the search settings of existing fields.
+	/// Add new fields to an existing data stream or index.
+	/// You can also use this API to change the search settings of existing fields and add new properties to existing object fields.
 	/// For data streams, these changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Add multi-fields to an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Multi-fields let you index the same field in different ways.
+	/// You can use this API to update the fields mapping parameter and enable multi-fields for an existing field.
+	/// WARNING: If an index (or data stream) contains documents when you add a multi-field, those documents will not have values for the new multi-field.
+	/// You can populate the new multi-field with the update by query API.
+	/// </para>
+	/// <para>
+	/// <strong>Change supported mapping parameters for an existing field</strong>
+	/// </para>
+	/// <para>
+	/// The documentation for each mapping parameter indicates whether you can update it for an existing field using this API.
+	/// For example, you can use the update mapping API to update the <c>ignore_above</c> parameter.
+	/// </para>
+	/// <para>
+	/// <strong>Change the mapping of an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Except for supported mapping parameters, you can't change the mapping or field type of an existing field.
+	/// Changing an existing field could invalidate data that's already indexed.
+	/// </para>
+	/// <para>
+	/// If you need to change the mapping of a field in a data stream's backing indices, refer to documentation about modifying data streams.
+	/// If you need to change the mapping of a field in other indices, create a new index with the correct mapping and reindex your data into that index.
+	/// </para>
+	/// <para>
+	/// <strong>Rename a field</strong>
+	/// </para>
+	/// <para>
+	/// Renaming a field would invalidate data already indexed under the old field name.
+	/// Instead, add an alias field to create an alternate field name.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutMappingResponse> PutMappingAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -3873,11 +5702,45 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update field mappings.
-	/// Adds new fields to an existing data stream or index.
-	/// You can also use this API to change the search settings of existing fields.
+	/// Add new fields to an existing data stream or index.
+	/// You can also use this API to change the search settings of existing fields and add new properties to existing object fields.
 	/// For data streams, these changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Add multi-fields to an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Multi-fields let you index the same field in different ways.
+	/// You can use this API to update the fields mapping parameter and enable multi-fields for an existing field.
+	/// WARNING: If an index (or data stream) contains documents when you add a multi-field, those documents will not have values for the new multi-field.
+	/// You can populate the new multi-field with the update by query API.
+	/// </para>
+	/// <para>
+	/// <strong>Change supported mapping parameters for an existing field</strong>
+	/// </para>
+	/// <para>
+	/// The documentation for each mapping parameter indicates whether you can update it for an existing field using this API.
+	/// For example, you can use the update mapping API to update the <c>ignore_above</c> parameter.
+	/// </para>
+	/// <para>
+	/// <strong>Change the mapping of an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Except for supported mapping parameters, you can't change the mapping or field type of an existing field.
+	/// Changing an existing field could invalidate data that's already indexed.
+	/// </para>
+	/// <para>
+	/// If you need to change the mapping of a field in a data stream's backing indices, refer to documentation about modifying data streams.
+	/// If you need to change the mapping of a field in other indices, create a new index with the correct mapping and reindex your data into that index.
+	/// </para>
+	/// <para>
+	/// <strong>Rename a field</strong>
+	/// </para>
+	/// <para>
+	/// Renaming a field would invalidate data already indexed under the old field name.
+	/// Instead, add an alias field to create an alternate field name.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutMappingResponse> PutMappingAsync<TDocument>(Action<PutMappingRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3890,11 +5753,45 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update field mappings.
-	/// Adds new fields to an existing data stream or index.
-	/// You can also use this API to change the search settings of existing fields.
+	/// Add new fields to an existing data stream or index.
+	/// You can also use this API to change the search settings of existing fields and add new properties to existing object fields.
 	/// For data streams, these changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Add multi-fields to an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Multi-fields let you index the same field in different ways.
+	/// You can use this API to update the fields mapping parameter and enable multi-fields for an existing field.
+	/// WARNING: If an index (or data stream) contains documents when you add a multi-field, those documents will not have values for the new multi-field.
+	/// You can populate the new multi-field with the update by query API.
+	/// </para>
+	/// <para>
+	/// <strong>Change supported mapping parameters for an existing field</strong>
+	/// </para>
+	/// <para>
+	/// The documentation for each mapping parameter indicates whether you can update it for an existing field using this API.
+	/// For example, you can use the update mapping API to update the <c>ignore_above</c> parameter.
+	/// </para>
+	/// <para>
+	/// <strong>Change the mapping of an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Except for supported mapping parameters, you can't change the mapping or field type of an existing field.
+	/// Changing an existing field could invalidate data that's already indexed.
+	/// </para>
+	/// <para>
+	/// If you need to change the mapping of a field in a data stream's backing indices, refer to documentation about modifying data streams.
+	/// If you need to change the mapping of a field in other indices, create a new index with the correct mapping and reindex your data into that index.
+	/// </para>
+	/// <para>
+	/// <strong>Rename a field</strong>
+	/// </para>
+	/// <para>
+	/// Renaming a field would invalidate data already indexed under the old field name.
+	/// Instead, add an alias field to create an alternate field name.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutMappingResponse> PutMappingAsync(PutMappingRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -3905,11 +5802,45 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update field mappings.
-	/// Adds new fields to an existing data stream or index.
-	/// You can also use this API to change the search settings of existing fields.
+	/// Add new fields to an existing data stream or index.
+	/// You can also use this API to change the search settings of existing fields and add new properties to existing object fields.
 	/// For data streams, these changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Add multi-fields to an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Multi-fields let you index the same field in different ways.
+	/// You can use this API to update the fields mapping parameter and enable multi-fields for an existing field.
+	/// WARNING: If an index (or data stream) contains documents when you add a multi-field, those documents will not have values for the new multi-field.
+	/// You can populate the new multi-field with the update by query API.
+	/// </para>
+	/// <para>
+	/// <strong>Change supported mapping parameters for an existing field</strong>
+	/// </para>
+	/// <para>
+	/// The documentation for each mapping parameter indicates whether you can update it for an existing field using this API.
+	/// For example, you can use the update mapping API to update the <c>ignore_above</c> parameter.
+	/// </para>
+	/// <para>
+	/// <strong>Change the mapping of an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Except for supported mapping parameters, you can't change the mapping or field type of an existing field.
+	/// Changing an existing field could invalidate data that's already indexed.
+	/// </para>
+	/// <para>
+	/// If you need to change the mapping of a field in a data stream's backing indices, refer to documentation about modifying data streams.
+	/// If you need to change the mapping of a field in other indices, create a new index with the correct mapping and reindex your data into that index.
+	/// </para>
+	/// <para>
+	/// <strong>Rename a field</strong>
+	/// </para>
+	/// <para>
+	/// Renaming a field would invalidate data already indexed under the old field name.
+	/// Instead, add an alias field to create an alternate field name.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutMappingResponse> PutMappingAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, CancellationToken cancellationToken = default)
 	{
@@ -3921,11 +5852,45 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update field mappings.
-	/// Adds new fields to an existing data stream or index.
-	/// You can also use this API to change the search settings of existing fields.
+	/// Add new fields to an existing data stream or index.
+	/// You can also use this API to change the search settings of existing fields and add new properties to existing object fields.
 	/// For data streams, these changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// <strong>Add multi-fields to an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Multi-fields let you index the same field in different ways.
+	/// You can use this API to update the fields mapping parameter and enable multi-fields for an existing field.
+	/// WARNING: If an index (or data stream) contains documents when you add a multi-field, those documents will not have values for the new multi-field.
+	/// You can populate the new multi-field with the update by query API.
+	/// </para>
+	/// <para>
+	/// <strong>Change supported mapping parameters for an existing field</strong>
+	/// </para>
+	/// <para>
+	/// The documentation for each mapping parameter indicates whether you can update it for an existing field using this API.
+	/// For example, you can use the update mapping API to update the <c>ignore_above</c> parameter.
+	/// </para>
+	/// <para>
+	/// <strong>Change the mapping of an existing field</strong>
+	/// </para>
+	/// <para>
+	/// Except for supported mapping parameters, you can't change the mapping or field type of an existing field.
+	/// Changing an existing field could invalidate data that's already indexed.
+	/// </para>
+	/// <para>
+	/// If you need to change the mapping of a field in a data stream's backing indices, refer to documentation about modifying data streams.
+	/// If you need to change the mapping of a field in other indices, create a new index with the correct mapping and reindex your data into that index.
+	/// </para>
+	/// <para>
+	/// <strong>Rename a field</strong>
+	/// </para>
+	/// <para>
+	/// Renaming a field would invalidate data already indexed under the old field name.
+	/// Instead, add an alias field to create an alternate field name.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-put-mapping.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutMappingResponse> PutMappingAsync(Elastic.Clients.Elasticsearch.Serverless.Indices indices, Action<PutMappingRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3938,10 +5903,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync(PutIndicesSettingsRequest request, CancellationToken cancellationToken = default)
 	{
@@ -3952,10 +5932,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync<TDocument>(PutIndicesSettingsRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -3966,10 +5961,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings settings, Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -3981,10 +5991,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings settings, Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<PutIndicesSettingsRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -3997,10 +6022,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings settings, CancellationToken cancellationToken = default)
 	{
@@ -4012,10 +6052,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings settings, Action<PutIndicesSettingsRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4028,10 +6083,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync(PutIndicesSettingsRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -4042,10 +6112,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync(Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings settings, Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -4057,10 +6142,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync(Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings settings, Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<PutIndicesSettingsRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4073,10 +6173,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync(Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings settings, CancellationToken cancellationToken = default)
 	{
@@ -4088,10 +6203,25 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Update index settings.
-	/// Changes dynamic index settings in real time. For data streams, index setting
-	/// changes are applied to all backing indices by default.
+	/// Changes dynamic index settings in real time.
+	/// For data streams, index setting changes are applied to all backing indices by default.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// To revert a setting to the default value, use a null value.
+	/// The list of per-index settings that can be updated dynamically on live indices can be found in index module documentation.
+	/// To preserve existing settings from being updated, set the <c>preserve_existing</c> parameter to <c>true</c>.
+	/// </para>
+	/// <para>
+	/// NOTE: You can only define new analyzers on closed indices.
+	/// To add an analyzer, you must close the index, define the analyzer, and reopen the index.
+	/// You cannot close the write index of a data stream.
+	/// To update the analyzer for a data stream's write index and future backing indices, update the analyzer in the index template used by the stream.
+	/// Then roll over the data stream to apply the new analyzer to the stream's write index and future backing indices.
+	/// This affects searches and any new data added to the stream after the rollover.
+	/// However, it does not affect the data stream's backing indices or their existing data.
+	/// To change the analyzer for existing backing indices, you must create a new data stream and reindex your data into it.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-update-settings.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<PutIndicesSettingsResponse> PutSettingsAsync(Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings settings, Action<PutIndicesSettingsRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4108,6 +6238,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4154,7 +6287,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync(RecoveryRequest request, CancellationToken cancellationToken = default)
 	{
@@ -4169,6 +6302,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4215,7 +6351,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync<TDocument>(RecoveryRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -4230,6 +6366,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4276,7 +6415,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -4292,6 +6431,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4338,7 +6480,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<RecoveryRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4355,6 +6497,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4401,7 +6546,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -4417,6 +6562,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4463,7 +6611,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync<TDocument>(Action<RecoveryRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4480,6 +6628,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4526,7 +6677,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync(RecoveryRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -4541,6 +6692,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4587,7 +6741,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -4603,6 +6757,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4649,7 +6806,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<RecoveryRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4666,6 +6823,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4712,7 +6872,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync(CancellationToken cancellationToken = default)
 	{
@@ -4728,6 +6888,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// For data streams, the API returns information for the stream's backing indices.
 	/// </para>
 	/// <para>
+	/// All recoveries, whether ongoing or complete, are kept in the cluster state and may be reported on at any time.
+	/// </para>
+	/// <para>
 	/// Shard recovery is the process of initializing a shard copy, such as restoring a primary shard from a snapshot or creating a replica shard from a primary shard.
 	/// When a shard recovery completes, the recovered shard is available for search and indexing.
 	/// </para>
@@ -4774,7 +6937,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// It only reports the last recovery for each shard copy and does not report historical information about earlier recoveries, nor does it report information about the recoveries of shard copies that no longer exist.
 	/// This means that if a shard copy completes a recovery and then Elasticsearch relocates it onto a different node then the information about the original recovery will not be shown in the recovery API.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-recovery.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RecoveryResponse> RecoveryAsync(Action<RecoveryRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4790,7 +6953,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync(RefreshRequest request, CancellationToken cancellationToken = default)
 	{
@@ -4804,7 +6982,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync<TDocument>(RefreshRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -4818,7 +7011,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -4833,7 +7041,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<RefreshRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4849,7 +7072,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -4864,7 +7102,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync<TDocument>(Action<RefreshRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4880,7 +7133,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync(RefreshRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -4894,7 +7162,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -4909,7 +7192,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<RefreshRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4925,7 +7223,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync(CancellationToken cancellationToken = default)
 	{
@@ -4940,7 +7253,22 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// A refresh makes recent operations performed on one or more indices available for search.
 	/// For data streams, the API runs the refresh operation on the stream’s backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para>
+	/// By default, Elasticsearch periodically refreshes indices every second, but only on indices that have received one search request or more in the last 30 seconds.
+	/// You can change this default interval with the <c>index.refresh_interval</c> setting.
+	/// </para>
+	/// <para>
+	/// Refresh requests are synchronous and do not return a response until the refresh operation completes.
+	/// </para>
+	/// <para>
+	/// Refreshes are resource-intensive.
+	/// To ensure good cluster performance, it's recommended to wait for Elasticsearch's periodic refresh rather than performing an explicit refresh when possible.
+	/// </para>
+	/// <para>
+	/// If your application workflow indexes documents and then runs a search to retrieve the indexed document, it's recommended to use the index API's <c>refresh=wait_for</c> query parameter option.
+	/// This option ensures the indexing operation waits for a periodic refresh before running the search.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-refresh.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<RefreshResponse> RefreshAsync(Action<RefreshRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -4956,7 +7284,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Resolve the names and/or index patterns for indices, aliases, and data streams.
 	/// Multiple patterns and remote clusters are supported.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-resolve-index-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-resolve-index-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ResolveIndexResponse> ResolveIndexAsync(ResolveIndexRequest request, CancellationToken cancellationToken = default)
 	{
@@ -4970,7 +7298,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Resolve the names and/or index patterns for indices, aliases, and data streams.
 	/// Multiple patterns and remote clusters are supported.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-resolve-index-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-resolve-index-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ResolveIndexResponse> ResolveIndexAsync(ResolveIndexRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -4984,7 +7312,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Resolve the names and/or index patterns for indices, aliases, and data streams.
 	/// Multiple patterns and remote clusters are supported.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-resolve-index-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-resolve-index-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ResolveIndexResponse> ResolveIndexAsync(Elastic.Clients.Elasticsearch.Serverless.Names name, CancellationToken cancellationToken = default)
 	{
@@ -4999,7 +7327,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Resolve the names and/or index patterns for indices, aliases, and data streams.
 	/// Multiple patterns and remote clusters are supported.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-resolve-index-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-resolve-index-api.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<ResolveIndexResponse> ResolveIndexAsync(Elastic.Clients.Elasticsearch.Serverless.Names name, Action<ResolveIndexRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5012,7 +7340,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5025,7 +7401,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5038,7 +7462,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5052,7 +7524,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5067,7 +7587,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5081,7 +7649,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5096,7 +7712,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5109,7 +7773,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5123,7 +7835,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5138,7 +7898,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5152,7 +7960,55 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Roll over to a new index.
-	/// Creates a new index for a data stream or index alias.
+	/// TIP: It is recommended to use the index lifecycle rollover action to automate rollovers.
+	/// </para>
+	/// <para>
+	/// The rollover API creates a new index for a data stream or index alias.
+	/// The API behavior depends on the rollover target.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over a data stream</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over a data stream, the API creates a new write index for the stream.
+	/// The stream's previous write index becomes a regular backing index.
+	/// A rollover also increments the data stream's generation.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with a write index</strong>
+	/// </para>
+	/// <para>
+	/// TIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.
+	/// Data streams replace this functionality, require less maintenance, and automatically integrate with data tiers.
+	/// </para>
+	/// <para>
+	/// If an index alias points to multiple indices, one of the indices must be a write index.
+	/// The rollover API creates a new write index for the alias with <c>is_write_index</c> set to <c>true</c>.
+	/// The API also <c>sets is_write_index</c> to <c>false</c> for the previous write index.
+	/// </para>
+	/// <para>
+	/// <strong>Roll over an index alias with one index</strong>
+	/// </para>
+	/// <para>
+	/// If you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.
+	/// </para>
+	/// <para>
+	/// NOTE: A rollover creates a new index and is subject to the <c>wait_for_active_shards</c> setting.
+	/// </para>
+	/// <para>
+	/// <strong>Increment index names for an alias</strong>
+	/// </para>
+	/// <para>
+	/// When you roll over an index alias, you can specify a name for the new index.
+	/// If you don't specify a name and the current index ends with <c>-</c> and a number, such as <c>my-index-000001</c> or <c>my-index-3</c>, the new index name increments that number.
+	/// For example, if you roll over an alias with a current index of <c>my-index-000001</c>, the rollover creates a new index named <c>my-index-000002</c>.
+	/// This number is always six characters and zero-padded, regardless of the previous index's name.
+	/// </para>
+	/// <para>
+	/// If you use an index alias for time series data, you can use date math in the index name to track the rollover date.
+	/// For example, you can create an alias that points to an index named <c>&lt;my-index-{now/d}-000001></c>.
+	/// If you create the index on May 6, 2099, the index's name is <c>my-index-2099.05.06-000001</c>.
+	/// If you roll over the alias on May 7, 2099, the new index's name is <c>my-index-2099.05.07-000002</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-rollover-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -5170,7 +8026,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync(SegmentsRequest request, CancellationToken cancellationToken = default)
 	{
@@ -5184,7 +8040,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync<TDocument>(SegmentsRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -5198,7 +8054,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -5213,7 +8069,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<SegmentsRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5229,7 +8085,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -5244,7 +8100,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync<TDocument>(Action<SegmentsRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5260,7 +8116,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync(SegmentsRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -5274,7 +8130,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, CancellationToken cancellationToken = default)
 	{
@@ -5289,7 +8145,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Action<SegmentsRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5305,7 +8161,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync(CancellationToken cancellationToken = default)
 	{
@@ -5320,7 +8176,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// Get low-level information about the Lucene segments in index shards.
 	/// For data streams, the API returns information about the stream's backing indices.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-segments.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SegmentsResponse> SegmentsAsync(Action<SegmentsRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5333,9 +8189,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index.
-	/// Returns the index configuration that would be applied to the specified index from an existing index template.
+	/// Get the index configuration that would be applied to the specified index from an existing index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/{master}/indices-simulate-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateIndexTemplateResponse> SimulateIndexTemplateAsync(SimulateIndexTemplateRequest request, CancellationToken cancellationToken = default)
 	{
@@ -5346,9 +8202,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index.
-	/// Returns the index configuration that would be applied to the specified index from an existing index template.
+	/// Get the index configuration that would be applied to the specified index from an existing index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/{master}/indices-simulate-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateIndexTemplateResponse> SimulateIndexTemplateAsync(SimulateIndexTemplateRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -5359,9 +8215,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index.
-	/// Returns the index configuration that would be applied to the specified index from an existing index template.
+	/// Get the index configuration that would be applied to the specified index from an existing index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/{master}/indices-simulate-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateIndexTemplateResponse> SimulateIndexTemplateAsync(Elastic.Clients.Elasticsearch.Serverless.Name name, CancellationToken cancellationToken = default)
 	{
@@ -5373,9 +8229,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index.
-	/// Returns the index configuration that would be applied to the specified index from an existing index template.
+	/// Get the index configuration that would be applied to the specified index from an existing index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/{master}/indices-simulate-index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateIndexTemplateResponse> SimulateIndexTemplateAsync(Elastic.Clients.Elasticsearch.Serverless.Name name, Action<SimulateIndexTemplateRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5388,9 +8244,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync(SimulateTemplateRequest request, CancellationToken cancellationToken = default)
 	{
@@ -5401,9 +8257,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync<TDocument>(SimulateTemplateRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -5414,9 +8270,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Name? name, CancellationToken cancellationToken = default)
 	{
@@ -5428,9 +8284,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Name? name, Action<SimulateTemplateRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5443,9 +8299,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -5457,9 +8313,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync<TDocument>(Action<SimulateTemplateRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5472,9 +8328,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync(SimulateTemplateRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -5485,9 +8341,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync(Elastic.Clients.Elasticsearch.Serverless.Name? name, CancellationToken cancellationToken = default)
 	{
@@ -5499,9 +8355,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync(Elastic.Clients.Elasticsearch.Serverless.Name? name, Action<SimulateTemplateRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5514,9 +8370,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync(CancellationToken cancellationToken = default)
 	{
@@ -5528,9 +8384,9 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// <summary>
 	/// <para>
 	/// Simulate an index template.
-	/// Returns the index configuration that would be applied by a particular index template.
+	/// Get the index configuration that would be applied by a particular index template.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-simulate-template.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<SimulateTemplateResponse> SimulateTemplateAsync(Action<SimulateTemplateRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5557,7 +8413,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync(IndicesStatsRequest request, CancellationToken cancellationToken = default)
 	{
@@ -5582,7 +8438,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync<TDocument>(IndicesStatsRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
 	{
@@ -5607,7 +8463,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Metrics? metric, CancellationToken cancellationToken = default)
 	{
@@ -5633,7 +8489,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync<TDocument>(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Metrics? metric, Action<IndicesStatsRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5660,7 +8516,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync<TDocument>(CancellationToken cancellationToken = default)
 	{
@@ -5686,7 +8542,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync<TDocument>(Action<IndicesStatsRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5713,7 +8569,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync(IndicesStatsRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -5738,7 +8594,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Metrics? metric, CancellationToken cancellationToken = default)
 	{
@@ -5764,7 +8620,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync(Elastic.Clients.Elasticsearch.Serverless.Indices? indices, Elastic.Clients.Elasticsearch.Serverless.Metrics? metric, Action<IndicesStatsRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{
@@ -5791,7 +8647,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync(CancellationToken cancellationToken = default)
 	{
@@ -5817,7 +8673,7 @@ public partial class IndicesNamespacedClient : NamespacedClientProxy
 	/// NOTE: When moving to another node, the shard-level statistics for a shard are cleared.
 	/// Although the shard is no longer part of the node, that node retains any node-level statistics to which the shard contributed.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/indices-stats.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<IndicesStatsResponse> StatsAsync(Action<IndicesStatsRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{

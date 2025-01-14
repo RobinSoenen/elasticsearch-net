@@ -34,49 +34,53 @@ public sealed partial class GetSnapshotRequestParameters : RequestParameters
 {
 	/// <summary>
 	/// <para>
-	/// Offset identifier to start pagination from as returned by the next field in the response body.
+	/// An offset identifier to start pagination from as returned by the next field in the response body.
 	/// </para>
 	/// </summary>
 	public string? After { get => Q<string?>("after"); set => Q("after", value); }
 
 	/// <summary>
 	/// <para>
-	/// Value of the current sort column at which to start retrieval. Can either be a string snapshot- or repository name when sorting by snapshot or repository name, a millisecond time value or a number when sorting by index- or shard count.
+	/// The value of the current sort column at which to start retrieval.
+	/// It can be a string <c>snapshot-</c> or a repository name when sorting by snapshot or repository name.
+	/// It can be a millisecond time value or a number when sorting by <c>index-</c> or shard count.
 	/// </para>
 	/// </summary>
 	public string? FromSortValue { get => Q<string?>("from_sort_value"); set => Q("from_sort_value", value); }
 
 	/// <summary>
 	/// <para>
-	/// If false, the request returns an error for any snapshots that are unavailable.
+	/// If <c>false</c>, the request returns an error for any snapshots that are unavailable.
 	/// </para>
 	/// </summary>
 	public bool? IgnoreUnavailable { get => Q<bool?>("ignore_unavailable"); set => Q("ignore_unavailable", value); }
 
 	/// <summary>
 	/// <para>
-	/// If true, returns the repository name in each snapshot.
+	/// If <c>true</c>, the response includes the repository name in each snapshot.
 	/// </para>
 	/// </summary>
 	public bool? IncludeRepository { get => Q<bool?>("include_repository"); set => Q("include_repository", value); }
 
 	/// <summary>
 	/// <para>
-	/// If true, returns additional information about each index in the snapshot comprising the number of shards in the index, the total size of the index in bytes, and the maximum number of segments per shard in the index. Defaults to false, meaning that this information is omitted.
+	/// If <c>true</c>, the response includes additional information about each index in the snapshot comprising the number of shards in the index, the total size of the index in bytes, and the maximum number of segments per shard in the index.
+	/// The default is <c>false</c>, meaning that this information is omitted.
 	/// </para>
 	/// </summary>
 	public bool? IndexDetails { get => Q<bool?>("index_details"); set => Q("index_details", value); }
 
 	/// <summary>
 	/// <para>
-	/// If true, returns the name of each index in each snapshot.
+	/// If <c>true</c>, the response includes the name of each index in each snapshot.
 	/// </para>
 	/// </summary>
 	public bool? IndexNames { get => Q<bool?>("index_names"); set => Q("index_names", value); }
 
 	/// <summary>
 	/// <para>
-	/// Period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.
+	/// The period to wait for a connection to the master node.
+	/// If no response is received before the timeout expires, the request fails and returns an error.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Serverless.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Serverless.Duration?>("master_timeout"); set => Q("master_timeout", value); }
@@ -90,35 +94,48 @@ public sealed partial class GetSnapshotRequestParameters : RequestParameters
 
 	/// <summary>
 	/// <para>
-	/// Sort order. Valid values are asc for ascending and desc for descending order. Defaults to asc, meaning ascending order.
+	/// The sort order.
+	/// Valid values are <c>asc</c> for ascending and <c>desc</c> for descending order.
+	/// The default behavior is ascending order.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Serverless.SortOrder? Order { get => Q<Elastic.Clients.Elasticsearch.Serverless.SortOrder?>("order"); set => Q("order", value); }
 
 	/// <summary>
 	/// <para>
-	/// Maximum number of snapshots to return. Defaults to 0 which means return all that match the request without limit.
+	/// The maximum number of snapshots to return.
+	/// The default is 0, which means to return all that match the request without limit.
 	/// </para>
 	/// </summary>
 	public int? Size { get => Q<int?>("size"); set => Q("size", value); }
 
 	/// <summary>
 	/// <para>
-	/// Filter snapshots by a comma-separated list of SLM policy names that snapshots belong to. Also accepts wildcards (*) and combinations of wildcards followed by exclude patterns starting with -. To include snapshots not created by an SLM policy you can use the special pattern _none that will match all snapshots without an SLM policy.
+	/// Filter snapshots by a comma-separated list of snapshot lifecycle management (SLM) policy names that snapshots belong to.
+	/// </para>
+	/// <para>
+	/// You can use wildcards (<c>*</c>) and combinations of wildcards followed by exclude patterns starting with <c>-</c>.
+	/// For example, the pattern <c>*,-policy-a-\*</c> will return all snapshots except for those that were created by an SLM policy with a name starting with <c>policy-a-</c>.
+	/// Note that the wildcard pattern <c>*</c> matches all snapshots created by an SLM policy but not those snapshots that were not created by an SLM policy.
+	/// To include snapshots that were not created by an SLM policy, you can use the special pattern <c>_none</c> that will match all snapshots without an SLM policy.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Serverless.Name? SlmPolicyFilter { get => Q<Elastic.Clients.Elasticsearch.Serverless.Name?>("slm_policy_filter"); set => Q("slm_policy_filter", value); }
 
 	/// <summary>
 	/// <para>
-	/// Allows setting a sort order for the result. Defaults to start_time, i.e. sorting by snapshot start time stamp.
+	/// The sort order for the result.
+	/// The default behavior is sorting by snapshot start time stamp.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Serverless.Snapshot.SnapshotSort? Sort { get => Q<Elastic.Clients.Elasticsearch.Serverless.Snapshot.SnapshotSort?>("sort"); set => Q("sort", value); }
 
 	/// <summary>
 	/// <para>
-	/// If true, returns additional information about each snapshot such as the version of Elasticsearch which took the snapshot, the start and end times of the snapshot, and the number of shards snapshotted.
+	/// If <c>true</c>, returns additional information about each snapshot such as the version of Elasticsearch which took the snapshot, the start and end times of the snapshot, and the number of shards snapshotted.
+	/// </para>
+	/// <para>
+	/// NOTE: The parameters <c>size</c>, <c>order</c>, <c>after</c>, <c>from_sort_value</c>, <c>offset</c>, <c>slm_policy_filter</c>, and <c>sort</c> are not supported when you set <c>verbose=false</c> and the sort order for requests with <c>verbose=false</c> is undefined.
 	/// </para>
 	/// </summary>
 	public bool? Verbose { get => Q<bool?>("verbose"); set => Q("verbose", value); }
@@ -127,6 +144,11 @@ public sealed partial class GetSnapshotRequestParameters : RequestParameters
 /// <summary>
 /// <para>
 /// Get snapshot information.
+/// </para>
+/// <para>
+/// NOTE: The <c>after</c> parameter and <c>next</c> field enable you to iterate through snapshots with some consistency guarantees regarding concurrent creation or deletion of snapshots.
+/// It is guaranteed that any snapshot that exists at the beginning of the iteration and is not concurrently deleted will be seen during the iteration.
+/// Snapshots concurrently created may be seen during an iteration.
 /// </para>
 /// </summary>
 public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequestParameters>
@@ -145,7 +167,7 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// Offset identifier to start pagination from as returned by the next field in the response body.
+	/// An offset identifier to start pagination from as returned by the next field in the response body.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -153,7 +175,9 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// Value of the current sort column at which to start retrieval. Can either be a string snapshot- or repository name when sorting by snapshot or repository name, a millisecond time value or a number when sorting by index- or shard count.
+	/// The value of the current sort column at which to start retrieval.
+	/// It can be a string <c>snapshot-</c> or a repository name when sorting by snapshot or repository name.
+	/// It can be a millisecond time value or a number when sorting by <c>index-</c> or shard count.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -161,7 +185,7 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// If false, the request returns an error for any snapshots that are unavailable.
+	/// If <c>false</c>, the request returns an error for any snapshots that are unavailable.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -169,7 +193,7 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// If true, returns the repository name in each snapshot.
+	/// If <c>true</c>, the response includes the repository name in each snapshot.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -177,7 +201,8 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// If true, returns additional information about each index in the snapshot comprising the number of shards in the index, the total size of the index in bytes, and the maximum number of segments per shard in the index. Defaults to false, meaning that this information is omitted.
+	/// If <c>true</c>, the response includes additional information about each index in the snapshot comprising the number of shards in the index, the total size of the index in bytes, and the maximum number of segments per shard in the index.
+	/// The default is <c>false</c>, meaning that this information is omitted.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -185,7 +210,7 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// If true, returns the name of each index in each snapshot.
+	/// If <c>true</c>, the response includes the name of each index in each snapshot.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -193,7 +218,8 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// Period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.
+	/// The period to wait for a connection to the master node.
+	/// If no response is received before the timeout expires, the request fails and returns an error.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -209,7 +235,9 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// Sort order. Valid values are asc for ascending and desc for descending order. Defaults to asc, meaning ascending order.
+	/// The sort order.
+	/// Valid values are <c>asc</c> for ascending and <c>desc</c> for descending order.
+	/// The default behavior is ascending order.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -217,7 +245,8 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// Maximum number of snapshots to return. Defaults to 0 which means return all that match the request without limit.
+	/// The maximum number of snapshots to return.
+	/// The default is 0, which means to return all that match the request without limit.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -225,7 +254,13 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// Filter snapshots by a comma-separated list of SLM policy names that snapshots belong to. Also accepts wildcards (*) and combinations of wildcards followed by exclude patterns starting with -. To include snapshots not created by an SLM policy you can use the special pattern _none that will match all snapshots without an SLM policy.
+	/// Filter snapshots by a comma-separated list of snapshot lifecycle management (SLM) policy names that snapshots belong to.
+	/// </para>
+	/// <para>
+	/// You can use wildcards (<c>*</c>) and combinations of wildcards followed by exclude patterns starting with <c>-</c>.
+	/// For example, the pattern <c>*,-policy-a-\*</c> will return all snapshots except for those that were created by an SLM policy with a name starting with <c>policy-a-</c>.
+	/// Note that the wildcard pattern <c>*</c> matches all snapshots created by an SLM policy but not those snapshots that were not created by an SLM policy.
+	/// To include snapshots that were not created by an SLM policy, you can use the special pattern <c>_none</c> that will match all snapshots without an SLM policy.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -233,7 +268,8 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// Allows setting a sort order for the result. Defaults to start_time, i.e. sorting by snapshot start time stamp.
+	/// The sort order for the result.
+	/// The default behavior is sorting by snapshot start time stamp.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -241,7 +277,10 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 
 	/// <summary>
 	/// <para>
-	/// If true, returns additional information about each snapshot such as the version of Elasticsearch which took the snapshot, the start and end times of the snapshot, and the number of shards snapshotted.
+	/// If <c>true</c>, returns additional information about each snapshot such as the version of Elasticsearch which took the snapshot, the start and end times of the snapshot, and the number of shards snapshotted.
+	/// </para>
+	/// <para>
+	/// NOTE: The parameters <c>size</c>, <c>order</c>, <c>after</c>, <c>from_sort_value</c>, <c>offset</c>, <c>slm_policy_filter</c>, and <c>sort</c> are not supported when you set <c>verbose=false</c> and the sort order for requests with <c>verbose=false</c> is undefined.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -251,6 +290,11 @@ public sealed partial class GetSnapshotRequest : PlainRequest<GetSnapshotRequest
 /// <summary>
 /// <para>
 /// Get snapshot information.
+/// </para>
+/// <para>
+/// NOTE: The <c>after</c> parameter and <c>next</c> field enable you to iterate through snapshots with some consistency guarantees regarding concurrent creation or deletion of snapshots.
+/// It is guaranteed that any snapshot that exists at the beginning of the iteration and is not concurrently deleted will be seen during the iteration.
+/// Snapshots concurrently created may be seen during an iteration.
 /// </para>
 /// </summary>
 public sealed partial class GetSnapshotRequestDescriptor : RequestDescriptor<GetSnapshotRequestDescriptor, GetSnapshotRequestParameters>

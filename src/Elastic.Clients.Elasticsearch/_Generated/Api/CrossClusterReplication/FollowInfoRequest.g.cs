@@ -32,6 +32,12 @@ namespace Elastic.Clients.Elasticsearch.CrossClusterReplication;
 
 public sealed partial class FollowInfoRequestParameters : RequestParameters
 {
+	/// <summary>
+	/// <para>
+	/// Period to wait for a connection to the master node.
+	/// </para>
+	/// </summary>
+	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 }
 
 /// <summary>
@@ -54,6 +60,14 @@ public sealed partial class FollowInfoRequest : PlainRequest<FollowInfoRequestPa
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.follow_info";
+
+	/// <summary>
+	/// <para>
+	/// Period to wait for a connection to the master node.
+	/// </para>
+	/// </summary>
+	[JsonIgnore]
+	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 }
 
 /// <summary>
@@ -82,6 +96,8 @@ public sealed partial class FollowInfoRequestDescriptor<TDocument> : RequestDesc
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.follow_info";
+
+	public FollowInfoRequestDescriptor<TDocument> MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 
 	public FollowInfoRequestDescriptor<TDocument> Indices(Elastic.Clients.Elasticsearch.Indices indices)
 	{
@@ -116,6 +132,8 @@ public sealed partial class FollowInfoRequestDescriptor : RequestDescriptor<Foll
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.follow_info";
+
+	public FollowInfoRequestDescriptor MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 
 	public FollowInfoRequestDescriptor Indices(Elastic.Clients.Elasticsearch.Indices indices)
 	{

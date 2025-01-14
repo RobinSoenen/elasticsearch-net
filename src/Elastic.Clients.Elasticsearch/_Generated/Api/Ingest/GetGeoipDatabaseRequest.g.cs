@@ -32,13 +32,6 @@ namespace Elastic.Clients.Elasticsearch.Ingest;
 
 public sealed partial class GetGeoipDatabaseRequestParameters : RequestParameters
 {
-	/// <summary>
-	/// <para>
-	/// Period to wait for a connection to the master node.
-	/// If no response is received before the timeout expires, the request fails and returns an error.
-	/// </para>
-	/// </summary>
-	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 }
 
 /// <summary>
@@ -64,15 +57,6 @@ public sealed partial class GetGeoipDatabaseRequest : PlainRequest<GetGeoipDatab
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ingest.get_geoip_database";
-
-	/// <summary>
-	/// <para>
-	/// Period to wait for a connection to the master node.
-	/// If no response is received before the timeout expires, the request fails and returns an error.
-	/// </para>
-	/// </summary>
-	[JsonIgnore]
-	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 }
 
 /// <summary>
@@ -100,8 +84,6 @@ public sealed partial class GetGeoipDatabaseRequestDescriptor<TDocument> : Reque
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ingest.get_geoip_database";
-
-	public GetGeoipDatabaseRequestDescriptor<TDocument> MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 
 	public GetGeoipDatabaseRequestDescriptor<TDocument> Id(Elastic.Clients.Elasticsearch.Ids? id)
 	{
@@ -139,8 +121,6 @@ public sealed partial class GetGeoipDatabaseRequestDescriptor : RequestDescripto
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ingest.get_geoip_database";
-
-	public GetGeoipDatabaseRequestDescriptor MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 
 	public GetGeoipDatabaseRequestDescriptor Id(Elastic.Clients.Elasticsearch.Ids? id)
 	{

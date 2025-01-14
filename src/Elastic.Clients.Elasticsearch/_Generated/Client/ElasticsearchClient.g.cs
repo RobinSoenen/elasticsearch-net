@@ -38,6 +38,7 @@ using Elastic.Clients.Elasticsearch.Rollup;
 using Elastic.Clients.Elasticsearch.SearchableSnapshots;
 using Elastic.Clients.Elasticsearch.SearchApplication;
 using Elastic.Clients.Elasticsearch.Security;
+using Elastic.Clients.Elasticsearch.Simulate;
 using Elastic.Clients.Elasticsearch.Snapshot;
 using Elastic.Clients.Elasticsearch.SnapshotLifecycleManagement;
 using Elastic.Clients.Elasticsearch.Sql;
@@ -76,6 +77,7 @@ public partial class ElasticsearchClient
 	public virtual SearchableSnapshotsNamespacedClient SearchableSnapshots { get; private set; }
 	public virtual SearchApplicationNamespacedClient SearchApplication { get; private set; }
 	public virtual SecurityNamespacedClient Security { get; private set; }
+	public virtual SimulateNamespacedClient Simulate { get; private set; }
 	public virtual SnapshotNamespacedClient Snapshot { get; private set; }
 	public virtual SnapshotLifecycleManagementNamespacedClient SnapshotLifecycleManagement { get; private set; }
 	public virtual SqlNamespacedClient Sql { get; private set; }
@@ -108,6 +110,7 @@ public partial class ElasticsearchClient
 		SearchableSnapshots = new SearchableSnapshotsNamespacedClient(this);
 		SearchApplication = new SearchApplicationNamespacedClient(this);
 		Security = new SecurityNamespacedClient(this);
+		Simulate = new SimulateNamespacedClient(this);
 		Snapshot = new SnapshotNamespacedClient(this);
 		SnapshotLifecycleManagement = new SnapshotLifecycleManagementNamespacedClient(this);
 		Sql = new SqlNamespacedClient(this);
@@ -6044,9 +6047,9 @@ public partial class ElasticsearchClient
 	/// <summary>
 	/// <para>
 	/// Get cluster info.
-	/// Returns basic information about the cluster.
+	/// Get basic build, version, and cluster information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/rest-api-root.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual InfoResponse Info(InfoRequest request)
@@ -6058,9 +6061,9 @@ public partial class ElasticsearchClient
 	/// <summary>
 	/// <para>
 	/// Get cluster info.
-	/// Returns basic information about the cluster.
+	/// Get basic build, version, and cluster information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/rest-api-root.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<InfoResponse> InfoAsync(InfoRequest request, CancellationToken cancellationToken = default)
 	{
@@ -6071,9 +6074,9 @@ public partial class ElasticsearchClient
 	/// <summary>
 	/// <para>
 	/// Get cluster info.
-	/// Returns basic information about the cluster.
+	/// Get basic build, version, and cluster information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/rest-api-root.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual InfoResponse Info(InfoRequestDescriptor descriptor)
@@ -6085,9 +6088,9 @@ public partial class ElasticsearchClient
 	/// <summary>
 	/// <para>
 	/// Get cluster info.
-	/// Returns basic information about the cluster.
+	/// Get basic build, version, and cluster information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/rest-api-root.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual InfoResponse Info()
@@ -6100,9 +6103,9 @@ public partial class ElasticsearchClient
 	/// <summary>
 	/// <para>
 	/// Get cluster info.
-	/// Returns basic information about the cluster.
+	/// Get basic build, version, and cluster information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/rest-api-root.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
 	public virtual InfoResponse Info(Action<InfoRequestDescriptor> configureRequest)
@@ -6116,9 +6119,9 @@ public partial class ElasticsearchClient
 	/// <summary>
 	/// <para>
 	/// Get cluster info.
-	/// Returns basic information about the cluster.
+	/// Get basic build, version, and cluster information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/rest-api-root.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<InfoResponse> InfoAsync(InfoRequestDescriptor descriptor, CancellationToken cancellationToken = default)
 	{
@@ -6129,9 +6132,9 @@ public partial class ElasticsearchClient
 	/// <summary>
 	/// <para>
 	/// Get cluster info.
-	/// Returns basic information about the cluster.
+	/// Get basic build, version, and cluster information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/rest-api-root.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<InfoResponse> InfoAsync(CancellationToken cancellationToken = default)
 	{
@@ -6143,9 +6146,9 @@ public partial class ElasticsearchClient
 	/// <summary>
 	/// <para>
 	/// Get cluster info.
-	/// Returns basic information about the cluster.
+	/// Get basic build, version, and cluster information.
 	/// </para>
-	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/rest-api-root.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
 	public virtual Task<InfoResponse> InfoAsync(Action<InfoRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
 	{

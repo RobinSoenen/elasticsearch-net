@@ -34,14 +34,16 @@ public sealed partial class CreateSnapshotRequestParameters : RequestParameters
 {
 	/// <summary>
 	/// <para>
-	/// Period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.
+	/// The period to wait for a connection to the master node.
+	/// If no response is received before the timeout expires, the request fails and returns an error.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Serverless.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Serverless.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 
 	/// <summary>
 	/// <para>
-	/// If <c>true</c>, the request returns a response when the snapshot is complete. If <c>false</c>, the request returns a response when the snapshot initializes.
+	/// If <c>true</c>, the request returns a response when the snapshot is complete.
+	/// If <c>false</c>, the request returns a response when the snapshot initializes.
 	/// </para>
 	/// </summary>
 	public bool? WaitForCompletion { get => Q<bool?>("wait_for_completion"); set => Q("wait_for_completion", value); }
@@ -69,7 +71,8 @@ public sealed partial class CreateSnapshotRequest : PlainRequest<CreateSnapshotR
 
 	/// <summary>
 	/// <para>
-	/// Period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.
+	/// The period to wait for a connection to the master node.
+	/// If no response is received before the timeout expires, the request fails and returns an error.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -77,7 +80,8 @@ public sealed partial class CreateSnapshotRequest : PlainRequest<CreateSnapshotR
 
 	/// <summary>
 	/// <para>
-	/// If <c>true</c>, the request returns a response when the snapshot is complete. If <c>false</c>, the request returns a response when the snapshot initializes.
+	/// If <c>true</c>, the request returns a response when the snapshot is complete.
+	/// If <c>false</c>, the request returns a response when the snapshot initializes.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -85,7 +89,27 @@ public sealed partial class CreateSnapshotRequest : PlainRequest<CreateSnapshotR
 
 	/// <summary>
 	/// <para>
-	/// Feature states to include in the snapshot. Each feature state includes one or more system indices containing related data. You can view a list of eligible features using the get features API. If <c>include_global_state</c> is <c>true</c>, all current feature states are included by default. If <c>include_global_state</c> is <c>false</c>, no feature states are included by default.
+	/// Determines how wildcard patterns in the <c>indices</c> parameter match data streams and indices.
+	/// It supports comma-separated values such as <c>open,hidden</c>.
+	/// </para>
+	/// </summary>
+	[JsonInclude, JsonPropertyName("expand_wildcards")]
+	[SingleOrManyCollectionConverter(typeof(Elastic.Clients.Elasticsearch.Serverless.ExpandWildcard))]
+	public ICollection<Elastic.Clients.Elasticsearch.Serverless.ExpandWildcard>? ExpandWildcards { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The feature states to include in the snapshot.
+	/// Each feature state includes one or more system indices containing related data.
+	/// You can view a list of eligible features using the get features API.
+	/// </para>
+	/// <para>
+	/// If <c>include_global_state</c> is <c>true</c>, all current feature states are included by default.
+	/// If <c>include_global_state</c> is <c>false</c>, no feature states are included by default.
+	/// </para>
+	/// <para>
+	/// Note that specifying an empty array will result in the default behavior.
+	/// To exclude all feature states, regardless of the <c>include_global_state</c> value, specify an array with only the value <c>none</c> (<c>["none"]</c>).
 	/// </para>
 	/// </summary>
 	[JsonInclude, JsonPropertyName("feature_states")]
@@ -93,7 +117,8 @@ public sealed partial class CreateSnapshotRequest : PlainRequest<CreateSnapshotR
 
 	/// <summary>
 	/// <para>
-	/// If <c>true</c>, the request ignores data streams and indices in <c>indices</c> that are missing or closed. If <c>false</c>, the request returns an error for any data stream or index that is missing or closed.
+	/// If <c>true</c>, the request ignores data streams and indices in <c>indices</c> that are missing or closed.
+	/// If <c>false</c>, the request returns an error for any data stream or index that is missing or closed.
 	/// </para>
 	/// </summary>
 	[JsonInclude, JsonPropertyName("ignore_unavailable")]
@@ -101,7 +126,9 @@ public sealed partial class CreateSnapshotRequest : PlainRequest<CreateSnapshotR
 
 	/// <summary>
 	/// <para>
-	/// If <c>true</c>, the current cluster state is included in the snapshot. The cluster state includes persistent cluster settings, composable index templates, legacy index templates, ingest pipelines, and ILM policies. It also includes data stored in system indices, such as Watches and task records (configurable via <c>feature_states</c>).
+	/// If <c>true</c>, the current cluster state is included in the snapshot.
+	/// The cluster state includes persistent cluster settings, composable index templates, legacy index templates, ingest pipelines, and ILM policies.
+	/// It also includes data stored in system indices, such as Watches and task records (configurable via <c>feature_states</c>).
 	/// </para>
 	/// </summary>
 	[JsonInclude, JsonPropertyName("include_global_state")]
@@ -109,7 +136,14 @@ public sealed partial class CreateSnapshotRequest : PlainRequest<CreateSnapshotR
 
 	/// <summary>
 	/// <para>
-	/// Data streams and indices to include in the snapshot. Supports multi-target syntax. Includes all data streams and indices by default.
+	/// A comma-separated list of data streams and indices to include in the snapshot.
+	/// It supports a multi-target syntax.
+	/// The default is an empty array (<c>[]</c>), which includes all regular data streams and regular indices.
+	/// To exclude all data streams and indices, use <c>-*</c>.
+	/// </para>
+	/// <para>
+	/// You can't use this parameter to include or exclude system indices or system data streams from a snapshot.
+	/// Use <c>feature_states</c> instead.
 	/// </para>
 	/// </summary>
 	[JsonInclude, JsonPropertyName("indices")]
@@ -117,7 +151,9 @@ public sealed partial class CreateSnapshotRequest : PlainRequest<CreateSnapshotR
 
 	/// <summary>
 	/// <para>
-	/// Optional metadata for the snapshot. May have any contents. Must be less than 1024 bytes. This map is not automatically generated by Elasticsearch.
+	/// Arbitrary metadata to the snapshot, such as a record of who took the snapshot, why it was taken, or any other useful data.
+	/// It can have any contents but it must be less than 1024 bytes.
+	/// This information is not automatically generated by Elasticsearch.
 	/// </para>
 	/// </summary>
 	[JsonInclude, JsonPropertyName("metadata")]
@@ -125,7 +161,12 @@ public sealed partial class CreateSnapshotRequest : PlainRequest<CreateSnapshotR
 
 	/// <summary>
 	/// <para>
-	/// If <c>true</c>, allows restoring a partial snapshot of indices with unavailable shards. Only shards that were successfully included in the snapshot will be restored. All missing shards will be recreated as empty. If <c>false</c>, the entire restore operation will fail if one or more indices included in the snapshot do not have all primary shards available.
+	/// If <c>true</c>, it enables you to restore a partial snapshot of indices with unavailable shards.
+	/// Only shards that were successfully included in the snapshot will be restored.
+	/// All missing shards will be recreated as empty.
+	/// </para>
+	/// <para>
+	/// If <c>false</c>, the entire restore operation will fail if one or more indices included in the snapshot do not have all primary shards available.
 	/// </para>
 	/// </summary>
 	[JsonInclude, JsonPropertyName("partial")]
@@ -169,6 +210,7 @@ public sealed partial class CreateSnapshotRequestDescriptor : RequestDescriptor<
 		return Self;
 	}
 
+	private ICollection<Elastic.Clients.Elasticsearch.Serverless.ExpandWildcard>? ExpandWildcardsValue { get; set; }
 	private ICollection<string>? FeatureStatesValue { get; set; }
 	private bool? IgnoreUnavailableValue { get; set; }
 	private bool? IncludeGlobalStateValue { get; set; }
@@ -178,7 +220,29 @@ public sealed partial class CreateSnapshotRequestDescriptor : RequestDescriptor<
 
 	/// <summary>
 	/// <para>
-	/// Feature states to include in the snapshot. Each feature state includes one or more system indices containing related data. You can view a list of eligible features using the get features API. If <c>include_global_state</c> is <c>true</c>, all current feature states are included by default. If <c>include_global_state</c> is <c>false</c>, no feature states are included by default.
+	/// Determines how wildcard patterns in the <c>indices</c> parameter match data streams and indices.
+	/// It supports comma-separated values such as <c>open,hidden</c>.
+	/// </para>
+	/// </summary>
+	public CreateSnapshotRequestDescriptor ExpandWildcards(ICollection<Elastic.Clients.Elasticsearch.Serverless.ExpandWildcard>? expandWildcards)
+	{
+		ExpandWildcardsValue = expandWildcards;
+		return Self;
+	}
+
+	/// <summary>
+	/// <para>
+	/// The feature states to include in the snapshot.
+	/// Each feature state includes one or more system indices containing related data.
+	/// You can view a list of eligible features using the get features API.
+	/// </para>
+	/// <para>
+	/// If <c>include_global_state</c> is <c>true</c>, all current feature states are included by default.
+	/// If <c>include_global_state</c> is <c>false</c>, no feature states are included by default.
+	/// </para>
+	/// <para>
+	/// Note that specifying an empty array will result in the default behavior.
+	/// To exclude all feature states, regardless of the <c>include_global_state</c> value, specify an array with only the value <c>none</c> (<c>["none"]</c>).
 	/// </para>
 	/// </summary>
 	public CreateSnapshotRequestDescriptor FeatureStates(ICollection<string>? featureStates)
@@ -189,7 +253,8 @@ public sealed partial class CreateSnapshotRequestDescriptor : RequestDescriptor<
 
 	/// <summary>
 	/// <para>
-	/// If <c>true</c>, the request ignores data streams and indices in <c>indices</c> that are missing or closed. If <c>false</c>, the request returns an error for any data stream or index that is missing or closed.
+	/// If <c>true</c>, the request ignores data streams and indices in <c>indices</c> that are missing or closed.
+	/// If <c>false</c>, the request returns an error for any data stream or index that is missing or closed.
 	/// </para>
 	/// </summary>
 	public CreateSnapshotRequestDescriptor IgnoreUnavailable(bool? ignoreUnavailable = true)
@@ -200,7 +265,9 @@ public sealed partial class CreateSnapshotRequestDescriptor : RequestDescriptor<
 
 	/// <summary>
 	/// <para>
-	/// If <c>true</c>, the current cluster state is included in the snapshot. The cluster state includes persistent cluster settings, composable index templates, legacy index templates, ingest pipelines, and ILM policies. It also includes data stored in system indices, such as Watches and task records (configurable via <c>feature_states</c>).
+	/// If <c>true</c>, the current cluster state is included in the snapshot.
+	/// The cluster state includes persistent cluster settings, composable index templates, legacy index templates, ingest pipelines, and ILM policies.
+	/// It also includes data stored in system indices, such as Watches and task records (configurable via <c>feature_states</c>).
 	/// </para>
 	/// </summary>
 	public CreateSnapshotRequestDescriptor IncludeGlobalState(bool? includeGlobalState = true)
@@ -211,7 +278,14 @@ public sealed partial class CreateSnapshotRequestDescriptor : RequestDescriptor<
 
 	/// <summary>
 	/// <para>
-	/// Data streams and indices to include in the snapshot. Supports multi-target syntax. Includes all data streams and indices by default.
+	/// A comma-separated list of data streams and indices to include in the snapshot.
+	/// It supports a multi-target syntax.
+	/// The default is an empty array (<c>[]</c>), which includes all regular data streams and regular indices.
+	/// To exclude all data streams and indices, use <c>-*</c>.
+	/// </para>
+	/// <para>
+	/// You can't use this parameter to include or exclude system indices or system data streams from a snapshot.
+	/// Use <c>feature_states</c> instead.
 	/// </para>
 	/// </summary>
 	public CreateSnapshotRequestDescriptor Indices(Elastic.Clients.Elasticsearch.Serverless.Indices? indices)
@@ -222,7 +296,9 @@ public sealed partial class CreateSnapshotRequestDescriptor : RequestDescriptor<
 
 	/// <summary>
 	/// <para>
-	/// Optional metadata for the snapshot. May have any contents. Must be less than 1024 bytes. This map is not automatically generated by Elasticsearch.
+	/// Arbitrary metadata to the snapshot, such as a record of who took the snapshot, why it was taken, or any other useful data.
+	/// It can have any contents but it must be less than 1024 bytes.
+	/// This information is not automatically generated by Elasticsearch.
 	/// </para>
 	/// </summary>
 	public CreateSnapshotRequestDescriptor Metadata(Func<FluentDictionary<string, object>, FluentDictionary<string, object>> selector)
@@ -233,7 +309,12 @@ public sealed partial class CreateSnapshotRequestDescriptor : RequestDescriptor<
 
 	/// <summary>
 	/// <para>
-	/// If <c>true</c>, allows restoring a partial snapshot of indices with unavailable shards. Only shards that were successfully included in the snapshot will be restored. All missing shards will be recreated as empty. If <c>false</c>, the entire restore operation will fail if one or more indices included in the snapshot do not have all primary shards available.
+	/// If <c>true</c>, it enables you to restore a partial snapshot of indices with unavailable shards.
+	/// Only shards that were successfully included in the snapshot will be restored.
+	/// All missing shards will be recreated as empty.
+	/// </para>
+	/// <para>
+	/// If <c>false</c>, the entire restore operation will fail if one or more indices included in the snapshot do not have all primary shards available.
 	/// </para>
 	/// </summary>
 	public CreateSnapshotRequestDescriptor Partial(bool? partial = true)
@@ -245,6 +326,12 @@ public sealed partial class CreateSnapshotRequestDescriptor : RequestDescriptor<
 	protected override void Serialize(Utf8JsonWriter writer, JsonSerializerOptions options, IElasticsearchClientSettings settings)
 	{
 		writer.WriteStartObject();
+		if (ExpandWildcardsValue is not null)
+		{
+			writer.WritePropertyName("expand_wildcards");
+			SingleOrManySerializationHelper.Serialize<Elastic.Clients.Elasticsearch.Serverless.ExpandWildcard>(ExpandWildcardsValue, writer, options);
+		}
+
 		if (FeatureStatesValue is not null)
 		{
 			writer.WritePropertyName("feature_states");

@@ -34,14 +34,17 @@ public sealed partial class GetRepositoryRequestParameters : RequestParameters
 {
 	/// <summary>
 	/// <para>
-	/// Return local information, do not retrieve the state from master node (default: false)
+	/// If <c>true</c>, the request gets information from the local node only.
+	/// If <c>false</c>, the request gets information from the master node.
 	/// </para>
 	/// </summary>
 	public bool? Local { get => Q<bool?>("local"); set => Q("local", value); }
 
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout for connection to master node
+	/// The period to wait for the master node.
+	/// If the master node is not available before the timeout expires, the request fails and returns an error.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
@@ -72,7 +75,8 @@ public sealed partial class GetRepositoryRequest : PlainRequest<GetRepositoryReq
 
 	/// <summary>
 	/// <para>
-	/// Return local information, do not retrieve the state from master node (default: false)
+	/// If <c>true</c>, the request gets information from the local node only.
+	/// If <c>false</c>, the request gets information from the master node.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -80,7 +84,9 @@ public sealed partial class GetRepositoryRequest : PlainRequest<GetRepositoryReq
 
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout for connection to master node
+	/// The period to wait for the master node.
+	/// If the master node is not available before the timeout expires, the request fails and returns an error.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]

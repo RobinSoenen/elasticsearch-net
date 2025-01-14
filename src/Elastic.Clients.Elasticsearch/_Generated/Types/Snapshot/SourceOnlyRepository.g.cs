@@ -29,9 +29,19 @@ namespace Elastic.Clients.Elasticsearch.Snapshot;
 
 public sealed partial class SourceOnlyRepository : IRepository
 {
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("settings")]
 	public Elastic.Clients.Elasticsearch.Snapshot.SourceOnlyRepositorySettings Settings { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The source-only repository type.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("type")]
 	public string Type => "source";
 
@@ -52,6 +62,11 @@ public sealed partial class SourceOnlyRepositoryDescriptor : SerializableDescrip
 	private Action<Elastic.Clients.Elasticsearch.Snapshot.SourceOnlyRepositorySettingsDescriptor> SettingsDescriptorAction { get; set; }
 	private string? UuidValue { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// </summary>
 	public SourceOnlyRepositoryDescriptor Settings(Elastic.Clients.Elasticsearch.Snapshot.SourceOnlyRepositorySettings settings)
 	{
 		SettingsDescriptor = null;

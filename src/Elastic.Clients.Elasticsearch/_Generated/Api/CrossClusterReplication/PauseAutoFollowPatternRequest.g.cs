@@ -32,6 +32,12 @@ namespace Elastic.Clients.Elasticsearch.CrossClusterReplication;
 
 public sealed partial class PauseAutoFollowPatternRequestParameters : RequestParameters
 {
+	/// <summary>
+	/// <para>
+	/// Period to wait for a connection to the master node.
+	/// </para>
+	/// </summary>
+	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 }
 
 /// <summary>
@@ -60,6 +66,14 @@ public sealed partial class PauseAutoFollowPatternRequest : PlainRequest<PauseAu
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.pause_auto_follow_pattern";
+
+	/// <summary>
+	/// <para>
+	/// Period to wait for a connection to the master node.
+	/// </para>
+	/// </summary>
+	[JsonIgnore]
+	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 }
 
 /// <summary>
@@ -90,6 +104,8 @@ public sealed partial class PauseAutoFollowPatternRequestDescriptor : RequestDes
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.pause_auto_follow_pattern";
+
+	public PauseAutoFollowPatternRequestDescriptor MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 
 	public PauseAutoFollowPatternRequestDescriptor Name(Elastic.Clients.Elasticsearch.Name name)
 	{

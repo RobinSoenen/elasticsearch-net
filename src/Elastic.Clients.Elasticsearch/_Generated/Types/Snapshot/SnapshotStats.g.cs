@@ -29,14 +29,38 @@ namespace Elastic.Clients.Elasticsearch.Snapshot;
 
 public sealed partial class SnapshotStats
 {
+	/// <summary>
+	/// <para>
+	/// The number and size of files that still need to be copied as part of the incremental snapshot.
+	/// For completed snapshots, this property indicates the number and size of files that were not already in the repository and were copied as part of the incremental snapshot.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("incremental")]
 	public Elastic.Clients.Elasticsearch.Snapshot.FileCountSnapshotStats Incremental { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The time, in milliseconds, when the snapshot creation process started.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("start_time_in_millis")]
 	public long StartTimeInMillis { get; init; }
 	[JsonInclude, JsonPropertyName("time")]
 	public Elastic.Clients.Elasticsearch.Duration? Time { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The total time, in milliseconds, that it took for the snapshot process to complete.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("time_in_millis")]
 	public long TimeInMillis { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The total number and size of files that are referenced by the snapshot.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("total")]
 	public Elastic.Clients.Elasticsearch.Snapshot.FileCountSnapshotStats Total { get; init; }
 }

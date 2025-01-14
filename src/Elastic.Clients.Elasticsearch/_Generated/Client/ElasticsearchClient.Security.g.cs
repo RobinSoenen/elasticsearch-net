@@ -706,6 +706,487 @@ public partial class SecurityNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual BulkUpdateApiKeysResponse BulkUpdateApiKeys(BulkUpdateApiKeysRequest request)
+	{
+		request.BeforeRequest();
+		return DoRequest<BulkUpdateApiKeysRequest, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(request);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<BulkUpdateApiKeysResponse> BulkUpdateApiKeysAsync(BulkUpdateApiKeysRequest request, CancellationToken cancellationToken = default)
+	{
+		request.BeforeRequest();
+		return DoRequestAsync<BulkUpdateApiKeysRequest, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(request, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual BulkUpdateApiKeysResponse BulkUpdateApiKeys<TDocument>(BulkUpdateApiKeysRequestDescriptor<TDocument> descriptor)
+	{
+		descriptor.BeforeRequest();
+		return DoRequest<BulkUpdateApiKeysRequestDescriptor<TDocument>, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual BulkUpdateApiKeysResponse BulkUpdateApiKeys<TDocument>()
+	{
+		var descriptor = new BulkUpdateApiKeysRequestDescriptor<TDocument>();
+		descriptor.BeforeRequest();
+		return DoRequest<BulkUpdateApiKeysRequestDescriptor<TDocument>, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual BulkUpdateApiKeysResponse BulkUpdateApiKeys<TDocument>(Action<BulkUpdateApiKeysRequestDescriptor<TDocument>> configureRequest)
+	{
+		var descriptor = new BulkUpdateApiKeysRequestDescriptor<TDocument>();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequest<BulkUpdateApiKeysRequestDescriptor<TDocument>, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual BulkUpdateApiKeysResponse BulkUpdateApiKeys(BulkUpdateApiKeysRequestDescriptor descriptor)
+	{
+		descriptor.BeforeRequest();
+		return DoRequest<BulkUpdateApiKeysRequestDescriptor, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual BulkUpdateApiKeysResponse BulkUpdateApiKeys()
+	{
+		var descriptor = new BulkUpdateApiKeysRequestDescriptor();
+		descriptor.BeforeRequest();
+		return DoRequest<BulkUpdateApiKeysRequestDescriptor, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual BulkUpdateApiKeysResponse BulkUpdateApiKeys(Action<BulkUpdateApiKeysRequestDescriptor> configureRequest)
+	{
+		var descriptor = new BulkUpdateApiKeysRequestDescriptor();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequest<BulkUpdateApiKeysRequestDescriptor, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<BulkUpdateApiKeysResponse> BulkUpdateApiKeysAsync<TDocument>(BulkUpdateApiKeysRequestDescriptor<TDocument> descriptor, CancellationToken cancellationToken = default)
+	{
+		descriptor.BeforeRequest();
+		return DoRequestAsync<BulkUpdateApiKeysRequestDescriptor<TDocument>, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<BulkUpdateApiKeysResponse> BulkUpdateApiKeysAsync<TDocument>(CancellationToken cancellationToken = default)
+	{
+		var descriptor = new BulkUpdateApiKeysRequestDescriptor<TDocument>();
+		descriptor.BeforeRequest();
+		return DoRequestAsync<BulkUpdateApiKeysRequestDescriptor<TDocument>, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<BulkUpdateApiKeysResponse> BulkUpdateApiKeysAsync<TDocument>(Action<BulkUpdateApiKeysRequestDescriptor<TDocument>> configureRequest, CancellationToken cancellationToken = default)
+	{
+		var descriptor = new BulkUpdateApiKeysRequestDescriptor<TDocument>();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequestAsync<BulkUpdateApiKeysRequestDescriptor<TDocument>, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<BulkUpdateApiKeysResponse> BulkUpdateApiKeysAsync(BulkUpdateApiKeysRequestDescriptor descriptor, CancellationToken cancellationToken = default)
+	{
+		descriptor.BeforeRequest();
+		return DoRequestAsync<BulkUpdateApiKeysRequestDescriptor, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<BulkUpdateApiKeysResponse> BulkUpdateApiKeysAsync(CancellationToken cancellationToken = default)
+	{
+		var descriptor = new BulkUpdateApiKeysRequestDescriptor();
+		descriptor.BeforeRequest();
+		return DoRequestAsync<BulkUpdateApiKeysRequestDescriptor, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Bulk update API keys.
+	/// Update the attributes for multiple API keys.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: It is not possible to use an API key as the authentication credential for this API. To update API keys, the owner user's credentials are required.
+	/// </para>
+	/// <para>
+	/// This API is similar to the update API key API but enables you to apply the same update to multiple API keys in one API call. This operation can greatly improve performance over making individual updates.
+	/// </para>
+	/// <para>
+	/// It is not possible to update expired or invalidated API keys.
+	/// </para>
+	/// <para>
+	/// This API supports updates to API key access scope, metadata and expiration.
+	/// The access scope of each API key is derived from the <c>role_descriptors</c> you specify in the request and a snapshot of the owner user's permissions at the time of the request.
+	/// The snapshot of the owner's permissions is updated automatically on every call.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: If you don't specify <c>role_descriptors</c> in the request, a call to this API might still change an API key's access scope. This change can occur if the owner user's permissions have changed since the API key was created or last modified.
+	/// </para>
+	/// <para>
+	/// A successful request returns a JSON structure that contains the IDs of all updated API keys, the IDs of API keys that already had the requested changes and did not require an update, and error details for any failed update.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-bulk-update-api-keys.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<BulkUpdateApiKeysResponse> BulkUpdateApiKeysAsync(Action<BulkUpdateApiKeysRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
+	{
+		var descriptor = new BulkUpdateApiKeysRequestDescriptor();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequestAsync<BulkUpdateApiKeysRequestDescriptor, BulkUpdateApiKeysResponse, BulkUpdateApiKeysRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
 	/// Change passwords.
 	/// </para>
 	/// <para>
@@ -2544,6 +3025,200 @@ public partial class SecurityNamespacedClient : NamespacedClientProxy
 		configureRequest?.Invoke(descriptor);
 		descriptor.BeforeRequest();
 		return DoRequestAsync<CreateServiceTokenRequestDescriptor, CreateServiceTokenResponse, CreateServiceTokenRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Delegate PKI authentication.
+	/// This API implements the exchange of an X509Certificate chain for an Elasticsearch access token.
+	/// The certificate chain is validated, according to RFC 5280, by sequentially considering the trust configuration of every installed PKI realm that has <c>delegation.enabled</c> set to <c>true</c>.
+	/// A successfully trusted client certificate is also subject to the validation of the subject distinguished name according to thw <c>username_pattern</c> of the respective realm.
+	/// </para>
+	/// <para>
+	/// This API is called by smart and trusted proxies, such as Kibana, which terminate the user's TLS session but still want to authenticate the user by using a PKI realm—-​as if the user connected directly to Elasticsearch.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: The association between the subject public key in the target certificate and the corresponding private key is not validated.
+	/// This is part of the TLS authentication process and it is delegated to the proxy that calls this API.
+	/// The proxy is trusted to have performed the TLS authentication and this API translates that authentication into an Elasticsearch access token.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-delegate-pki-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual DelegatePkiResponse DelegatePki(DelegatePkiRequest request)
+	{
+		request.BeforeRequest();
+		return DoRequest<DelegatePkiRequest, DelegatePkiResponse, DelegatePkiRequestParameters>(request);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Delegate PKI authentication.
+	/// This API implements the exchange of an X509Certificate chain for an Elasticsearch access token.
+	/// The certificate chain is validated, according to RFC 5280, by sequentially considering the trust configuration of every installed PKI realm that has <c>delegation.enabled</c> set to <c>true</c>.
+	/// A successfully trusted client certificate is also subject to the validation of the subject distinguished name according to thw <c>username_pattern</c> of the respective realm.
+	/// </para>
+	/// <para>
+	/// This API is called by smart and trusted proxies, such as Kibana, which terminate the user's TLS session but still want to authenticate the user by using a PKI realm—-​as if the user connected directly to Elasticsearch.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: The association between the subject public key in the target certificate and the corresponding private key is not validated.
+	/// This is part of the TLS authentication process and it is delegated to the proxy that calls this API.
+	/// The proxy is trusted to have performed the TLS authentication and this API translates that authentication into an Elasticsearch access token.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-delegate-pki-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<DelegatePkiResponse> DelegatePkiAsync(DelegatePkiRequest request, CancellationToken cancellationToken = default)
+	{
+		request.BeforeRequest();
+		return DoRequestAsync<DelegatePkiRequest, DelegatePkiResponse, DelegatePkiRequestParameters>(request, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Delegate PKI authentication.
+	/// This API implements the exchange of an X509Certificate chain for an Elasticsearch access token.
+	/// The certificate chain is validated, according to RFC 5280, by sequentially considering the trust configuration of every installed PKI realm that has <c>delegation.enabled</c> set to <c>true</c>.
+	/// A successfully trusted client certificate is also subject to the validation of the subject distinguished name according to thw <c>username_pattern</c> of the respective realm.
+	/// </para>
+	/// <para>
+	/// This API is called by smart and trusted proxies, such as Kibana, which terminate the user's TLS session but still want to authenticate the user by using a PKI realm—-​as if the user connected directly to Elasticsearch.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: The association between the subject public key in the target certificate and the corresponding private key is not validated.
+	/// This is part of the TLS authentication process and it is delegated to the proxy that calls this API.
+	/// The proxy is trusted to have performed the TLS authentication and this API translates that authentication into an Elasticsearch access token.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-delegate-pki-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual DelegatePkiResponse DelegatePki(DelegatePkiRequestDescriptor descriptor)
+	{
+		descriptor.BeforeRequest();
+		return DoRequest<DelegatePkiRequestDescriptor, DelegatePkiResponse, DelegatePkiRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Delegate PKI authentication.
+	/// This API implements the exchange of an X509Certificate chain for an Elasticsearch access token.
+	/// The certificate chain is validated, according to RFC 5280, by sequentially considering the trust configuration of every installed PKI realm that has <c>delegation.enabled</c> set to <c>true</c>.
+	/// A successfully trusted client certificate is also subject to the validation of the subject distinguished name according to thw <c>username_pattern</c> of the respective realm.
+	/// </para>
+	/// <para>
+	/// This API is called by smart and trusted proxies, such as Kibana, which terminate the user's TLS session but still want to authenticate the user by using a PKI realm—-​as if the user connected directly to Elasticsearch.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: The association between the subject public key in the target certificate and the corresponding private key is not validated.
+	/// This is part of the TLS authentication process and it is delegated to the proxy that calls this API.
+	/// The proxy is trusted to have performed the TLS authentication and this API translates that authentication into an Elasticsearch access token.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-delegate-pki-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual DelegatePkiResponse DelegatePki()
+	{
+		var descriptor = new DelegatePkiRequestDescriptor();
+		descriptor.BeforeRequest();
+		return DoRequest<DelegatePkiRequestDescriptor, DelegatePkiResponse, DelegatePkiRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Delegate PKI authentication.
+	/// This API implements the exchange of an X509Certificate chain for an Elasticsearch access token.
+	/// The certificate chain is validated, according to RFC 5280, by sequentially considering the trust configuration of every installed PKI realm that has <c>delegation.enabled</c> set to <c>true</c>.
+	/// A successfully trusted client certificate is also subject to the validation of the subject distinguished name according to thw <c>username_pattern</c> of the respective realm.
+	/// </para>
+	/// <para>
+	/// This API is called by smart and trusted proxies, such as Kibana, which terminate the user's TLS session but still want to authenticate the user by using a PKI realm—-​as if the user connected directly to Elasticsearch.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: The association between the subject public key in the target certificate and the corresponding private key is not validated.
+	/// This is part of the TLS authentication process and it is delegated to the proxy that calls this API.
+	/// The proxy is trusted to have performed the TLS authentication and this API translates that authentication into an Elasticsearch access token.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-delegate-pki-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual DelegatePkiResponse DelegatePki(Action<DelegatePkiRequestDescriptor> configureRequest)
+	{
+		var descriptor = new DelegatePkiRequestDescriptor();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequest<DelegatePkiRequestDescriptor, DelegatePkiResponse, DelegatePkiRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Delegate PKI authentication.
+	/// This API implements the exchange of an X509Certificate chain for an Elasticsearch access token.
+	/// The certificate chain is validated, according to RFC 5280, by sequentially considering the trust configuration of every installed PKI realm that has <c>delegation.enabled</c> set to <c>true</c>.
+	/// A successfully trusted client certificate is also subject to the validation of the subject distinguished name according to thw <c>username_pattern</c> of the respective realm.
+	/// </para>
+	/// <para>
+	/// This API is called by smart and trusted proxies, such as Kibana, which terminate the user's TLS session but still want to authenticate the user by using a PKI realm—-​as if the user connected directly to Elasticsearch.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: The association between the subject public key in the target certificate and the corresponding private key is not validated.
+	/// This is part of the TLS authentication process and it is delegated to the proxy that calls this API.
+	/// The proxy is trusted to have performed the TLS authentication and this API translates that authentication into an Elasticsearch access token.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-delegate-pki-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<DelegatePkiResponse> DelegatePkiAsync(DelegatePkiRequestDescriptor descriptor, CancellationToken cancellationToken = default)
+	{
+		descriptor.BeforeRequest();
+		return DoRequestAsync<DelegatePkiRequestDescriptor, DelegatePkiResponse, DelegatePkiRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Delegate PKI authentication.
+	/// This API implements the exchange of an X509Certificate chain for an Elasticsearch access token.
+	/// The certificate chain is validated, according to RFC 5280, by sequentially considering the trust configuration of every installed PKI realm that has <c>delegation.enabled</c> set to <c>true</c>.
+	/// A successfully trusted client certificate is also subject to the validation of the subject distinguished name according to thw <c>username_pattern</c> of the respective realm.
+	/// </para>
+	/// <para>
+	/// This API is called by smart and trusted proxies, such as Kibana, which terminate the user's TLS session but still want to authenticate the user by using a PKI realm—-​as if the user connected directly to Elasticsearch.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: The association between the subject public key in the target certificate and the corresponding private key is not validated.
+	/// This is part of the TLS authentication process and it is delegated to the proxy that calls this API.
+	/// The proxy is trusted to have performed the TLS authentication and this API translates that authentication into an Elasticsearch access token.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-delegate-pki-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<DelegatePkiResponse> DelegatePkiAsync(CancellationToken cancellationToken = default)
+	{
+		var descriptor = new DelegatePkiRequestDescriptor();
+		descriptor.BeforeRequest();
+		return DoRequestAsync<DelegatePkiRequestDescriptor, DelegatePkiResponse, DelegatePkiRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Delegate PKI authentication.
+	/// This API implements the exchange of an X509Certificate chain for an Elasticsearch access token.
+	/// The certificate chain is validated, according to RFC 5280, by sequentially considering the trust configuration of every installed PKI realm that has <c>delegation.enabled</c> set to <c>true</c>.
+	/// A successfully trusted client certificate is also subject to the validation of the subject distinguished name according to thw <c>username_pattern</c> of the respective realm.
+	/// </para>
+	/// <para>
+	/// This API is called by smart and trusted proxies, such as Kibana, which terminate the user's TLS session but still want to authenticate the user by using a PKI realm—-​as if the user connected directly to Elasticsearch.
+	/// </para>
+	/// <para>
+	/// IMPORTANT: The association between the subject public key in the target certificate and the corresponding private key is not validated.
+	/// This is part of the TLS authentication process and it is delegated to the proxy that calls this API.
+	/// The proxy is trusted to have performed the TLS authentication and this API translates that authentication into an Elasticsearch access token.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-delegate-pki-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<DelegatePkiResponse> DelegatePkiAsync(Action<DelegatePkiRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
+	{
+		var descriptor = new DelegatePkiRequestDescriptor();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequestAsync<DelegatePkiRequestDescriptor, DelegatePkiResponse, DelegatePkiRequestParameters>(descriptor, cancellationToken);
 	}
 
 	/// <summary>
@@ -6895,6 +7570,492 @@ public partial class SecurityNamespacedClient : NamespacedClientProxy
 		configureRequest?.Invoke(descriptor);
 		descriptor.BeforeRequest();
 		return DoRequestAsync<InvalidateTokenRequestDescriptor, InvalidateTokenResponse, InvalidateTokenRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Authenticate OpenID Connect.
+	/// Exchange an OpenID Connect authentication response message for an Elasticsearch internal access token and refresh token that can be subsequently used for authentication.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-authenticate.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcAuthenticateResponse OidcAuthenticate(OidcAuthenticateRequest request)
+	{
+		request.BeforeRequest();
+		return DoRequest<OidcAuthenticateRequest, OidcAuthenticateResponse, OidcAuthenticateRequestParameters>(request);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Authenticate OpenID Connect.
+	/// Exchange an OpenID Connect authentication response message for an Elasticsearch internal access token and refresh token that can be subsequently used for authentication.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-authenticate.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcAuthenticateResponse> OidcAuthenticateAsync(OidcAuthenticateRequest request, CancellationToken cancellationToken = default)
+	{
+		request.BeforeRequest();
+		return DoRequestAsync<OidcAuthenticateRequest, OidcAuthenticateResponse, OidcAuthenticateRequestParameters>(request, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Authenticate OpenID Connect.
+	/// Exchange an OpenID Connect authentication response message for an Elasticsearch internal access token and refresh token that can be subsequently used for authentication.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-authenticate.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcAuthenticateResponse OidcAuthenticate(OidcAuthenticateRequestDescriptor descriptor)
+	{
+		descriptor.BeforeRequest();
+		return DoRequest<OidcAuthenticateRequestDescriptor, OidcAuthenticateResponse, OidcAuthenticateRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Authenticate OpenID Connect.
+	/// Exchange an OpenID Connect authentication response message for an Elasticsearch internal access token and refresh token that can be subsequently used for authentication.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-authenticate.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcAuthenticateResponse OidcAuthenticate()
+	{
+		var descriptor = new OidcAuthenticateRequestDescriptor();
+		descriptor.BeforeRequest();
+		return DoRequest<OidcAuthenticateRequestDescriptor, OidcAuthenticateResponse, OidcAuthenticateRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Authenticate OpenID Connect.
+	/// Exchange an OpenID Connect authentication response message for an Elasticsearch internal access token and refresh token that can be subsequently used for authentication.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-authenticate.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcAuthenticateResponse OidcAuthenticate(Action<OidcAuthenticateRequestDescriptor> configureRequest)
+	{
+		var descriptor = new OidcAuthenticateRequestDescriptor();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequest<OidcAuthenticateRequestDescriptor, OidcAuthenticateResponse, OidcAuthenticateRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Authenticate OpenID Connect.
+	/// Exchange an OpenID Connect authentication response message for an Elasticsearch internal access token and refresh token that can be subsequently used for authentication.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-authenticate.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcAuthenticateResponse> OidcAuthenticateAsync(OidcAuthenticateRequestDescriptor descriptor, CancellationToken cancellationToken = default)
+	{
+		descriptor.BeforeRequest();
+		return DoRequestAsync<OidcAuthenticateRequestDescriptor, OidcAuthenticateResponse, OidcAuthenticateRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Authenticate OpenID Connect.
+	/// Exchange an OpenID Connect authentication response message for an Elasticsearch internal access token and refresh token that can be subsequently used for authentication.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-authenticate.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcAuthenticateResponse> OidcAuthenticateAsync(CancellationToken cancellationToken = default)
+	{
+		var descriptor = new OidcAuthenticateRequestDescriptor();
+		descriptor.BeforeRequest();
+		return DoRequestAsync<OidcAuthenticateRequestDescriptor, OidcAuthenticateResponse, OidcAuthenticateRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Authenticate OpenID Connect.
+	/// Exchange an OpenID Connect authentication response message for an Elasticsearch internal access token and refresh token that can be subsequently used for authentication.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-authenticate.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcAuthenticateResponse> OidcAuthenticateAsync(Action<OidcAuthenticateRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
+	{
+		var descriptor = new OidcAuthenticateRequestDescriptor();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequestAsync<OidcAuthenticateRequestDescriptor, OidcAuthenticateResponse, OidcAuthenticateRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Logout of OpenID Connect.
+	/// Invalidate an access token and a refresh token that were generated as a response to the <c>/_security/oidc/authenticate</c> API.
+	/// </para>
+	/// <para>
+	/// If the OpenID Connect authentication realm in Elasticsearch is accordingly configured, the response to this call will contain a URI pointing to the end session endpoint of the OpenID Connect Provider in order to perform single logout.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-logout.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcLogoutResponse OidcLogout(OidcLogoutRequest request)
+	{
+		request.BeforeRequest();
+		return DoRequest<OidcLogoutRequest, OidcLogoutResponse, OidcLogoutRequestParameters>(request);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Logout of OpenID Connect.
+	/// Invalidate an access token and a refresh token that were generated as a response to the <c>/_security/oidc/authenticate</c> API.
+	/// </para>
+	/// <para>
+	/// If the OpenID Connect authentication realm in Elasticsearch is accordingly configured, the response to this call will contain a URI pointing to the end session endpoint of the OpenID Connect Provider in order to perform single logout.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-logout.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcLogoutResponse> OidcLogoutAsync(OidcLogoutRequest request, CancellationToken cancellationToken = default)
+	{
+		request.BeforeRequest();
+		return DoRequestAsync<OidcLogoutRequest, OidcLogoutResponse, OidcLogoutRequestParameters>(request, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Logout of OpenID Connect.
+	/// Invalidate an access token and a refresh token that were generated as a response to the <c>/_security/oidc/authenticate</c> API.
+	/// </para>
+	/// <para>
+	/// If the OpenID Connect authentication realm in Elasticsearch is accordingly configured, the response to this call will contain a URI pointing to the end session endpoint of the OpenID Connect Provider in order to perform single logout.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-logout.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcLogoutResponse OidcLogout(OidcLogoutRequestDescriptor descriptor)
+	{
+		descriptor.BeforeRequest();
+		return DoRequest<OidcLogoutRequestDescriptor, OidcLogoutResponse, OidcLogoutRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Logout of OpenID Connect.
+	/// Invalidate an access token and a refresh token that were generated as a response to the <c>/_security/oidc/authenticate</c> API.
+	/// </para>
+	/// <para>
+	/// If the OpenID Connect authentication realm in Elasticsearch is accordingly configured, the response to this call will contain a URI pointing to the end session endpoint of the OpenID Connect Provider in order to perform single logout.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-logout.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcLogoutResponse OidcLogout()
+	{
+		var descriptor = new OidcLogoutRequestDescriptor();
+		descriptor.BeforeRequest();
+		return DoRequest<OidcLogoutRequestDescriptor, OidcLogoutResponse, OidcLogoutRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Logout of OpenID Connect.
+	/// Invalidate an access token and a refresh token that were generated as a response to the <c>/_security/oidc/authenticate</c> API.
+	/// </para>
+	/// <para>
+	/// If the OpenID Connect authentication realm in Elasticsearch is accordingly configured, the response to this call will contain a URI pointing to the end session endpoint of the OpenID Connect Provider in order to perform single logout.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-logout.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcLogoutResponse OidcLogout(Action<OidcLogoutRequestDescriptor> configureRequest)
+	{
+		var descriptor = new OidcLogoutRequestDescriptor();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequest<OidcLogoutRequestDescriptor, OidcLogoutResponse, OidcLogoutRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Logout of OpenID Connect.
+	/// Invalidate an access token and a refresh token that were generated as a response to the <c>/_security/oidc/authenticate</c> API.
+	/// </para>
+	/// <para>
+	/// If the OpenID Connect authentication realm in Elasticsearch is accordingly configured, the response to this call will contain a URI pointing to the end session endpoint of the OpenID Connect Provider in order to perform single logout.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-logout.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcLogoutResponse> OidcLogoutAsync(OidcLogoutRequestDescriptor descriptor, CancellationToken cancellationToken = default)
+	{
+		descriptor.BeforeRequest();
+		return DoRequestAsync<OidcLogoutRequestDescriptor, OidcLogoutResponse, OidcLogoutRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Logout of OpenID Connect.
+	/// Invalidate an access token and a refresh token that were generated as a response to the <c>/_security/oidc/authenticate</c> API.
+	/// </para>
+	/// <para>
+	/// If the OpenID Connect authentication realm in Elasticsearch is accordingly configured, the response to this call will contain a URI pointing to the end session endpoint of the OpenID Connect Provider in order to perform single logout.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-logout.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcLogoutResponse> OidcLogoutAsync(CancellationToken cancellationToken = default)
+	{
+		var descriptor = new OidcLogoutRequestDescriptor();
+		descriptor.BeforeRequest();
+		return DoRequestAsync<OidcLogoutRequestDescriptor, OidcLogoutResponse, OidcLogoutRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Logout of OpenID Connect.
+	/// Invalidate an access token and a refresh token that were generated as a response to the <c>/_security/oidc/authenticate</c> API.
+	/// </para>
+	/// <para>
+	/// If the OpenID Connect authentication realm in Elasticsearch is accordingly configured, the response to this call will contain a URI pointing to the end session endpoint of the OpenID Connect Provider in order to perform single logout.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-logout.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcLogoutResponse> OidcLogoutAsync(Action<OidcLogoutRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
+	{
+		var descriptor = new OidcLogoutRequestDescriptor();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequestAsync<OidcLogoutRequestDescriptor, OidcLogoutResponse, OidcLogoutRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Prepare OpenID connect authentication.
+	/// Create an oAuth 2.0 authentication request as a URL string based on the configuration of the OpenID Connect authentication realm in Elasticsearch.
+	/// </para>
+	/// <para>
+	/// The response of this API is a URL pointing to the Authorization Endpoint of the configured OpenID Connect Provider, which can be used to redirect the browser of the user in order to continue the authentication process.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-prepare-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcPrepareAuthenticationResponse OidcPrepareAuthentication(OidcPrepareAuthenticationRequest request)
+	{
+		request.BeforeRequest();
+		return DoRequest<OidcPrepareAuthenticationRequest, OidcPrepareAuthenticationResponse, OidcPrepareAuthenticationRequestParameters>(request);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Prepare OpenID connect authentication.
+	/// Create an oAuth 2.0 authentication request as a URL string based on the configuration of the OpenID Connect authentication realm in Elasticsearch.
+	/// </para>
+	/// <para>
+	/// The response of this API is a URL pointing to the Authorization Endpoint of the configured OpenID Connect Provider, which can be used to redirect the browser of the user in order to continue the authentication process.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-prepare-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcPrepareAuthenticationResponse> OidcPrepareAuthenticationAsync(OidcPrepareAuthenticationRequest request, CancellationToken cancellationToken = default)
+	{
+		request.BeforeRequest();
+		return DoRequestAsync<OidcPrepareAuthenticationRequest, OidcPrepareAuthenticationResponse, OidcPrepareAuthenticationRequestParameters>(request, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Prepare OpenID connect authentication.
+	/// Create an oAuth 2.0 authentication request as a URL string based on the configuration of the OpenID Connect authentication realm in Elasticsearch.
+	/// </para>
+	/// <para>
+	/// The response of this API is a URL pointing to the Authorization Endpoint of the configured OpenID Connect Provider, which can be used to redirect the browser of the user in order to continue the authentication process.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-prepare-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcPrepareAuthenticationResponse OidcPrepareAuthentication(OidcPrepareAuthenticationRequestDescriptor descriptor)
+	{
+		descriptor.BeforeRequest();
+		return DoRequest<OidcPrepareAuthenticationRequestDescriptor, OidcPrepareAuthenticationResponse, OidcPrepareAuthenticationRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Prepare OpenID connect authentication.
+	/// Create an oAuth 2.0 authentication request as a URL string based on the configuration of the OpenID Connect authentication realm in Elasticsearch.
+	/// </para>
+	/// <para>
+	/// The response of this API is a URL pointing to the Authorization Endpoint of the configured OpenID Connect Provider, which can be used to redirect the browser of the user in order to continue the authentication process.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-prepare-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcPrepareAuthenticationResponse OidcPrepareAuthentication()
+	{
+		var descriptor = new OidcPrepareAuthenticationRequestDescriptor();
+		descriptor.BeforeRequest();
+		return DoRequest<OidcPrepareAuthenticationRequestDescriptor, OidcPrepareAuthenticationResponse, OidcPrepareAuthenticationRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Prepare OpenID connect authentication.
+	/// Create an oAuth 2.0 authentication request as a URL string based on the configuration of the OpenID Connect authentication realm in Elasticsearch.
+	/// </para>
+	/// <para>
+	/// The response of this API is a URL pointing to the Authorization Endpoint of the configured OpenID Connect Provider, which can be used to redirect the browser of the user in order to continue the authentication process.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-prepare-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	[Obsolete("Synchronous methods are deprecated and could be removed in the future.")]
+	public virtual OidcPrepareAuthenticationResponse OidcPrepareAuthentication(Action<OidcPrepareAuthenticationRequestDescriptor> configureRequest)
+	{
+		var descriptor = new OidcPrepareAuthenticationRequestDescriptor();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequest<OidcPrepareAuthenticationRequestDescriptor, OidcPrepareAuthenticationResponse, OidcPrepareAuthenticationRequestParameters>(descriptor);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Prepare OpenID connect authentication.
+	/// Create an oAuth 2.0 authentication request as a URL string based on the configuration of the OpenID Connect authentication realm in Elasticsearch.
+	/// </para>
+	/// <para>
+	/// The response of this API is a URL pointing to the Authorization Endpoint of the configured OpenID Connect Provider, which can be used to redirect the browser of the user in order to continue the authentication process.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-prepare-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcPrepareAuthenticationResponse> OidcPrepareAuthenticationAsync(OidcPrepareAuthenticationRequestDescriptor descriptor, CancellationToken cancellationToken = default)
+	{
+		descriptor.BeforeRequest();
+		return DoRequestAsync<OidcPrepareAuthenticationRequestDescriptor, OidcPrepareAuthenticationResponse, OidcPrepareAuthenticationRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Prepare OpenID connect authentication.
+	/// Create an oAuth 2.0 authentication request as a URL string based on the configuration of the OpenID Connect authentication realm in Elasticsearch.
+	/// </para>
+	/// <para>
+	/// The response of this API is a URL pointing to the Authorization Endpoint of the configured OpenID Connect Provider, which can be used to redirect the browser of the user in order to continue the authentication process.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-prepare-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcPrepareAuthenticationResponse> OidcPrepareAuthenticationAsync(CancellationToken cancellationToken = default)
+	{
+		var descriptor = new OidcPrepareAuthenticationRequestDescriptor();
+		descriptor.BeforeRequest();
+		return DoRequestAsync<OidcPrepareAuthenticationRequestDescriptor, OidcPrepareAuthenticationResponse, OidcPrepareAuthenticationRequestParameters>(descriptor, cancellationToken);
+	}
+
+	/// <summary>
+	/// <para>
+	/// Prepare OpenID connect authentication.
+	/// Create an oAuth 2.0 authentication request as a URL string based on the configuration of the OpenID Connect authentication realm in Elasticsearch.
+	/// </para>
+	/// <para>
+	/// The response of this API is a URL pointing to the Authorization Endpoint of the configured OpenID Connect Provider, which can be used to redirect the browser of the user in order to continue the authentication process.
+	/// </para>
+	/// <para>
+	/// Elasticsearch exposes all the necessary OpenID Connect related functionality with the OpenID Connect APIs.
+	/// These APIs are used internally by Kibana in order to provide OpenID Connect based authentication, but can also be used by other, custom web applications or other clients.
+	/// </para>
+	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/security-api-oidc-prepare-authentication.html">Learn more about this API in the Elasticsearch documentation.</see></para>
+	/// </summary>
+	public virtual Task<OidcPrepareAuthenticationResponse> OidcPrepareAuthenticationAsync(Action<OidcPrepareAuthenticationRequestDescriptor> configureRequest, CancellationToken cancellationToken = default)
+	{
+		var descriptor = new OidcPrepareAuthenticationRequestDescriptor();
+		configureRequest?.Invoke(descriptor);
+		descriptor.BeforeRequest();
+		return DoRequestAsync<OidcPrepareAuthenticationRequestDescriptor, OidcPrepareAuthenticationResponse, OidcPrepareAuthenticationRequestParameters>(descriptor, cancellationToken);
 	}
 
 	/// <summary>

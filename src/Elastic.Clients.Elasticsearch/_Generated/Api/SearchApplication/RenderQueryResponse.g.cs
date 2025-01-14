@@ -17,22 +17,15 @@
 
 #nullable restore
 
-using Elastic.Clients.Elasticsearch.Serverless.Fluent;
-using Elastic.Clients.Elasticsearch.Serverless.Serialization;
+using Elastic.Clients.Elasticsearch.Fluent;
+using Elastic.Clients.Elasticsearch.Serialization;
+using Elastic.Transport.Products.Elasticsearch;
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Elastic.Clients.Elasticsearch.Serverless.Ingest;
+namespace Elastic.Clients.Elasticsearch.SearchApplication;
 
-public sealed partial class IngestInfo
+public sealed partial class RenderQueryResponse : ElasticsearchResponse
 {
-	[JsonInclude, JsonPropertyName("pipeline")]
-	public string? Pipeline { get; init; }
-	[JsonInclude, JsonPropertyName("_redact")]
-	public Elastic.Clients.Elasticsearch.Serverless.Ingest.Redact? Redact { get; init; }
-	[JsonInclude, JsonPropertyName("timestamp")]
-	public DateTimeOffset Timestamp { get; init; }
 }

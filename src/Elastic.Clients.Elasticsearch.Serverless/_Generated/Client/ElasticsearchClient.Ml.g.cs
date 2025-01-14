@@ -4303,7 +4303,9 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Datafeeds retrieve data from Elasticsearch for analysis by an anomaly detection job.
 	/// You can associate only one datafeed with each anomaly detection job.
 	/// The datafeed contains a query that runs at a defined interval (<c>frequency</c>).
-	/// If you are concerned about delayed data, you can add a delay (<c>query_delay</c>) at each interval.
+	/// If you are concerned about delayed data, you can add a delay (<c>query_delay') at each interval. By default, the datafeed uses the following query: </c>{"match_all": {"boost": 1}}`.
+	/// </para>
+	/// <para>
 	/// When Elasticsearch security features are enabled, your datafeed remembers which roles the user who created it had
 	/// at the time of creation and runs the query using those same roles. If you provide secondary authorization headers,
 	/// those credentials are used instead.
@@ -4324,7 +4326,9 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Datafeeds retrieve data from Elasticsearch for analysis by an anomaly detection job.
 	/// You can associate only one datafeed with each anomaly detection job.
 	/// The datafeed contains a query that runs at a defined interval (<c>frequency</c>).
-	/// If you are concerned about delayed data, you can add a delay (<c>query_delay</c>) at each interval.
+	/// If you are concerned about delayed data, you can add a delay (<c>query_delay') at each interval. By default, the datafeed uses the following query: </c>{"match_all": {"boost": 1}}`.
+	/// </para>
+	/// <para>
 	/// When Elasticsearch security features are enabled, your datafeed remembers which roles the user who created it had
 	/// at the time of creation and runs the query using those same roles. If you provide secondary authorization headers,
 	/// those credentials are used instead.
@@ -4345,7 +4349,9 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Datafeeds retrieve data from Elasticsearch for analysis by an anomaly detection job.
 	/// You can associate only one datafeed with each anomaly detection job.
 	/// The datafeed contains a query that runs at a defined interval (<c>frequency</c>).
-	/// If you are concerned about delayed data, you can add a delay (<c>query_delay</c>) at each interval.
+	/// If you are concerned about delayed data, you can add a delay (<c>query_delay') at each interval. By default, the datafeed uses the following query: </c>{"match_all": {"boost": 1}}`.
+	/// </para>
+	/// <para>
 	/// When Elasticsearch security features are enabled, your datafeed remembers which roles the user who created it had
 	/// at the time of creation and runs the query using those same roles. If you provide secondary authorization headers,
 	/// those credentials are used instead.
@@ -4367,7 +4373,9 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Datafeeds retrieve data from Elasticsearch for analysis by an anomaly detection job.
 	/// You can associate only one datafeed with each anomaly detection job.
 	/// The datafeed contains a query that runs at a defined interval (<c>frequency</c>).
-	/// If you are concerned about delayed data, you can add a delay (<c>query_delay</c>) at each interval.
+	/// If you are concerned about delayed data, you can add a delay (<c>query_delay') at each interval. By default, the datafeed uses the following query: </c>{"match_all": {"boost": 1}}`.
+	/// </para>
+	/// <para>
 	/// When Elasticsearch security features are enabled, your datafeed remembers which roles the user who created it had
 	/// at the time of creation and runs the query using those same roles. If you provide secondary authorization headers,
 	/// those credentials are used instead.
@@ -4390,7 +4398,9 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Datafeeds retrieve data from Elasticsearch for analysis by an anomaly detection job.
 	/// You can associate only one datafeed with each anomaly detection job.
 	/// The datafeed contains a query that runs at a defined interval (<c>frequency</c>).
-	/// If you are concerned about delayed data, you can add a delay (<c>query_delay</c>) at each interval.
+	/// If you are concerned about delayed data, you can add a delay (<c>query_delay') at each interval. By default, the datafeed uses the following query: </c>{"match_all": {"boost": 1}}`.
+	/// </para>
+	/// <para>
 	/// When Elasticsearch security features are enabled, your datafeed remembers which roles the user who created it had
 	/// at the time of creation and runs the query using those same roles. If you provide secondary authorization headers,
 	/// those credentials are used instead.
@@ -4411,7 +4421,9 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Datafeeds retrieve data from Elasticsearch for analysis by an anomaly detection job.
 	/// You can associate only one datafeed with each anomaly detection job.
 	/// The datafeed contains a query that runs at a defined interval (<c>frequency</c>).
-	/// If you are concerned about delayed data, you can add a delay (<c>query_delay</c>) at each interval.
+	/// If you are concerned about delayed data, you can add a delay (<c>query_delay') at each interval. By default, the datafeed uses the following query: </c>{"match_all": {"boost": 1}}`.
+	/// </para>
+	/// <para>
 	/// When Elasticsearch security features are enabled, your datafeed remembers which roles the user who created it had
 	/// at the time of creation and runs the query using those same roles. If you provide secondary authorization headers,
 	/// those credentials are used instead.
@@ -4433,7 +4445,9 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Datafeeds retrieve data from Elasticsearch for analysis by an anomaly detection job.
 	/// You can associate only one datafeed with each anomaly detection job.
 	/// The datafeed contains a query that runs at a defined interval (<c>frequency</c>).
-	/// If you are concerned about delayed data, you can add a delay (<c>query_delay</c>) at each interval.
+	/// If you are concerned about delayed data, you can add a delay (<c>query_delay') at each interval. By default, the datafeed uses the following query: </c>{"match_all": {"boost": 1}}`.
+	/// </para>
+	/// <para>
 	/// When Elasticsearch security features are enabled, your datafeed remembers which roles the user who created it had
 	/// at the time of creation and runs the query using those same roles. If you provide secondary authorization headers,
 	/// those credentials are used instead.
@@ -4455,6 +4469,13 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Create a data frame analytics job.
 	/// This API creates a data frame analytics job that performs an analysis on the
 	/// source indices and stores the outcome in a destination index.
+	/// By default, the query used in the source configuration is <c>{"match_all": {}}</c>.
+	/// </para>
+	/// <para>
+	/// If the destination index does not exist, it is created automatically when you start the job.
+	/// </para>
+	/// <para>
+	/// If you supply only a subset of the regression or classification parameters, hyperparameter optimization occurs. It determines a value for each of the undefined parameters.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-dfanalytics.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -4469,6 +4490,13 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Create a data frame analytics job.
 	/// This API creates a data frame analytics job that performs an analysis on the
 	/// source indices and stores the outcome in a destination index.
+	/// By default, the query used in the source configuration is <c>{"match_all": {}}</c>.
+	/// </para>
+	/// <para>
+	/// If the destination index does not exist, it is created automatically when you start the job.
+	/// </para>
+	/// <para>
+	/// If you supply only a subset of the regression or classification parameters, hyperparameter optimization occurs. It determines a value for each of the undefined parameters.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-dfanalytics.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -4483,6 +4511,13 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Create a data frame analytics job.
 	/// This API creates a data frame analytics job that performs an analysis on the
 	/// source indices and stores the outcome in a destination index.
+	/// By default, the query used in the source configuration is <c>{"match_all": {}}</c>.
+	/// </para>
+	/// <para>
+	/// If the destination index does not exist, it is created automatically when you start the job.
+	/// </para>
+	/// <para>
+	/// If you supply only a subset of the regression or classification parameters, hyperparameter optimization occurs. It determines a value for each of the undefined parameters.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-dfanalytics.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -4498,6 +4533,13 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Create a data frame analytics job.
 	/// This API creates a data frame analytics job that performs an analysis on the
 	/// source indices and stores the outcome in a destination index.
+	/// By default, the query used in the source configuration is <c>{"match_all": {}}</c>.
+	/// </para>
+	/// <para>
+	/// If the destination index does not exist, it is created automatically when you start the job.
+	/// </para>
+	/// <para>
+	/// If you supply only a subset of the regression or classification parameters, hyperparameter optimization occurs. It determines a value for each of the undefined parameters.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-dfanalytics.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -4514,6 +4556,13 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Create a data frame analytics job.
 	/// This API creates a data frame analytics job that performs an analysis on the
 	/// source indices and stores the outcome in a destination index.
+	/// By default, the query used in the source configuration is <c>{"match_all": {}}</c>.
+	/// </para>
+	/// <para>
+	/// If the destination index does not exist, it is created automatically when you start the job.
+	/// </para>
+	/// <para>
+	/// If you supply only a subset of the regression or classification parameters, hyperparameter optimization occurs. It determines a value for each of the undefined parameters.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-dfanalytics.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -4528,6 +4577,13 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Create a data frame analytics job.
 	/// This API creates a data frame analytics job that performs an analysis on the
 	/// source indices and stores the outcome in a destination index.
+	/// By default, the query used in the source configuration is <c>{"match_all": {}}</c>.
+	/// </para>
+	/// <para>
+	/// If the destination index does not exist, it is created automatically when you start the job.
+	/// </para>
+	/// <para>
+	/// If you supply only a subset of the regression or classification parameters, hyperparameter optimization occurs. It determines a value for each of the undefined parameters.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-dfanalytics.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -4543,6 +4599,13 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// Create a data frame analytics job.
 	/// This API creates a data frame analytics job that performs an analysis on the
 	/// source indices and stores the outcome in a destination index.
+	/// By default, the query used in the source configuration is <c>{"match_all": {}}</c>.
+	/// </para>
+	/// <para>
+	/// If the destination index does not exist, it is created automatically when you start the job.
+	/// </para>
+	/// <para>
+	/// If you supply only a subset of the regression or classification parameters, hyperparameter optimization occurs. It determines a value for each of the undefined parameters.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/8.17/put-dfanalytics.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -4617,6 +4680,7 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Create an anomaly detection job.
 	/// If you include a <c>datafeed_config</c>, you must have read index privileges on the source index.
+	/// If you include a <c>datafeed_config</c> but do not provide a query, the datafeed uses <c>{"match_all": {"boost": 1}}</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/ml-put-job.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -4630,6 +4694,7 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Create an anomaly detection job.
 	/// If you include a <c>datafeed_config</c>, you must have read index privileges on the source index.
+	/// If you include a <c>datafeed_config</c> but do not provide a query, the datafeed uses <c>{"match_all": {"boost": 1}}</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/ml-put-job.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -4643,6 +4708,7 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 	/// <para>
 	/// Create an anomaly detection job.
 	/// If you include a <c>datafeed_config</c>, you must have read index privileges on the source index.
+	/// If you include a <c>datafeed_config</c> but do not provide a query, the datafeed uses <c>{"match_all": {"boost": 1}}</c>.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/elasticsearch/reference/current/ml-put-job.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -6274,7 +6340,7 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Validates an anomaly detection job.
+	/// Validate an anomaly detection job.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/machine-learning/current/ml-jobs.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -6286,7 +6352,7 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Validates an anomaly detection job.
+	/// Validate an anomaly detection job.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/machine-learning/current/ml-jobs.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -6298,7 +6364,7 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Validates an anomaly detection job.
+	/// Validate an anomaly detection job.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/machine-learning/current/ml-jobs.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -6311,7 +6377,7 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Validates an anomaly detection job.
+	/// Validate an anomaly detection job.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/machine-learning/current/ml-jobs.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -6325,7 +6391,7 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Validates an anomaly detection job.
+	/// Validate an anomaly detection job.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/machine-learning/current/ml-jobs.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -6337,7 +6403,7 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Validates an anomaly detection job.
+	/// Validate an anomaly detection job.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/machine-learning/current/ml-jobs.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>
@@ -6350,7 +6416,7 @@ public partial class MachineLearningNamespacedClient : NamespacedClientProxy
 
 	/// <summary>
 	/// <para>
-	/// Validates an anomaly detection job.
+	/// Validate an anomaly detection job.
 	/// </para>
 	/// <para><see href="https://www.elastic.co/guide/en/machine-learning/current/ml-jobs.html">Learn more about this API in the Elasticsearch documentation.</see></para>
 	/// </summary>

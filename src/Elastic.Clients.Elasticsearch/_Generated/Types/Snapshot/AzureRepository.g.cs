@@ -29,9 +29,19 @@ namespace Elastic.Clients.Elasticsearch.Snapshot;
 
 public sealed partial class AzureRepository : IRepository
 {
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("settings")]
 	public Elastic.Clients.Elasticsearch.Snapshot.AzureRepositorySettings Settings { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The Azure repository type.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("type")]
 	public string Type => "azure";
 
@@ -52,6 +62,11 @@ public sealed partial class AzureRepositoryDescriptor : SerializableDescriptor<A
 	private Action<Elastic.Clients.Elasticsearch.Snapshot.AzureRepositorySettingsDescriptor> SettingsDescriptorAction { get; set; }
 	private string? UuidValue { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The repository settings.
+	/// </para>
+	/// </summary>
 	public AzureRepositoryDescriptor Settings(Elastic.Clients.Elasticsearch.Snapshot.AzureRepositorySettings settings)
 	{
 		SettingsDescriptor = null;

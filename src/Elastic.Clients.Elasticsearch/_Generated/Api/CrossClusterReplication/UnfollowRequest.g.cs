@@ -32,6 +32,12 @@ namespace Elastic.Clients.Elasticsearch.CrossClusterReplication;
 
 public sealed partial class UnfollowRequestParameters : RequestParameters
 {
+	/// <summary>
+	/// <para>
+	/// Period to wait for a connection to the master node.
+	/// </para>
+	/// </summary>
+	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 }
 
 /// <summary>
@@ -58,6 +64,14 @@ public sealed partial class UnfollowRequest : PlainRequest<UnfollowRequestParame
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.unfollow";
+
+	/// <summary>
+	/// <para>
+	/// Period to wait for a connection to the master node.
+	/// </para>
+	/// </summary>
+	[JsonIgnore]
+	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 }
 
 /// <summary>
@@ -90,6 +104,8 @@ public sealed partial class UnfollowRequestDescriptor<TDocument> : RequestDescri
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.unfollow";
+
+	public UnfollowRequestDescriptor<TDocument> MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 
 	public UnfollowRequestDescriptor<TDocument> Index(Elastic.Clients.Elasticsearch.IndexName index)
 	{
@@ -128,6 +144,8 @@ public sealed partial class UnfollowRequestDescriptor : RequestDescriptor<Unfoll
 	internal override bool SupportsBody => false;
 
 	internal override string OperationName => "ccr.unfollow";
+
+	public UnfollowRequestDescriptor MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 
 	public UnfollowRequestDescriptor Index(Elastic.Clients.Elasticsearch.IndexName index)
 	{

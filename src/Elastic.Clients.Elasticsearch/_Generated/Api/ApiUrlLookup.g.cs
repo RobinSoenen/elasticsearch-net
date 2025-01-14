@@ -100,6 +100,7 @@ internal static class ApiUrlLookup
 	internal static ApiUrls IndexManagementGet = new ApiUrls(new[] { "{index}" });
 	internal static ApiUrls IndexManagementGetAlias = new ApiUrls(new[] { "_alias", "_alias/{name}", "{index}/_alias/{name}", "{index}/_alias" });
 	internal static ApiUrls IndexManagementGetDataLifecycle = new ApiUrls(new[] { "_data_stream/{name}/_lifecycle" });
+	internal static ApiUrls IndexManagementGetDataLifecycleStats = new ApiUrls(new[] { "_lifecycle/stats" });
 	internal static ApiUrls IndexManagementGetDataStream = new ApiUrls(new[] { "_data_stream", "_data_stream/{name}" });
 	internal static ApiUrls IndexManagementGetFieldMapping = new ApiUrls(new[] { "_mapping/field/{fields}", "{index}/_mapping/field/{fields}" });
 	internal static ApiUrls IndexManagementGetIndexTemplate = new ApiUrls(new[] { "_index_template", "_index_template/{name}" });
@@ -300,13 +301,16 @@ internal static class ApiUrlLookup
 	internal static ApiUrls SearchApplicationGet = new ApiUrls(new[] { "_application/search_application/{name}" });
 	internal static ApiUrls SearchApplicationGetBehavioralAnalytics = new ApiUrls(new[] { "_application/analytics", "_application/analytics/{name}" });
 	internal static ApiUrls SearchApplicationList = new ApiUrls(new[] { "_application/search_application" });
+	internal static ApiUrls SearchApplicationPostBehavioralAnalyticsEvent = new ApiUrls(new[] { "_application/analytics/{collection_name}/event/{event_type}" });
 	internal static ApiUrls SearchApplicationPut = new ApiUrls(new[] { "_application/search_application/{name}" });
 	internal static ApiUrls SearchApplicationPutBehavioralAnalytics = new ApiUrls(new[] { "_application/analytics/{name}" });
+	internal static ApiUrls SearchApplicationRenderQuery = new ApiUrls(new[] { "_application/search_application/{name}/_render_query" });
 	internal static ApiUrls SearchApplicationSearch = new ApiUrls(new[] { "_application/search_application/{name}/_search" });
 	internal static ApiUrls SecurityActivateUserProfile = new ApiUrls(new[] { "_security/profile/_activate" });
 	internal static ApiUrls SecurityAuthenticate = new ApiUrls(new[] { "_security/_authenticate" });
 	internal static ApiUrls SecurityBulkDeleteRole = new ApiUrls(new[] { "_security/role" });
 	internal static ApiUrls SecurityBulkPutRole = new ApiUrls(new[] { "_security/role" });
+	internal static ApiUrls SecurityBulkUpdateApiKeys = new ApiUrls(new[] { "_security/api_key/_bulk_update" });
 	internal static ApiUrls SecurityChangePassword = new ApiUrls(new[] { "_security/user/{username}/_password", "_security/user/_password" });
 	internal static ApiUrls SecurityClearApiKeyCache = new ApiUrls(new[] { "_security/api_key/{ids}/_clear_cache" });
 	internal static ApiUrls SecurityClearCachedPrivileges = new ApiUrls(new[] { "_security/privilege/{application}/_clear_cache" });
@@ -316,6 +320,7 @@ internal static class ApiUrlLookup
 	internal static ApiUrls SecurityCreateApiKey = new ApiUrls(new[] { "_security/api_key" });
 	internal static ApiUrls SecurityCreateCrossClusterApiKey = new ApiUrls(new[] { "_security/cross_cluster/api_key" });
 	internal static ApiUrls SecurityCreateServiceToken = new ApiUrls(new[] { "_security/service/{namespace}/{service}/credential/token/{name}", "_security/service/{namespace}/{service}/credential/token" });
+	internal static ApiUrls SecurityDelegatePki = new ApiUrls(new[] { "_security/delegate_pki" });
 	internal static ApiUrls SecurityDeletePrivileges = new ApiUrls(new[] { "_security/privilege/{application}/{name}" });
 	internal static ApiUrls SecurityDeleteRole = new ApiUrls(new[] { "_security/role/{name}" });
 	internal static ApiUrls SecurityDeleteRoleMapping = new ApiUrls(new[] { "_security/role_mapping/{name}" });
@@ -343,6 +348,9 @@ internal static class ApiUrlLookup
 	internal static ApiUrls SecurityHasPrivilegesUserProfile = new ApiUrls(new[] { "_security/profile/_has_privileges" });
 	internal static ApiUrls SecurityInvalidateApiKey = new ApiUrls(new[] { "_security/api_key" });
 	internal static ApiUrls SecurityInvalidateToken = new ApiUrls(new[] { "_security/oauth2/token" });
+	internal static ApiUrls SecurityOidcAuthenticate = new ApiUrls(new[] { "_security/oidc/authenticate" });
+	internal static ApiUrls SecurityOidcLogout = new ApiUrls(new[] { "_security/oidc/logout" });
+	internal static ApiUrls SecurityOidcPrepareAuthentication = new ApiUrls(new[] { "_security/oidc/prepare" });
 	internal static ApiUrls SecurityPutPrivileges = new ApiUrls(new[] { "_security/privilege" });
 	internal static ApiUrls SecurityPutRole = new ApiUrls(new[] { "_security/role/{name}" });
 	internal static ApiUrls SecurityPutRoleMapping = new ApiUrls(new[] { "_security/role_mapping/{name}" });
@@ -360,6 +368,7 @@ internal static class ApiUrlLookup
 	internal static ApiUrls SecurityUpdateApiKey = new ApiUrls(new[] { "_security/api_key/{id}" });
 	internal static ApiUrls SecurityUpdateCrossClusterApiKey = new ApiUrls(new[] { "_security/cross_cluster/api_key/{id}" });
 	internal static ApiUrls SecurityUpdateUserProfileData = new ApiUrls(new[] { "_security/profile/{uid}/_data" });
+	internal static ApiUrls SimulateIngest = new ApiUrls(new[] { "_ingest/_simulate", "_ingest/{index}/_simulate" });
 	internal static ApiUrls SnapshotCleanupRepository = new ApiUrls(new[] { "_snapshot/{repository}/_cleanup" });
 	internal static ApiUrls SnapshotClone = new ApiUrls(new[] { "_snapshot/{repository}/{snapshot}/_clone/{target_snapshot}" });
 	internal static ApiUrls SnapshotCreate = new ApiUrls(new[] { "_snapshot/{repository}/{snapshot}" });

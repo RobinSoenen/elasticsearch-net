@@ -30,7 +30,16 @@ public sealed partial class GetSnapshotResponse : ElasticsearchResponse
 {
 	/// <summary>
 	/// <para>
-	/// The number of remaining snapshots that were not returned due to size limits and that can be fetched by additional requests using the next field value.
+	/// If the request contained a size limit and there might be more results, a <c>next</c> field will be added to the response.
+	/// It can be used as the <c>after</c> query parameter to fetch additional results.
+	/// </para>
+	/// </summary>
+	[JsonInclude, JsonPropertyName("next")]
+	public string? Next { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The number of remaining snapshots that were not returned due to size limits and that can be fetched by additional requests using the <c>next</c> field value.
 	/// </para>
 	/// </summary>
 	[JsonInclude, JsonPropertyName("remaining")]
@@ -42,7 +51,7 @@ public sealed partial class GetSnapshotResponse : ElasticsearchResponse
 
 	/// <summary>
 	/// <para>
-	/// The total number of snapshots that match the request when ignoring size limit or after query parameter.
+	/// The total number of snapshots that match the request when ignoring the size limit or <c>after</c> query parameter.
 	/// </para>
 	/// </summary>
 	[JsonInclude, JsonPropertyName("total")]

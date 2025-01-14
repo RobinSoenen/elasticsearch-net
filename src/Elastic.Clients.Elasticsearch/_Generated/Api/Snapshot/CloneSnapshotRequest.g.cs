@@ -34,10 +34,19 @@ public sealed partial class CloneSnapshotRequestParameters : RequestParameters
 {
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout for connection to master node
+	/// The period to wait for the master node.
+	/// If the master node is not available before the timeout expires, the request fails and returns an error.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
+
+	/// <summary>
+	/// <para>
+	/// The period of time to wait for a response.
+	/// If no response is received before the timeout expires, the request fails and returns an error.
+	/// </para>
+	/// </summary>
 	public Elastic.Clients.Elasticsearch.Duration? Timeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("timeout"); set => Q("timeout", value); }
 }
 
@@ -63,13 +72,29 @@ public sealed partial class CloneSnapshotRequest : PlainRequest<CloneSnapshotReq
 
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout for connection to master node
+	/// The period to wait for the master node.
+	/// If the master node is not available before the timeout expires, the request fails and returns an error.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
 	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
+
+	/// <summary>
+	/// <para>
+	/// The period of time to wait for a response.
+	/// If no response is received before the timeout expires, the request fails and returns an error.
+	/// </para>
+	/// </summary>
 	[JsonIgnore]
 	public Elastic.Clients.Elasticsearch.Duration? Timeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("timeout"); set => Q("timeout", value); }
+
+	/// <summary>
+	/// <para>
+	/// A comma-separated list of indices to include in the snapshot.
+	/// Multi-target syntax is supported.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("indices")]
 	public string Indices { get; set; }
 }
@@ -119,6 +144,12 @@ public sealed partial class CloneSnapshotRequestDescriptor : RequestDescriptor<C
 
 	private string IndicesValue { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// A comma-separated list of indices to include in the snapshot.
+	/// Multi-target syntax is supported.
+	/// </para>
+	/// </summary>
 	public CloneSnapshotRequestDescriptor Indices(string indices)
 	{
 		IndicesValue = indices;

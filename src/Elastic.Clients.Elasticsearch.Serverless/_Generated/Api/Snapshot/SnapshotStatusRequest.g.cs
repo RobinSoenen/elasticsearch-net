@@ -34,14 +34,17 @@ public sealed partial class SnapshotStatusRequestParameters : RequestParameters
 {
 	/// <summary>
 	/// <para>
-	/// Whether to ignore unavailable snapshots, defaults to false which means a SnapshotMissingException is thrown
+	/// If <c>false</c>, the request returns an error for any snapshots that are unavailable.
+	/// If <c>true</c>, the request ignores snapshots that are unavailable, such as those that are corrupted or temporarily cannot be returned.
 	/// </para>
 	/// </summary>
 	public bool? IgnoreUnavailable { get => Q<bool?>("ignore_unavailable"); set => Q("ignore_unavailable", value); }
 
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout for connection to master node
+	/// The period to wait for the master node.
+	/// If the master node is not available before the timeout expires, the request fails and returns an error.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Serverless.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Serverless.Duration?>("master_timeout"); set => Q("master_timeout", value); }
@@ -51,8 +54,15 @@ public sealed partial class SnapshotStatusRequestParameters : RequestParameters
 /// <para>
 /// Get the snapshot status.
 /// Get a detailed description of the current state for each shard participating in the snapshot.
+/// </para>
+/// <para>
 /// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 /// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+/// </para>
+/// <para>
+/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+/// This usage is preferred.
+/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 /// </para>
 /// <para>
 /// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.
@@ -88,7 +98,8 @@ public sealed partial class SnapshotStatusRequest : PlainRequest<SnapshotStatusR
 
 	/// <summary>
 	/// <para>
-	/// Whether to ignore unavailable snapshots, defaults to false which means a SnapshotMissingException is thrown
+	/// If <c>false</c>, the request returns an error for any snapshots that are unavailable.
+	/// If <c>true</c>, the request ignores snapshots that are unavailable, such as those that are corrupted or temporarily cannot be returned.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -96,7 +107,9 @@ public sealed partial class SnapshotStatusRequest : PlainRequest<SnapshotStatusR
 
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout for connection to master node
+	/// The period to wait for the master node.
+	/// If the master node is not available before the timeout expires, the request fails and returns an error.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -107,8 +120,15 @@ public sealed partial class SnapshotStatusRequest : PlainRequest<SnapshotStatusR
 /// <para>
 /// Get the snapshot status.
 /// Get a detailed description of the current state for each shard participating in the snapshot.
+/// </para>
+/// <para>
 /// Note that this API should be used only to obtain detailed shard-level information for ongoing snapshots.
 /// If this detail is not needed or you want to obtain information about one or more existing snapshots, use the get snapshot API.
+/// </para>
+/// <para>
+/// If you omit the <c>&lt;snapshot></c> request path parameter, the request retrieves information only for currently running snapshots.
+/// This usage is preferred.
+/// If needed, you can specify <c>&lt;repository></c> and <c>&lt;snapshot></c> to retrieve information for specific snapshots, even if they're not currently running.
 /// </para>
 /// <para>
 /// WARNING: Using the API to return the status of any snapshots other than currently running snapshots can be expensive.

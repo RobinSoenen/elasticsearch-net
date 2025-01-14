@@ -29,6 +29,13 @@ namespace Elastic.Clients.Elasticsearch.Snapshot;
 
 public sealed partial class CompactNodeInfo
 {
+	/// <summary>
+	/// <para>
+	/// A human-readable name for the node.
+	/// You can set this name using the <c>node.name</c> property in <c>elasticsearch.yml</c>.
+	/// The default value is the machine's hostname.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("name")]
 	public string Name { get; init; }
 }

@@ -34,6 +34,13 @@ public sealed partial class FollowRequestParameters : RequestParameters
 {
 	/// <summary>
 	/// <para>
+	/// Period to wait for a connection to the master node.
+	/// </para>
+	/// </summary>
+	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
+
+	/// <summary>
+	/// <para>
 	/// Specifies the number of shards to wait on being active before responding. This defaults to waiting on none of the shards to be
 	/// active.
 	/// A shard must be restored from the leader index before being active. Restoring a follower shard requires transferring all the
@@ -63,6 +70,14 @@ public sealed partial class FollowRequest : PlainRequest<FollowRequestParameters
 	internal override bool SupportsBody => true;
 
 	internal override string OperationName => "ccr.follow";
+
+	/// <summary>
+	/// <para>
+	/// Period to wait for a connection to the master node.
+	/// </para>
+	/// </summary>
+	[JsonIgnore]
+	public Elastic.Clients.Elasticsearch.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 
 	/// <summary>
 	/// <para>
@@ -220,6 +235,7 @@ public sealed partial class FollowRequestDescriptor<TDocument> : RequestDescript
 
 	internal override string OperationName => "ccr.follow";
 
+	public FollowRequestDescriptor<TDocument> MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 	public FollowRequestDescriptor<TDocument> WaitForActiveShards(Elastic.Clients.Elasticsearch.WaitForActiveShards? waitForActiveShards) => Qs("wait_for_active_shards", waitForActiveShards);
 
 	public FollowRequestDescriptor<TDocument> Index(Elastic.Clients.Elasticsearch.IndexName index)
@@ -538,6 +554,7 @@ public sealed partial class FollowRequestDescriptor : RequestDescriptor<FollowRe
 
 	internal override string OperationName => "ccr.follow";
 
+	public FollowRequestDescriptor MasterTimeout(Elastic.Clients.Elasticsearch.Duration? masterTimeout) => Qs("master_timeout", masterTimeout);
 	public FollowRequestDescriptor WaitForActiveShards(Elastic.Clients.Elasticsearch.WaitForActiveShards? waitForActiveShards) => Qs("wait_for_active_shards", waitForActiveShards);
 
 	public FollowRequestDescriptor Index(Elastic.Clients.Elasticsearch.IndexName index)

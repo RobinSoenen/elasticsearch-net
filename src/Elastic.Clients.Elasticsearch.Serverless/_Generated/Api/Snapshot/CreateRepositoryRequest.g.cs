@@ -34,21 +34,27 @@ public sealed partial class CreateRepositoryRequestParameters : RequestParameter
 {
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout for connection to master node
+	/// The period to wait for the master node.
+	/// If the master node is not available before the timeout expires, the request fails and returns an error.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Serverless.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Serverless.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout
+	/// The period to wait for a response from all relevant nodes in the cluster after updating the cluster metadata.
+	/// If no response is received before the timeout expires, the cluster metadata update still applies but the response will indicate that it was not completely acknowledged.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Serverless.Duration? Timeout { get => Q<Elastic.Clients.Elasticsearch.Serverless.Duration?>("timeout"); set => Q("timeout", value); }
 
 	/// <summary>
 	/// <para>
-	/// Whether to verify the repository after creation
+	/// If <c>true</c>, the request verifies the repository is functional on all master and data nodes in the cluster.
+	/// If <c>false</c>, this verification is skipped.
+	/// You can also perform this verification with the verify snapshot repository API.
 	/// </para>
 	/// </summary>
 	public bool? Verify { get => Q<bool?>("verify"); set => Q("verify", value); }
@@ -60,6 +66,10 @@ public sealed partial class CreateRepositoryRequestParameters : RequestParameter
 /// IMPORTANT: If you are migrating searchable snapshots, the repository name must be identical in the source and destination clusters.
 /// To register a snapshot repository, the cluster's global metadata must be writeable.
 /// Ensure there are no cluster blocks (for example, <c>cluster.blocks.read_only</c> and <c>clsuter.blocks.read_only_allow_delete</c> settings) that prevent write access.
+/// </para>
+/// <para>
+/// Several options for this API can be specified using a query parameter or a request body parameter.
+/// If both parameters are specified, only the query parameter is used.
 /// </para>
 /// </summary>
 public sealed partial class CreateRepositoryRequest : PlainRequest<CreateRepositoryRequestParameters>, ISelfSerializable
@@ -78,7 +88,9 @@ public sealed partial class CreateRepositoryRequest : PlainRequest<CreateReposit
 
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout for connection to master node
+	/// The period to wait for the master node.
+	/// If the master node is not available before the timeout expires, the request fails and returns an error.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -86,7 +98,9 @@ public sealed partial class CreateRepositoryRequest : PlainRequest<CreateReposit
 
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout
+	/// The period to wait for a response from all relevant nodes in the cluster after updating the cluster metadata.
+	/// If no response is received before the timeout expires, the cluster metadata update still applies but the response will indicate that it was not completely acknowledged.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -94,7 +108,9 @@ public sealed partial class CreateRepositoryRequest : PlainRequest<CreateReposit
 
 	/// <summary>
 	/// <para>
-	/// Whether to verify the repository after creation
+	/// If <c>true</c>, the request verifies the repository is functional on all master and data nodes in the cluster.
+	/// If <c>false</c>, this verification is skipped.
+	/// You can also perform this verification with the verify snapshot repository API.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -114,6 +130,10 @@ public sealed partial class CreateRepositoryRequest : PlainRequest<CreateReposit
 /// IMPORTANT: If you are migrating searchable snapshots, the repository name must be identical in the source and destination clusters.
 /// To register a snapshot repository, the cluster's global metadata must be writeable.
 /// Ensure there are no cluster blocks (for example, <c>cluster.blocks.read_only</c> and <c>clsuter.blocks.read_only_allow_delete</c> settings) that prevent write access.
+/// </para>
+/// <para>
+/// Several options for this API can be specified using a query parameter or a request body parameter.
+/// If both parameters are specified, only the query parameter is used.
 /// </para>
 /// </summary>
 public sealed partial class CreateRepositoryRequestDescriptor : RequestDescriptor<CreateRepositoryRequestDescriptor, CreateRepositoryRequestParameters>

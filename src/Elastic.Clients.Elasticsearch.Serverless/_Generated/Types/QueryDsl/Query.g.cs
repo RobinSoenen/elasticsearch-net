@@ -28,6 +28,11 @@ using System.Text.Json.Serialization;
 
 namespace Elastic.Clients.Elasticsearch.Serverless.QueryDsl;
 
+/// <summary>
+/// <para>
+/// An Elasticsearch Query DSL (Domain Specific Language) object that defines a query.
+/// </para>
+/// </summary>
 [JsonConverter(typeof(QueryConverter))]
 public sealed partial class Query
 {

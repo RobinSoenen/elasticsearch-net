@@ -34,14 +34,21 @@ public sealed partial class RestoreRequestParameters : RequestParameters
 {
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout for connection to master node
+	/// The period to wait for the master node.
+	/// If the master node is not available before the timeout expires, the request fails and returns an error.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	public Elastic.Clients.Elasticsearch.Serverless.Duration? MasterTimeout { get => Q<Elastic.Clients.Elasticsearch.Serverless.Duration?>("master_timeout"); set => Q("master_timeout", value); }
 
 	/// <summary>
 	/// <para>
-	/// Should this request wait until the operation has completed before returning
+	/// If <c>true</c>, the request returns a response when the restore operation completes.
+	/// The operation is complete when it finishes all attempts to recover primary shards for restored indices.
+	/// This applies even if one or more of the recovery attempts fail.
+	/// </para>
+	/// <para>
+	/// If <c>false</c>, the request returns a response when the restore operation initializes.
 	/// </para>
 	/// </summary>
 	public bool? WaitForCompletion { get => Q<bool?>("wait_for_completion"); set => Q("wait_for_completion", value); }
@@ -89,7 +96,9 @@ public sealed partial class RestoreRequest : PlainRequest<RestoreRequestParamete
 
 	/// <summary>
 	/// <para>
-	/// Explicit operation timeout for connection to master node
+	/// The period to wait for the master node.
+	/// If the master node is not available before the timeout expires, the request fails and returns an error.
+	/// To indicate that the request should never timeout, set it to <c>-1</c>.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
@@ -97,29 +106,172 @@ public sealed partial class RestoreRequest : PlainRequest<RestoreRequestParamete
 
 	/// <summary>
 	/// <para>
-	/// Should this request wait until the operation has completed before returning
+	/// If <c>true</c>, the request returns a response when the restore operation completes.
+	/// The operation is complete when it finishes all attempts to recover primary shards for restored indices.
+	/// This applies even if one or more of the recovery attempts fail.
+	/// </para>
+	/// <para>
+	/// If <c>false</c>, the request returns a response when the restore operation initializes.
 	/// </para>
 	/// </summary>
 	[JsonIgnore]
 	public bool? WaitForCompletion { get => Q<bool?>("wait_for_completion"); set => Q("wait_for_completion", value); }
+
+	/// <summary>
+	/// <para>
+	/// The feature states to restore.
+	/// If <c>include_global_state</c> is <c>true</c>, the request restores all feature states in the snapshot by default.
+	/// If <c>include_global_state</c> is <c>false</c>, the request restores no feature states by default.
+	/// Note that specifying an empty array will result in the default behavior.
+	/// To restore no feature states, regardless of the <c>include_global_state</c> value, specify an array containing only the value <c>none</c> (<c>["none"]</c>).
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("feature_states")]
 	public ICollection<string>? FeatureStates { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The index settings to not restore from the snapshot.
+	/// You can't use this option to ignore <c>index.number_of_shards</c>.
+	/// </para>
+	/// <para>
+	/// For data streams, this option applies only to restored backing indices.
+	/// New backing indices are configured using the data stream's matching index template.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("ignore_index_settings")]
 	public ICollection<string>? IgnoreIndexSettings { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, the request ignores any index or data stream in indices that's missing from the snapshot.
+	/// If <c>false</c>, the request returns an error for any missing index or data stream.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("ignore_unavailable")]
 	public bool? IgnoreUnavailable { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, the request restores aliases for any restored data streams and indices.
+	/// If <c>false</c>, the request doesn’t restore aliases.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("include_aliases")]
 	public bool? IncludeAliases { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, restore the cluster state. The cluster state includes:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Persistent cluster settings
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index templates
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Legacy index templates
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Ingest pipelines
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index lifecycle management (ILM) policies
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Stored scripts
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// For snapshots taken after 7.12.0, feature states
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// If <c>include_global_state</c> is <c>true</c>, the restore operation merges the legacy index templates in your cluster with the templates contained in the snapshot, replacing any existing ones whose name matches one in the snapshot.
+	/// It completely removes all persistent settings, non-legacy index templates, ingest pipelines, and ILM lifecycle policies that exist in your cluster and replaces them with the corresponding items from the snapshot.
+	/// </para>
+	/// <para>
+	/// Use the <c>feature_states</c> parameter to configure how feature states are restored.
+	/// </para>
+	/// <para>
+	/// If <c>include_global_state</c> is <c>true</c> and a snapshot was created without a global state then the restore request will fail.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("include_global_state")]
 	public bool? IncludeGlobalState { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// Index settings to add or change in restored indices, including backing indices.
+	/// You can't use this option to change <c>index.number_of_shards</c>.
+	/// </para>
+	/// <para>
+	/// For data streams, this option applies only to restored backing indices.
+	/// New backing indices are configured using the data stream's matching index template.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("index_settings")]
 	public Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings? IndexSettings { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// A comma-separated list of indices and data streams to restore.
+	/// It supports a multi-target syntax.
+	/// The default behavior is all regular indices and regular data streams in the snapshot.
+	/// </para>
+	/// <para>
+	/// You can't use this parameter to restore system indices or system data streams.
+	/// Use <c>feature_states</c> instead.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("indices")]
 	public Elastic.Clients.Elasticsearch.Serverless.Indices? Indices { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// If <c>false</c>, the entire restore operation will fail if one or more indices included in the snapshot do not have all primary shards available.
+	/// </para>
+	/// <para>
+	/// If true, it allows restoring a partial snapshot of indices with unavailable shards.
+	/// Only shards that were successfully included in the snapshot will be restored.
+	/// All missing shards will be recreated as empty.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("partial")]
 	public bool? Partial { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// A rename pattern to apply to restored data streams and indices.
+	/// Data streams and indices matching the rename pattern will be renamed according to <c>rename_replacement</c>.
+	/// </para>
+	/// <para>
+	/// The rename pattern is applied as defined by the regular expression that supports referencing the original text, according to the <c>appendReplacement</c> logic.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("rename_pattern")]
 	public string? RenamePattern { get; set; }
+
+	/// <summary>
+	/// <para>
+	/// The rename replacement string that is used with the <c>rename_pattern</c>.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("rename_replacement")]
 	public string? RenameReplacement { get; set; }
 }
@@ -194,36 +346,129 @@ public sealed partial class RestoreRequestDescriptor<TDocument> : RequestDescrip
 	private string? RenamePatternValue { get; set; }
 	private string? RenameReplacementValue { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The feature states to restore.
+	/// If <c>include_global_state</c> is <c>true</c>, the request restores all feature states in the snapshot by default.
+	/// If <c>include_global_state</c> is <c>false</c>, the request restores no feature states by default.
+	/// Note that specifying an empty array will result in the default behavior.
+	/// To restore no feature states, regardless of the <c>include_global_state</c> value, specify an array containing only the value <c>none</c> (<c>["none"]</c>).
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor<TDocument> FeatureStates(ICollection<string>? featureStates)
 	{
 		FeatureStatesValue = featureStates;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The index settings to not restore from the snapshot.
+	/// You can't use this option to ignore <c>index.number_of_shards</c>.
+	/// </para>
+	/// <para>
+	/// For data streams, this option applies only to restored backing indices.
+	/// New backing indices are configured using the data stream's matching index template.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor<TDocument> IgnoreIndexSettings(ICollection<string>? ignoreIndexSettings)
 	{
 		IgnoreIndexSettingsValue = ignoreIndexSettings;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, the request ignores any index or data stream in indices that's missing from the snapshot.
+	/// If <c>false</c>, the request returns an error for any missing index or data stream.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor<TDocument> IgnoreUnavailable(bool? ignoreUnavailable = true)
 	{
 		IgnoreUnavailableValue = ignoreUnavailable;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, the request restores aliases for any restored data streams and indices.
+	/// If <c>false</c>, the request doesn’t restore aliases.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor<TDocument> IncludeAliases(bool? includeAliases = true)
 	{
 		IncludeAliasesValue = includeAliases;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, restore the cluster state. The cluster state includes:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Persistent cluster settings
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index templates
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Legacy index templates
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Ingest pipelines
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index lifecycle management (ILM) policies
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Stored scripts
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// For snapshots taken after 7.12.0, feature states
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// If <c>include_global_state</c> is <c>true</c>, the restore operation merges the legacy index templates in your cluster with the templates contained in the snapshot, replacing any existing ones whose name matches one in the snapshot.
+	/// It completely removes all persistent settings, non-legacy index templates, ingest pipelines, and ILM lifecycle policies that exist in your cluster and replaces them with the corresponding items from the snapshot.
+	/// </para>
+	/// <para>
+	/// Use the <c>feature_states</c> parameter to configure how feature states are restored.
+	/// </para>
+	/// <para>
+	/// If <c>include_global_state</c> is <c>true</c> and a snapshot was created without a global state then the restore request will fail.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor<TDocument> IncludeGlobalState(bool? includeGlobalState = true)
 	{
 		IncludeGlobalStateValue = includeGlobalState;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// Index settings to add or change in restored indices, including backing indices.
+	/// You can't use this option to change <c>index.number_of_shards</c>.
+	/// </para>
+	/// <para>
+	/// For data streams, this option applies only to restored backing indices.
+	/// New backing indices are configured using the data stream's matching index template.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor<TDocument> IndexSettings(Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings? indexSettings)
 	{
 		IndexSettingsDescriptor = null;
@@ -248,24 +493,59 @@ public sealed partial class RestoreRequestDescriptor<TDocument> : RequestDescrip
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// A comma-separated list of indices and data streams to restore.
+	/// It supports a multi-target syntax.
+	/// The default behavior is all regular indices and regular data streams in the snapshot.
+	/// </para>
+	/// <para>
+	/// You can't use this parameter to restore system indices or system data streams.
+	/// Use <c>feature_states</c> instead.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor<TDocument> Indices(Elastic.Clients.Elasticsearch.Serverless.Indices? indices)
 	{
 		IndicesValue = indices;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// If <c>false</c>, the entire restore operation will fail if one or more indices included in the snapshot do not have all primary shards available.
+	/// </para>
+	/// <para>
+	/// If true, it allows restoring a partial snapshot of indices with unavailable shards.
+	/// Only shards that were successfully included in the snapshot will be restored.
+	/// All missing shards will be recreated as empty.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor<TDocument> Partial(bool? partial = true)
 	{
 		PartialValue = partial;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// A rename pattern to apply to restored data streams and indices.
+	/// Data streams and indices matching the rename pattern will be renamed according to <c>rename_replacement</c>.
+	/// </para>
+	/// <para>
+	/// The rename pattern is applied as defined by the regular expression that supports referencing the original text, according to the <c>appendReplacement</c> logic.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor<TDocument> RenamePattern(string? renamePattern)
 	{
 		RenamePatternValue = renamePattern;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The rename replacement string that is used with the <c>rename_pattern</c>.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor<TDocument> RenameReplacement(string? renameReplacement)
 	{
 		RenameReplacementValue = renameReplacement;
@@ -419,36 +699,129 @@ public sealed partial class RestoreRequestDescriptor : RequestDescriptor<Restore
 	private string? RenamePatternValue { get; set; }
 	private string? RenameReplacementValue { get; set; }
 
+	/// <summary>
+	/// <para>
+	/// The feature states to restore.
+	/// If <c>include_global_state</c> is <c>true</c>, the request restores all feature states in the snapshot by default.
+	/// If <c>include_global_state</c> is <c>false</c>, the request restores no feature states by default.
+	/// Note that specifying an empty array will result in the default behavior.
+	/// To restore no feature states, regardless of the <c>include_global_state</c> value, specify an array containing only the value <c>none</c> (<c>["none"]</c>).
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor FeatureStates(ICollection<string>? featureStates)
 	{
 		FeatureStatesValue = featureStates;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The index settings to not restore from the snapshot.
+	/// You can't use this option to ignore <c>index.number_of_shards</c>.
+	/// </para>
+	/// <para>
+	/// For data streams, this option applies only to restored backing indices.
+	/// New backing indices are configured using the data stream's matching index template.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor IgnoreIndexSettings(ICollection<string>? ignoreIndexSettings)
 	{
 		IgnoreIndexSettingsValue = ignoreIndexSettings;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, the request ignores any index or data stream in indices that's missing from the snapshot.
+	/// If <c>false</c>, the request returns an error for any missing index or data stream.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor IgnoreUnavailable(bool? ignoreUnavailable = true)
 	{
 		IgnoreUnavailableValue = ignoreUnavailable;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, the request restores aliases for any restored data streams and indices.
+	/// If <c>false</c>, the request doesn’t restore aliases.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor IncludeAliases(bool? includeAliases = true)
 	{
 		IncludeAliasesValue = includeAliases;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// If <c>true</c>, restore the cluster state. The cluster state includes:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// Persistent cluster settings
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index templates
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Legacy index templates
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Ingest pipelines
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Index lifecycle management (ILM) policies
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// Stored scripts
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// For snapshots taken after 7.12.0, feature states
+	/// </para>
+	/// </item>
+	/// </list>
+	/// <para>
+	/// If <c>include_global_state</c> is <c>true</c>, the restore operation merges the legacy index templates in your cluster with the templates contained in the snapshot, replacing any existing ones whose name matches one in the snapshot.
+	/// It completely removes all persistent settings, non-legacy index templates, ingest pipelines, and ILM lifecycle policies that exist in your cluster and replaces them with the corresponding items from the snapshot.
+	/// </para>
+	/// <para>
+	/// Use the <c>feature_states</c> parameter to configure how feature states are restored.
+	/// </para>
+	/// <para>
+	/// If <c>include_global_state</c> is <c>true</c> and a snapshot was created without a global state then the restore request will fail.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor IncludeGlobalState(bool? includeGlobalState = true)
 	{
 		IncludeGlobalStateValue = includeGlobalState;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// Index settings to add or change in restored indices, including backing indices.
+	/// You can't use this option to change <c>index.number_of_shards</c>.
+	/// </para>
+	/// <para>
+	/// For data streams, this option applies only to restored backing indices.
+	/// New backing indices are configured using the data stream's matching index template.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor IndexSettings(Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexSettings? indexSettings)
 	{
 		IndexSettingsDescriptor = null;
@@ -473,24 +846,59 @@ public sealed partial class RestoreRequestDescriptor : RequestDescriptor<Restore
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// A comma-separated list of indices and data streams to restore.
+	/// It supports a multi-target syntax.
+	/// The default behavior is all regular indices and regular data streams in the snapshot.
+	/// </para>
+	/// <para>
+	/// You can't use this parameter to restore system indices or system data streams.
+	/// Use <c>feature_states</c> instead.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor Indices(Elastic.Clients.Elasticsearch.Serverless.Indices? indices)
 	{
 		IndicesValue = indices;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// If <c>false</c>, the entire restore operation will fail if one or more indices included in the snapshot do not have all primary shards available.
+	/// </para>
+	/// <para>
+	/// If true, it allows restoring a partial snapshot of indices with unavailable shards.
+	/// Only shards that were successfully included in the snapshot will be restored.
+	/// All missing shards will be recreated as empty.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor Partial(bool? partial = true)
 	{
 		PartialValue = partial;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// A rename pattern to apply to restored data streams and indices.
+	/// Data streams and indices matching the rename pattern will be renamed according to <c>rename_replacement</c>.
+	/// </para>
+	/// <para>
+	/// The rename pattern is applied as defined by the regular expression that supports referencing the original text, according to the <c>appendReplacement</c> logic.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor RenamePattern(string? renamePattern)
 	{
 		RenamePatternValue = renamePattern;
 		return Self;
 	}
 
+	/// <summary>
+	/// <para>
+	/// The rename replacement string that is used with the <c>rename_pattern</c>.
+	/// </para>
+	/// </summary>
 	public RestoreRequestDescriptor RenameReplacement(string? renameReplacement)
 	{
 		RenameReplacementValue = renameReplacement;

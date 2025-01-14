@@ -29,20 +29,78 @@ namespace Elastic.Clients.Elasticsearch.Serverless.Snapshot;
 
 public sealed partial class Status
 {
+	/// <summary>
+	/// <para>
+	/// Indicates whether the current cluster state is included in the snapshot.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("include_global_state")]
 	public bool IncludeGlobalState { get; init; }
 	[JsonInclude, JsonPropertyName("indices")]
 	public IReadOnlyDictionary<string, Elastic.Clients.Elasticsearch.Serverless.Snapshot.SnapshotIndexStats> Indices { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The name of the repository that includes the snapshot.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("repository")]
 	public string Repository { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// Statistics for the shards in the snapshot.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("shards_stats")]
 	public Elastic.Clients.Elasticsearch.Serverless.Snapshot.ShardsStats ShardsStats { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The name of the snapshot.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("snapshot")]
 	public string Snapshot { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The current snapshot state:
+	/// </para>
+	/// <list type="bullet">
+	/// <item>
+	/// <para>
+	/// <c>FAILED</c>: The snapshot finished with an error and failed to store any data.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// <c>STARTED</c>: The snapshot is currently running.
+	/// </para>
+	/// </item>
+	/// <item>
+	/// <para>
+	/// <c>SUCCESS</c>: The snapshot completed.
+	/// </para>
+	/// </item>
+	/// </list>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("state")]
 	public string State { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// Details about the number (<c>file_count</c>) and size (<c>size_in_bytes</c>) of files included in the snapshot.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("stats")]
 	public Elastic.Clients.Elasticsearch.Serverless.Snapshot.SnapshotStats Stats { get; init; }
+
+	/// <summary>
+	/// <para>
+	/// The universally unique identifier (UUID) for the snapshot.
+	/// </para>
+	/// </summary>
 	[JsonInclude, JsonPropertyName("uuid")]
 	public string Uuid { get; init; }
 }

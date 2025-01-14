@@ -254,7 +254,9 @@ internal sealed partial class PutDatafeedRequestConverter : JsonConverter<PutDat
 /// Datafeeds retrieve data from Elasticsearch for analysis by an anomaly detection job.
 /// You can associate only one datafeed with each anomaly detection job.
 /// The datafeed contains a query that runs at a defined interval (<c>frequency</c>).
-/// If you are concerned about delayed data, you can add a delay (<c>query_delay</c>) at each interval.
+/// If you are concerned about delayed data, you can add a delay (<c>query_delay') at each interval. By default, the datafeed uses the following query: </c>{"match_all": {"boost": 1}}`.
+/// </para>
+/// <para>
 /// When Elasticsearch security features are enabled, your datafeed remembers which roles the user who created it had
 /// at the time of creation and runs the query using those same roles. If you provide secondary authorization headers,
 /// those credentials are used instead.
@@ -443,7 +445,9 @@ public sealed partial class PutDatafeedRequest : PlainRequest<PutDatafeedRequest
 /// Datafeeds retrieve data from Elasticsearch for analysis by an anomaly detection job.
 /// You can associate only one datafeed with each anomaly detection job.
 /// The datafeed contains a query that runs at a defined interval (<c>frequency</c>).
-/// If you are concerned about delayed data, you can add a delay (<c>query_delay</c>) at each interval.
+/// If you are concerned about delayed data, you can add a delay (<c>query_delay') at each interval. By default, the datafeed uses the following query: </c>{"match_all": {"boost": 1}}`.
+/// </para>
+/// <para>
 /// When Elasticsearch security features are enabled, your datafeed remembers which roles the user who created it had
 /// at the time of creation and runs the query using those same roles. If you provide secondary authorization headers,
 /// those credentials are used instead.
@@ -881,7 +885,9 @@ public sealed partial class PutDatafeedRequestDescriptor<TDocument> : RequestDes
 /// Datafeeds retrieve data from Elasticsearch for analysis by an anomaly detection job.
 /// You can associate only one datafeed with each anomaly detection job.
 /// The datafeed contains a query that runs at a defined interval (<c>frequency</c>).
-/// If you are concerned about delayed data, you can add a delay (<c>query_delay</c>) at each interval.
+/// If you are concerned about delayed data, you can add a delay (<c>query_delay') at each interval. By default, the datafeed uses the following query: </c>{"match_all": {"boost": 1}}`.
+/// </para>
+/// <para>
 /// When Elasticsearch security features are enabled, your datafeed remembers which roles the user who created it had
 /// at the time of creation and runs the query using those same roles. If you provide secondary authorization headers,
 /// those credentials are used instead.
