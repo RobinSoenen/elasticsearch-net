@@ -18,6 +18,7 @@
 #nullable restore
 
 using Elastic.Clients.Elasticsearch.Serverless.Fluent;
+using Elastic.Clients.Elasticsearch.Serverless.Next;
 using Elastic.Clients.Elasticsearch.Serverless.Serialization;
 using System;
 using System.Collections.Generic;
@@ -27,9 +28,132 @@ using System.Text.Json.Serialization;
 
 namespace Elastic.Clients.Elasticsearch.Serverless.IndexManagement;
 
+internal sealed partial class IndexTemplateConverter : System.Text.Json.Serialization.JsonConverter<IndexTemplate>
+{
+	private static readonly System.Text.Json.JsonEncodedText PropAllowAutoCreate = System.Text.Json.JsonEncodedText.Encode("allow_auto_create");
+	private static readonly System.Text.Json.JsonEncodedText PropComposedOf = System.Text.Json.JsonEncodedText.Encode("composed_of");
+	private static readonly System.Text.Json.JsonEncodedText PropDataStream = System.Text.Json.JsonEncodedText.Encode("data_stream");
+	private static readonly System.Text.Json.JsonEncodedText PropDeprecated = System.Text.Json.JsonEncodedText.Encode("deprecated");
+	private static readonly System.Text.Json.JsonEncodedText PropIgnoreMissingComponentTemplates = System.Text.Json.JsonEncodedText.Encode("ignore_missing_component_templates");
+	private static readonly System.Text.Json.JsonEncodedText PropIndexPatterns = System.Text.Json.JsonEncodedText.Encode("index_patterns");
+	private static readonly System.Text.Json.JsonEncodedText PropMeta = System.Text.Json.JsonEncodedText.Encode("_meta");
+	private static readonly System.Text.Json.JsonEncodedText PropPriority = System.Text.Json.JsonEncodedText.Encode("priority");
+	private static readonly System.Text.Json.JsonEncodedText PropTemplate = System.Text.Json.JsonEncodedText.Encode("template");
+	private static readonly System.Text.Json.JsonEncodedText PropVersion = System.Text.Json.JsonEncodedText.Encode("version");
+
+	public override IndexTemplate Read(ref System.Text.Json.Utf8JsonReader reader, System.Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+	{
+		reader.ValidateToken(System.Text.Json.JsonTokenType.StartObject);
+		LocalJsonProperty<bool?> propAllowAutoCreate = default;
+		LocalJsonProperty<IReadOnlyCollection<string>> propComposedOf = default;
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexTemplateDataStreamConfiguration?> propDataStream = default;
+		LocalJsonProperty<bool?> propDeprecated = default;
+		LocalJsonProperty<IReadOnlyCollection<string>?> propIgnoreMissingComponentTemplates = default;
+		LocalJsonProperty<IReadOnlyCollection<string>> propIndexPatterns = default;
+		LocalJsonProperty<IReadOnlyDictionary<string, object>?> propMeta = default;
+		LocalJsonProperty<long?> propPriority = default;
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexTemplateSummary?> propTemplate = default;
+		LocalJsonProperty<long?> propVersion = default;
+		while (reader.Read() && reader.TokenType is System.Text.Json.JsonTokenType.PropertyName)
+		{
+			if (propAllowAutoCreate.TryRead(ref reader, options, PropAllowAutoCreate))
+			{
+				continue;
+			}
+
+			if (propComposedOf.TryRead(ref reader, options, PropComposedOf))
+			{
+				continue;
+			}
+
+			if (propDataStream.TryRead(ref reader, options, PropDataStream))
+			{
+				continue;
+			}
+
+			if (propDeprecated.TryRead(ref reader, options, PropDeprecated))
+			{
+				continue;
+			}
+
+			if (propIgnoreMissingComponentTemplates.TryRead(ref reader, options, PropIgnoreMissingComponentTemplates, typeof(SingleOrManyMarker<IReadOnlyCollection<string>?, string>)))
+			{
+				continue;
+			}
+
+			if (propIndexPatterns.TryRead(ref reader, options, PropIndexPatterns, typeof(SingleOrManyMarker<IReadOnlyCollection<string>, string>)))
+			{
+				continue;
+			}
+
+			if (propMeta.TryRead(ref reader, options, PropMeta))
+			{
+				continue;
+			}
+
+			if (propPriority.TryRead(ref reader, options, PropPriority))
+			{
+				continue;
+			}
+
+			if (propTemplate.TryRead(ref reader, options, PropTemplate))
+			{
+				continue;
+			}
+
+			if (propVersion.TryRead(ref reader, options, PropVersion))
+			{
+				continue;
+			}
+
+			throw new System.Text.Json.JsonException($"Unknown JSON property '{reader.GetString()}' for type '{typeToConvert.Name}'.");
+		}
+
+		reader.ValidateToken(System.Text.Json.JsonTokenType.EndObject);
+		return new IndexTemplate
+		{
+			AllowAutoCreate = propAllowAutoCreate.Value
+,
+			ComposedOf = propComposedOf.Value
+,
+			DataStream = propDataStream.Value
+,
+			Deprecated = propDeprecated.Value
+,
+			IgnoreMissingComponentTemplates = propIgnoreMissingComponentTemplates.Value
+,
+			IndexPatterns = propIndexPatterns.Value
+,
+			Meta = propMeta.Value
+,
+			Priority = propPriority.Value
+,
+			Template = propTemplate.Value
+,
+			Version = propVersion.Value
+		};
+	}
+
+	public override void Write(System.Text.Json.Utf8JsonWriter writer, IndexTemplate value, System.Text.Json.JsonSerializerOptions options)
+	{
+		writer.WriteStartObject();
+		writer.WriteProperty(options, PropAllowAutoCreate, value.AllowAutoCreate);
+		writer.WriteProperty(options, PropComposedOf, value.ComposedOf);
+		writer.WriteProperty(options, PropDataStream, value.DataStream);
+		writer.WriteProperty(options, PropDeprecated, value.Deprecated);
+		writer.WriteProperty(options, PropIgnoreMissingComponentTemplates, value.IgnoreMissingComponentTemplates, typeof(SingleOrManyMarker<IReadOnlyCollection<string>?, string>));
+		writer.WriteProperty(options, PropIndexPatterns, value.IndexPatterns, typeof(SingleOrManyMarker<IReadOnlyCollection<string>, string>));
+		writer.WriteProperty(options, PropMeta, value.Meta);
+		writer.WriteProperty(options, PropPriority, value.Priority);
+		writer.WriteProperty(options, PropTemplate, value.Template);
+		writer.WriteProperty(options, PropVersion, value.Version);
+		writer.WriteEndObject();
+	}
+}
+
+[JsonConverter(typeof(IndexTemplateConverter))]
 public sealed partial class IndexTemplate
 {
-	[JsonInclude, JsonPropertyName("allow_auto_create")]
 	public bool? AllowAutoCreate { get; init; }
 
 	/// <summary>
@@ -38,7 +162,6 @@ public sealed partial class IndexTemplate
 	/// Component templates are merged in the order specified, meaning that the last component template specified has the highest precedence.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("composed_of")]
 	public IReadOnlyCollection<string> ComposedOf { get; init; }
 
 	/// <summary>
@@ -48,7 +171,6 @@ public sealed partial class IndexTemplate
 	/// Data streams require a matching index template with a <c>data_stream</c> object.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("data_stream")]
 	public Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexTemplateDataStreamConfiguration? DataStream { get; init; }
 
 	/// <summary>
@@ -58,7 +180,6 @@ public sealed partial class IndexTemplate
 	/// Elasticsearch will emit a deprecation warning.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("deprecated")]
 	public bool? Deprecated { get; init; }
 
 	/// <summary>
@@ -66,8 +187,6 @@ public sealed partial class IndexTemplate
 	/// A list of component template names that are allowed to be absent.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("ignore_missing_component_templates")]
-	[SingleOrManyCollectionConverter(typeof(string))]
 	public IReadOnlyCollection<string>? IgnoreMissingComponentTemplates { get; init; }
 
 	/// <summary>
@@ -75,8 +194,6 @@ public sealed partial class IndexTemplate
 	/// Name of the index template.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("index_patterns")]
-	[SingleOrManyCollectionConverter(typeof(string))]
 	public IReadOnlyCollection<string> IndexPatterns { get; init; }
 
 	/// <summary>
@@ -85,7 +202,6 @@ public sealed partial class IndexTemplate
 	/// This map is not automatically generated by Elasticsearch.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("_meta")]
 	public IReadOnlyDictionary<string, object>? Meta { get; init; }
 
 	/// <summary>
@@ -96,7 +212,6 @@ public sealed partial class IndexTemplate
 	/// This number is not automatically generated by Elasticsearch.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("priority")]
 	public long? Priority { get; init; }
 
 	/// <summary>
@@ -105,7 +220,6 @@ public sealed partial class IndexTemplate
 	/// It may optionally include an <c>aliases</c>, <c>mappings</c>, or <c>settings</c> configuration.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("template")]
 	public Elastic.Clients.Elasticsearch.Serverless.IndexManagement.IndexTemplateSummary? Template { get; init; }
 
 	/// <summary>
@@ -114,6 +228,5 @@ public sealed partial class IndexTemplate
 	/// This number is not automatically generated by Elasticsearch.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("version")]
 	public long? Version { get; init; }
 }

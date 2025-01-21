@@ -8,10 +8,40 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 #if ELASTICSEARCH_SERVERLESS
+using Elastic.Clients.Elasticsearch.Serverless.Next;
+#else
+using Elastic.Clients.Elasticsearch.Next;
+#endif
+
+#if ELASTICSEARCH_SERVERLESS
 namespace Elastic.Clients.Elasticsearch.Serverless;
 #else
 namespace Elastic.Clients.Elasticsearch;
 #endif
+
+internal sealed class FieldsMarker;
+
+internal sealed class FieldsMarkerConverter :
+	JsonConverter<FieldsMarker>,
+	IMarkerTypeConverter
+{
+	public JsonConverter WrappedConverter { get; }
+
+	public FieldsMarkerConverter()
+	{
+		WrappedConverter = new FieldsConverter();
+	}
+
+	public override FieldsMarker? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+	{
+		throw new InvalidOperationException();
+	}
+
+	public override void Write(Utf8JsonWriter writer, FieldsMarker value, JsonSerializerOptions options)
+	{
+		throw new InvalidOperationException();
+	}
+}
 
 internal sealed class FieldsConverter : JsonConverter<Fields>
 {
@@ -40,6 +70,30 @@ internal sealed class FieldsConverter : JsonConverter<Fields>
 		}
 
 		JsonSerializer.Serialize(writer, value.ListOfFields, options);
+	}
+}
+
+internal sealed class SingleOrManyFieldsMarker;
+
+internal sealed class SingleOrManyFieldsMarkerConverter :
+	JsonConverter<SingleOrManyFieldsMarker>,
+	IMarkerTypeConverter
+{
+	public JsonConverter WrappedConverter { get; }
+
+	public SingleOrManyFieldsMarkerConverter()
+	{
+		WrappedConverter = new SingleOrManyFieldsConverter();
+	}
+
+	public override SingleOrManyFieldsMarker? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+	{
+		throw new InvalidOperationException();
+	}
+
+	public override void Write(Utf8JsonWriter writer, SingleOrManyFieldsMarker value, JsonSerializerOptions options)
+	{
+		throw new InvalidOperationException();
 	}
 }
 

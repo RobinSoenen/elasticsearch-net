@@ -18,6 +18,7 @@
 #nullable restore
 
 using Elastic.Clients.Elasticsearch.Serverless.Fluent;
+using Elastic.Clients.Elasticsearch.Serverless.Next;
 using Elastic.Clients.Elasticsearch.Serverless.Requests;
 using Elastic.Clients.Elasticsearch.Serverless.Serialization;
 using Elastic.Transport;
@@ -34,6 +35,69 @@ public sealed partial class PutRuleRequestParameters : RequestParameters
 {
 }
 
+internal sealed partial class PutRuleRequestConverter : System.Text.Json.Serialization.JsonConverter<PutRuleRequest>
+{
+	private static readonly System.Text.Json.JsonEncodedText PropActions = System.Text.Json.JsonEncodedText.Encode("actions");
+	private static readonly System.Text.Json.JsonEncodedText PropCriteria = System.Text.Json.JsonEncodedText.Encode("criteria");
+	private static readonly System.Text.Json.JsonEncodedText PropPriority = System.Text.Json.JsonEncodedText.Encode("priority");
+	private static readonly System.Text.Json.JsonEncodedText PropType = System.Text.Json.JsonEncodedText.Encode("type");
+
+	public override PutRuleRequest Read(ref System.Text.Json.Utf8JsonReader reader, System.Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+	{
+		reader.ValidateToken(System.Text.Json.JsonTokenType.StartObject);
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleActions> propActions = default;
+		LocalJsonProperty<ICollection<Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleCriteria>> propCriteria = default;
+		LocalJsonProperty<int?> propPriority = default;
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleType> propType = default;
+		while (reader.Read() && reader.TokenType is System.Text.Json.JsonTokenType.PropertyName)
+		{
+			if (propActions.TryRead(ref reader, options, PropActions))
+			{
+				continue;
+			}
+
+			if (propCriteria.TryRead(ref reader, options, PropCriteria, typeof(SingleOrManyMarker<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleCriteria>, Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleCriteria>)))
+			{
+				continue;
+			}
+
+			if (propPriority.TryRead(ref reader, options, PropPriority))
+			{
+				continue;
+			}
+
+			if (propType.TryRead(ref reader, options, PropType))
+			{
+				continue;
+			}
+
+			throw new System.Text.Json.JsonException($"Unknown JSON property '{reader.GetString()}' for type '{typeToConvert.Name}'.");
+		}
+
+		reader.ValidateToken(System.Text.Json.JsonTokenType.EndObject);
+		return new PutRuleRequest
+		{
+			Actions = propActions.Value
+,
+			Criteria = propCriteria.Value
+,
+			Priority = propPriority.Value
+,
+			Type = propType.Value
+		};
+	}
+
+	public override void Write(System.Text.Json.Utf8JsonWriter writer, PutRuleRequest value, System.Text.Json.JsonSerializerOptions options)
+	{
+		writer.WriteStartObject();
+		writer.WriteProperty(options, PropActions, value.Actions);
+		writer.WriteProperty(options, PropCriteria, value.Criteria, typeof(SingleOrManyMarker<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleCriteria>, Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleCriteria>));
+		writer.WriteProperty(options, PropPriority, value.Priority);
+		writer.WriteProperty(options, PropType, value.Type);
+		writer.WriteEndObject();
+	}
+}
+
 /// <summary>
 /// <para>
 /// Create or update a query rule.
@@ -46,6 +110,7 @@ public sealed partial class PutRuleRequestParameters : RequestParameters
 /// If multiple matching rules pin more than 100 documents, only the first 100 documents are pinned in the order they are specified in the ruleset.
 /// </para>
 /// </summary>
+[JsonConverter(typeof(PutRuleRequestConverter))]
 public sealed partial class PutRuleRequest : PlainRequest<PutRuleRequestParameters>
 {
 	public PutRuleRequest(Elastic.Clients.Elasticsearch.Serverless.Id rulesetId, Elastic.Clients.Elasticsearch.Serverless.Id ruleId) : base(r => r.Required("ruleset_id", rulesetId).Required("rule_id", ruleId))
@@ -66,7 +131,6 @@ public sealed partial class PutRuleRequest : PlainRequest<PutRuleRequestParamete
 	/// The format of this action depends on the rule type.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("actions")]
 	public Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleActions Actions { get; set; }
 
 	/// <summary>
@@ -75,10 +139,7 @@ public sealed partial class PutRuleRequest : PlainRequest<PutRuleRequestParamete
 	/// If multiple criteria are specified for a rule, all criteria must be met for the rule to be applied.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("criteria")]
-	[SingleOrManyCollectionConverter(typeof(Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleCriteria))]
 	public ICollection<Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleCriteria> Criteria { get; set; }
-	[JsonInclude, JsonPropertyName("priority")]
 	public int? Priority { get; set; }
 
 	/// <summary>
@@ -86,7 +147,6 @@ public sealed partial class PutRuleRequest : PlainRequest<PutRuleRequestParamete
 	/// The type of rule.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("type")]
 	public Elastic.Clients.Elasticsearch.Serverless.QueryRules.QueryRuleType Type { get; set; }
 }
 

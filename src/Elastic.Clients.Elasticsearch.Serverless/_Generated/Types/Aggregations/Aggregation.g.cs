@@ -18,6 +18,7 @@
 #nullable restore
 
 using Elastic.Clients.Elasticsearch.Serverless.Fluent;
+using Elastic.Clients.Elasticsearch.Serverless.Next;
 using Elastic.Clients.Elasticsearch.Serverless.Serialization;
 using System;
 using System.Collections.Generic;
@@ -39,12 +40,16 @@ public sealed partial class Aggregation
 			throw new ArgumentNullException(nameof(variant));
 		if (string.IsNullOrWhiteSpace(variantName))
 			throw new ArgumentException("Variant name must not be empty or whitespace.");
-		VariantName = variantName;
+		VariantType = variantName;
 		Variant = variant;
 	}
 
-	internal object Variant { get; }
-	internal string VariantName { get; }
+	internal Aggregation()
+	{
+	}
+
+	public object Variant { get; internal set; }
+	public string VariantType { get; internal set; }
 
 	public static Aggregation AdjacencyMatrix(Elastic.Clients.Elasticsearch.Serverless.Aggregations.AdjacencyMatrixAggregation adjacencyMatrixAggregation) => new Aggregation("adjacency_matrix", adjacencyMatrixAggregation);
 	public static Aggregation AutoDateHistogram(Elastic.Clients.Elasticsearch.Serverless.Aggregations.AutoDateHistogramAggregation autoDateHistogramAggregation) => new Aggregation("auto_date_histogram", autoDateHistogramAggregation);
@@ -143,797 +148,922 @@ public sealed partial class Aggregation
 	}
 }
 
-internal sealed partial class AggregationConverter : JsonConverter<Aggregation>
+internal sealed partial class AggregationConverter : System.Text.Json.Serialization.JsonConverter<Aggregation>
 {
-	public override Aggregation Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+	private static readonly System.Text.Json.JsonEncodedText PropAggregations = System.Text.Json.JsonEncodedText.Encode("aggregations");
+	private static readonly System.Text.Json.JsonEncodedText PropAggregations1 = System.Text.Json.JsonEncodedText.Encode("aggs");
+	private static readonly System.Text.Json.JsonEncodedText PropMeta = System.Text.Json.JsonEncodedText.Encode("meta");
+	private static readonly System.Text.Json.JsonEncodedText VariantAdjacencyMatrix = System.Text.Json.JsonEncodedText.Encode("adjacency_matrix");
+	private static readonly System.Text.Json.JsonEncodedText VariantAutoDateHistogram = System.Text.Json.JsonEncodedText.Encode("auto_date_histogram");
+	private static readonly System.Text.Json.JsonEncodedText VariantAvg = System.Text.Json.JsonEncodedText.Encode("avg");
+	private static readonly System.Text.Json.JsonEncodedText VariantAvgBucket = System.Text.Json.JsonEncodedText.Encode("avg_bucket");
+	private static readonly System.Text.Json.JsonEncodedText VariantBoxplot = System.Text.Json.JsonEncodedText.Encode("boxplot");
+	private static readonly System.Text.Json.JsonEncodedText VariantBucketScript = System.Text.Json.JsonEncodedText.Encode("bucket_script");
+	private static readonly System.Text.Json.JsonEncodedText VariantBucketSelector = System.Text.Json.JsonEncodedText.Encode("bucket_selector");
+	private static readonly System.Text.Json.JsonEncodedText VariantBucketSort = System.Text.Json.JsonEncodedText.Encode("bucket_sort");
+	private static readonly System.Text.Json.JsonEncodedText VariantCardinality = System.Text.Json.JsonEncodedText.Encode("cardinality");
+	private static readonly System.Text.Json.JsonEncodedText VariantChildren = System.Text.Json.JsonEncodedText.Encode("children");
+	private static readonly System.Text.Json.JsonEncodedText VariantComposite = System.Text.Json.JsonEncodedText.Encode("composite");
+	private static readonly System.Text.Json.JsonEncodedText VariantCumulativeCardinality = System.Text.Json.JsonEncodedText.Encode("cumulative_cardinality");
+	private static readonly System.Text.Json.JsonEncodedText VariantCumulativeSum = System.Text.Json.JsonEncodedText.Encode("cumulative_sum");
+	private static readonly System.Text.Json.JsonEncodedText VariantDateHistogram = System.Text.Json.JsonEncodedText.Encode("date_histogram");
+	private static readonly System.Text.Json.JsonEncodedText VariantDateRange = System.Text.Json.JsonEncodedText.Encode("date_range");
+	private static readonly System.Text.Json.JsonEncodedText VariantDerivative = System.Text.Json.JsonEncodedText.Encode("derivative");
+	private static readonly System.Text.Json.JsonEncodedText VariantDiversifiedSampler = System.Text.Json.JsonEncodedText.Encode("diversified_sampler");
+	private static readonly System.Text.Json.JsonEncodedText VariantExtendedStats = System.Text.Json.JsonEncodedText.Encode("extended_stats");
+	private static readonly System.Text.Json.JsonEncodedText VariantExtendedStatsBucket = System.Text.Json.JsonEncodedText.Encode("extended_stats_bucket");
+	private static readonly System.Text.Json.JsonEncodedText VariantFilter = System.Text.Json.JsonEncodedText.Encode("filter");
+	private static readonly System.Text.Json.JsonEncodedText VariantFilters = System.Text.Json.JsonEncodedText.Encode("filters");
+	private static readonly System.Text.Json.JsonEncodedText VariantFrequentItemSets = System.Text.Json.JsonEncodedText.Encode("frequent_item_sets");
+	private static readonly System.Text.Json.JsonEncodedText VariantGeoBounds = System.Text.Json.JsonEncodedText.Encode("geo_bounds");
+	private static readonly System.Text.Json.JsonEncodedText VariantGeoCentroid = System.Text.Json.JsonEncodedText.Encode("geo_centroid");
+	private static readonly System.Text.Json.JsonEncodedText VariantGeoDistance = System.Text.Json.JsonEncodedText.Encode("geo_distance");
+	private static readonly System.Text.Json.JsonEncodedText VariantGeohashGrid = System.Text.Json.JsonEncodedText.Encode("geohash_grid");
+	private static readonly System.Text.Json.JsonEncodedText VariantGeohexGrid = System.Text.Json.JsonEncodedText.Encode("geohex_grid");
+	private static readonly System.Text.Json.JsonEncodedText VariantGeoLine = System.Text.Json.JsonEncodedText.Encode("geo_line");
+	private static readonly System.Text.Json.JsonEncodedText VariantGeotileGrid = System.Text.Json.JsonEncodedText.Encode("geotile_grid");
+	private static readonly System.Text.Json.JsonEncodedText VariantGlobal = System.Text.Json.JsonEncodedText.Encode("global");
+	private static readonly System.Text.Json.JsonEncodedText VariantHistogram = System.Text.Json.JsonEncodedText.Encode("histogram");
+	private static readonly System.Text.Json.JsonEncodedText VariantInference = System.Text.Json.JsonEncodedText.Encode("inference");
+	private static readonly System.Text.Json.JsonEncodedText VariantIpPrefix = System.Text.Json.JsonEncodedText.Encode("ip_prefix");
+	private static readonly System.Text.Json.JsonEncodedText VariantIpRange = System.Text.Json.JsonEncodedText.Encode("ip_range");
+	private static readonly System.Text.Json.JsonEncodedText VariantLine = System.Text.Json.JsonEncodedText.Encode("line");
+	private static readonly System.Text.Json.JsonEncodedText VariantMatrixStats = System.Text.Json.JsonEncodedText.Encode("matrix_stats");
+	private static readonly System.Text.Json.JsonEncodedText VariantMax = System.Text.Json.JsonEncodedText.Encode("max");
+	private static readonly System.Text.Json.JsonEncodedText VariantMaxBucket = System.Text.Json.JsonEncodedText.Encode("max_bucket");
+	private static readonly System.Text.Json.JsonEncodedText VariantMedianAbsoluteDeviation = System.Text.Json.JsonEncodedText.Encode("median_absolute_deviation");
+	private static readonly System.Text.Json.JsonEncodedText VariantMin = System.Text.Json.JsonEncodedText.Encode("min");
+	private static readonly System.Text.Json.JsonEncodedText VariantMinBucket = System.Text.Json.JsonEncodedText.Encode("min_bucket");
+	private static readonly System.Text.Json.JsonEncodedText VariantMissing = System.Text.Json.JsonEncodedText.Encode("missing");
+	private static readonly System.Text.Json.JsonEncodedText VariantMovingFn = System.Text.Json.JsonEncodedText.Encode("moving_fn");
+	private static readonly System.Text.Json.JsonEncodedText VariantMovingPercentiles = System.Text.Json.JsonEncodedText.Encode("moving_percentiles");
+	private static readonly System.Text.Json.JsonEncodedText VariantMultiTerms = System.Text.Json.JsonEncodedText.Encode("multi_terms");
+	private static readonly System.Text.Json.JsonEncodedText VariantNested = System.Text.Json.JsonEncodedText.Encode("nested");
+	private static readonly System.Text.Json.JsonEncodedText VariantNormalize = System.Text.Json.JsonEncodedText.Encode("normalize");
+	private static readonly System.Text.Json.JsonEncodedText VariantParent = System.Text.Json.JsonEncodedText.Encode("parent");
+	private static readonly System.Text.Json.JsonEncodedText VariantPercentileRanks = System.Text.Json.JsonEncodedText.Encode("percentile_ranks");
+	private static readonly System.Text.Json.JsonEncodedText VariantPercentiles = System.Text.Json.JsonEncodedText.Encode("percentiles");
+	private static readonly System.Text.Json.JsonEncodedText VariantPercentilesBucket = System.Text.Json.JsonEncodedText.Encode("percentiles_bucket");
+	private static readonly System.Text.Json.JsonEncodedText VariantRange = System.Text.Json.JsonEncodedText.Encode("range");
+	private static readonly System.Text.Json.JsonEncodedText VariantRareTerms = System.Text.Json.JsonEncodedText.Encode("rare_terms");
+	private static readonly System.Text.Json.JsonEncodedText VariantRate = System.Text.Json.JsonEncodedText.Encode("rate");
+	private static readonly System.Text.Json.JsonEncodedText VariantReverseNested = System.Text.Json.JsonEncodedText.Encode("reverse_nested");
+	private static readonly System.Text.Json.JsonEncodedText VariantSampler = System.Text.Json.JsonEncodedText.Encode("sampler");
+	private static readonly System.Text.Json.JsonEncodedText VariantScriptedMetric = System.Text.Json.JsonEncodedText.Encode("scripted_metric");
+	private static readonly System.Text.Json.JsonEncodedText VariantSerialDiff = System.Text.Json.JsonEncodedText.Encode("serial_diff");
+	private static readonly System.Text.Json.JsonEncodedText VariantSignificantTerms = System.Text.Json.JsonEncodedText.Encode("significant_terms");
+	private static readonly System.Text.Json.JsonEncodedText VariantSignificantText = System.Text.Json.JsonEncodedText.Encode("significant_text");
+	private static readonly System.Text.Json.JsonEncodedText VariantStats = System.Text.Json.JsonEncodedText.Encode("stats");
+	private static readonly System.Text.Json.JsonEncodedText VariantStatsBucket = System.Text.Json.JsonEncodedText.Encode("stats_bucket");
+	private static readonly System.Text.Json.JsonEncodedText VariantStringStats = System.Text.Json.JsonEncodedText.Encode("string_stats");
+	private static readonly System.Text.Json.JsonEncodedText VariantSum = System.Text.Json.JsonEncodedText.Encode("sum");
+	private static readonly System.Text.Json.JsonEncodedText VariantSumBucket = System.Text.Json.JsonEncodedText.Encode("sum_bucket");
+	private static readonly System.Text.Json.JsonEncodedText VariantTerms = System.Text.Json.JsonEncodedText.Encode("terms");
+	private static readonly System.Text.Json.JsonEncodedText VariantTopHits = System.Text.Json.JsonEncodedText.Encode("top_hits");
+	private static readonly System.Text.Json.JsonEncodedText VariantTopMetrics = System.Text.Json.JsonEncodedText.Encode("top_metrics");
+	private static readonly System.Text.Json.JsonEncodedText VariantTTest = System.Text.Json.JsonEncodedText.Encode("t_test");
+	private static readonly System.Text.Json.JsonEncodedText VariantValueCount = System.Text.Json.JsonEncodedText.Encode("value_count");
+	private static readonly System.Text.Json.JsonEncodedText VariantVariableWidthHistogram = System.Text.Json.JsonEncodedText.Encode("variable_width_histogram");
+	private static readonly System.Text.Json.JsonEncodedText VariantWeightedAvg = System.Text.Json.JsonEncodedText.Encode("weighted_avg");
+
+	public override Aggregation Read(ref System.Text.Json.Utf8JsonReader reader, System.Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
 	{
-		if (reader.TokenType != JsonTokenType.StartObject)
+		reader.ValidateToken(System.Text.Json.JsonTokenType.StartObject);
+		LocalJsonProperty<IDictionary<string, Elastic.Clients.Elasticsearch.Serverless.Aggregations.Aggregation>?> propAggregations = default;
+		LocalJsonProperty<IDictionary<string, object>?> propMeta = default;
+		var variantType = string.Empty;
+		object? variant = null;
+		while (reader.Read() && reader.TokenType is System.Text.Json.JsonTokenType.PropertyName)
 		{
-			throw new JsonException("Expected start token.");
+			if (propAggregations.TryRead(ref reader, options, PropAggregations) || propAggregations.TryRead(ref reader, options, PropAggregations1))
+			{
+				continue;
+			}
+
+			if (propMeta.TryRead(ref reader, options, PropMeta))
+			{
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantAdjacencyMatrix))
+			{
+				variantType = VariantAdjacencyMatrix.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AdjacencyMatrixAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantAutoDateHistogram))
+			{
+				variantType = VariantAutoDateHistogram.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AutoDateHistogramAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantAvg))
+			{
+				variantType = VariantAvg.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AverageAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantAvgBucket))
+			{
+				variantType = VariantAvgBucket.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AverageBucketAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantBoxplot))
+			{
+				variantType = VariantBoxplot.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BoxplotAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantBucketScript))
+			{
+				variantType = VariantBucketScript.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketScriptAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantBucketSelector))
+			{
+				variantType = VariantBucketSelector.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketSelectorAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantBucketSort))
+			{
+				variantType = VariantBucketSort.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketSortAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantCardinality))
+			{
+				variantType = VariantCardinality.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CardinalityAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantChildren))
+			{
+				variantType = VariantChildren.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ChildrenAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantComposite))
+			{
+				variantType = VariantComposite.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CompositeAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantCumulativeCardinality))
+			{
+				variantType = VariantCumulativeCardinality.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CumulativeCardinalityAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantCumulativeSum))
+			{
+				variantType = VariantCumulativeSum.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CumulativeSumAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantDateHistogram))
+			{
+				variantType = VariantDateHistogram.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DateHistogramAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantDateRange))
+			{
+				variantType = VariantDateRange.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DateRangeAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantDerivative))
+			{
+				variantType = VariantDerivative.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DerivativeAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantDiversifiedSampler))
+			{
+				variantType = VariantDiversifiedSampler.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DiversifiedSamplerAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantExtendedStats))
+			{
+				variantType = VariantExtendedStats.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ExtendedStatsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantExtendedStatsBucket))
+			{
+				variantType = VariantExtendedStatsBucket.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ExtendedStatsBucketAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantFilter))
+			{
+				variantType = VariantFilter.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.QueryDsl.Query?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantFilters))
+			{
+				variantType = VariantFilters.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.FiltersAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantFrequentItemSets))
+			{
+				variantType = VariantFrequentItemSets.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.FrequentItemSetsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantGeoBounds))
+			{
+				variantType = VariantGeoBounds.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoBoundsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantGeoCentroid))
+			{
+				variantType = VariantGeoCentroid.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoCentroidAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantGeoDistance))
+			{
+				variantType = VariantGeoDistance.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoDistanceAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantGeohashGrid))
+			{
+				variantType = VariantGeohashGrid.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeohashGridAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantGeohexGrid))
+			{
+				variantType = VariantGeohexGrid.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeohexGridAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantGeoLine))
+			{
+				variantType = VariantGeoLine.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoLineAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantGeotileGrid))
+			{
+				variantType = VariantGeotileGrid.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeotileGridAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantGlobal))
+			{
+				variantType = VariantGlobal.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GlobalAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantHistogram))
+			{
+				variantType = VariantHistogram.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.HistogramAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantInference))
+			{
+				variantType = VariantInference.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.InferenceAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantIpPrefix))
+			{
+				variantType = VariantIpPrefix.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.IpPrefixAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantIpRange))
+			{
+				variantType = VariantIpRange.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.IpRangeAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantLine))
+			{
+				variantType = VariantLine.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoLineAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantMatrixStats))
+			{
+				variantType = VariantMatrixStats.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MatrixStatsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantMax))
+			{
+				variantType = VariantMax.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MaxAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantMaxBucket))
+			{
+				variantType = VariantMaxBucket.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MaxBucketAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantMedianAbsoluteDeviation))
+			{
+				variantType = VariantMedianAbsoluteDeviation.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MedianAbsoluteDeviationAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantMin))
+			{
+				variantType = VariantMin.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MinAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantMinBucket))
+			{
+				variantType = VariantMinBucket.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MinBucketAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantMissing))
+			{
+				variantType = VariantMissing.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MissingAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantMovingFn))
+			{
+				variantType = VariantMovingFn.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MovingFunctionAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantMovingPercentiles))
+			{
+				variantType = VariantMovingPercentiles.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MovingPercentilesAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantMultiTerms))
+			{
+				variantType = VariantMultiTerms.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MultiTermsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantNested))
+			{
+				variantType = VariantNested.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.NestedAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantNormalize))
+			{
+				variantType = VariantNormalize.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.NormalizeAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantParent))
+			{
+				variantType = VariantParent.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ParentAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantPercentileRanks))
+			{
+				variantType = VariantPercentileRanks.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentileRanksAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantPercentiles))
+			{
+				variantType = VariantPercentiles.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentilesAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantPercentilesBucket))
+			{
+				variantType = VariantPercentilesBucket.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentilesBucketAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantRange))
+			{
+				variantType = VariantRange.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.RangeAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantRareTerms))
+			{
+				variantType = VariantRareTerms.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.RareTermsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantRate))
+			{
+				variantType = VariantRate.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.RateAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantReverseNested))
+			{
+				variantType = VariantReverseNested.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ReverseNestedAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantSampler))
+			{
+				variantType = VariantSampler.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SamplerAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantScriptedMetric))
+			{
+				variantType = VariantScriptedMetric.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ScriptedMetricAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantSerialDiff))
+			{
+				variantType = VariantSerialDiff.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SerialDifferencingAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantSignificantTerms))
+			{
+				variantType = VariantSignificantTerms.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SignificantTermsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantSignificantText))
+			{
+				variantType = VariantSignificantText.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SignificantTextAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantStats))
+			{
+				variantType = VariantStats.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.StatsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantStatsBucket))
+			{
+				variantType = VariantStatsBucket.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.StatsBucketAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantStringStats))
+			{
+				variantType = VariantStringStats.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.StringStatsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantSum))
+			{
+				variantType = VariantSum.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SumAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantSumBucket))
+			{
+				variantType = VariantSumBucket.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SumBucketAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantTerms))
+			{
+				variantType = VariantTerms.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TermsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantTopHits))
+			{
+				variantType = VariantTopHits.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopHitsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantTopMetrics))
+			{
+				variantType = VariantTopMetrics.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantTTest))
+			{
+				variantType = VariantTTest.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TTestAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantValueCount))
+			{
+				variantType = VariantValueCount.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ValueCountAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantVariableWidthHistogram))
+			{
+				variantType = VariantVariableWidthHistogram.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.VariableWidthHistogramAggregation?>(options);
+				continue;
+			}
+
+			if (reader.ValueTextEquals(VariantWeightedAvg))
+			{
+				variantType = VariantWeightedAvg.Value;
+				reader.Read();
+				variant = reader.ReadValue<Elastic.Clients.Elasticsearch.Serverless.Aggregations.WeightedAverageAggregation?>(options);
+				continue;
+			}
+
+			throw new System.Text.Json.JsonException($"Unknown JSON property '{reader.GetString()}' for type '{typeToConvert.Name}'.");
 		}
 
-		object? variantValue = default;
-		string? variantNameValue = default;
-		IDictionary<string, Elastic.Clients.Elasticsearch.Serverless.Aggregations.Aggregation>? aggregationsValue = default;
-		IDictionary<string, object>? metaValue = default;
-		while (reader.Read() && reader.TokenType != JsonTokenType.EndObject)
+		reader.ValidateToken(System.Text.Json.JsonTokenType.EndObject);
+		return new Aggregation
 		{
-			if (reader.TokenType != JsonTokenType.PropertyName)
-			{
-				throw new JsonException("Expected a property name token.");
-			}
-
-			if (reader.TokenType != JsonTokenType.PropertyName)
-			{
-				throw new JsonException("Expected a property name token representing the name of an Elasticsearch field.");
-			}
-
-			var propertyName = reader.GetString();
-			reader.Read();
-			if (propertyName == "aggregations")
-			{
-				aggregationsValue = JsonSerializer.Deserialize<IDictionary<string, Elastic.Clients.Elasticsearch.Serverless.Aggregations.Aggregation>?>(ref reader, options);
-				continue;
-			}
-
-			if (propertyName == "meta")
-			{
-				metaValue = JsonSerializer.Deserialize<IDictionary<string, object>?>(ref reader, options);
-				continue;
-			}
-
-			if (propertyName == "adjacency_matrix")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AdjacencyMatrixAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "auto_date_histogram")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AutoDateHistogramAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "avg")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AverageAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "avg_bucket")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AverageBucketAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "boxplot")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BoxplotAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "bucket_script")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketScriptAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "bucket_selector")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketSelectorAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "bucket_sort")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketSortAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "cardinality")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CardinalityAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "children")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ChildrenAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "composite")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CompositeAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "cumulative_cardinality")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CumulativeCardinalityAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "cumulative_sum")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CumulativeSumAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "date_histogram")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DateHistogramAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "date_range")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DateRangeAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "derivative")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DerivativeAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "diversified_sampler")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DiversifiedSamplerAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "extended_stats")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ExtendedStatsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "extended_stats_bucket")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ExtendedStatsBucketAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "filter")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.QueryDsl.Query?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "filters")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.FiltersAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "frequent_item_sets")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.FrequentItemSetsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "geo_bounds")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoBoundsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "geo_centroid")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoCentroidAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "geo_distance")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoDistanceAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "geohash_grid")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeohashGridAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "geohex_grid")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeohexGridAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "geo_line")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoLineAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "geotile_grid")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeotileGridAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "global")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GlobalAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "histogram")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.HistogramAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "inference")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.InferenceAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "ip_prefix")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.IpPrefixAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "ip_range")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.IpRangeAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "line")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoLineAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "matrix_stats")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MatrixStatsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "max")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MaxAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "max_bucket")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MaxBucketAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "median_absolute_deviation")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MedianAbsoluteDeviationAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "min")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MinAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "min_bucket")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MinBucketAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "missing")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MissingAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "moving_fn")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MovingFunctionAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "moving_percentiles")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MovingPercentilesAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "multi_terms")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MultiTermsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "nested")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.NestedAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "normalize")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.NormalizeAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "parent")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ParentAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "percentile_ranks")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentileRanksAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "percentiles")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentilesAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "percentiles_bucket")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentilesBucketAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "range")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.RangeAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "rare_terms")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.RareTermsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "rate")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.RateAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "reverse_nested")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ReverseNestedAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "sampler")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SamplerAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "scripted_metric")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ScriptedMetricAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "serial_diff")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SerialDifferencingAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "significant_terms")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SignificantTermsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "significant_text")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SignificantTextAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "stats")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.StatsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "stats_bucket")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.StatsBucketAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "string_stats")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.StringStatsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "sum")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SumAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "sum_bucket")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SumBucketAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "terms")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TermsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "top_hits")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopHitsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "top_metrics")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "t_test")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TTestAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "value_count")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ValueCountAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "variable_width_histogram")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.VariableWidthHistogramAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			if (propertyName == "weighted_avg")
-			{
-				variantValue = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.WeightedAverageAggregation?>(ref reader, options);
-				variantNameValue = propertyName;
-				continue;
-			}
-
-			throw new JsonException($"Unknown property name '{propertyName}' received while deserializing the 'Aggregation' from the response.");
-		}
-
-		var result = new Aggregation(variantNameValue, variantValue);
-		result.Aggregations = aggregationsValue;
-		result.Meta = metaValue;
-		return result;
+			VariantType = variantType,
+			Variant = variant,
+			Aggregations = propAggregations.Value
+	,
+			Meta = propMeta.Value
+		};
 	}
 
-	public override void Write(Utf8JsonWriter writer, Aggregation value, JsonSerializerOptions options)
+	public override void Write(System.Text.Json.Utf8JsonWriter writer, Aggregation value, System.Text.Json.JsonSerializerOptions options)
 	{
 		writer.WriteStartObject();
-		if (value.Aggregations is not null)
+		switch (value.VariantType)
 		{
-			writer.WritePropertyName("aggregations");
-			JsonSerializer.Serialize(writer, value.Aggregations, options);
+			case "":
+				break;
+			case "adjacency_matrix":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.AdjacencyMatrixAggregation?)value.Variant);
+				break;
+			case "auto_date_histogram":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.AutoDateHistogramAggregation?)value.Variant);
+				break;
+			case "avg":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.AverageAggregation?)value.Variant);
+				break;
+			case "avg_bucket":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.AverageBucketAggregation?)value.Variant);
+				break;
+			case "boxplot":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.BoxplotAggregation?)value.Variant);
+				break;
+			case "bucket_script":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketScriptAggregation?)value.Variant);
+				break;
+			case "bucket_selector":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketSelectorAggregation?)value.Variant);
+				break;
+			case "bucket_sort":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketSortAggregation?)value.Variant);
+				break;
+			case "cardinality":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.CardinalityAggregation?)value.Variant);
+				break;
+			case "children":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ChildrenAggregation?)value.Variant);
+				break;
+			case "composite":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.CompositeAggregation?)value.Variant);
+				break;
+			case "cumulative_cardinality":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.CumulativeCardinalityAggregation?)value.Variant);
+				break;
+			case "cumulative_sum":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.CumulativeSumAggregation?)value.Variant);
+				break;
+			case "date_histogram":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.DateHistogramAggregation?)value.Variant);
+				break;
+			case "date_range":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.DateRangeAggregation?)value.Variant);
+				break;
+			case "derivative":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.DerivativeAggregation?)value.Variant);
+				break;
+			case "diversified_sampler":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.DiversifiedSamplerAggregation?)value.Variant);
+				break;
+			case "extended_stats":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ExtendedStatsAggregation?)value.Variant);
+				break;
+			case "extended_stats_bucket":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ExtendedStatsBucketAggregation?)value.Variant);
+				break;
+			case "filter":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.QueryDsl.Query?)value.Variant);
+				break;
+			case "filters":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.FiltersAggregation?)value.Variant);
+				break;
+			case "frequent_item_sets":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.FrequentItemSetsAggregation?)value.Variant);
+				break;
+			case "geo_bounds":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoBoundsAggregation?)value.Variant);
+				break;
+			case "geo_centroid":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoCentroidAggregation?)value.Variant);
+				break;
+			case "geo_distance":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoDistanceAggregation?)value.Variant);
+				break;
+			case "geohash_grid":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeohashGridAggregation?)value.Variant);
+				break;
+			case "geohex_grid":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeohexGridAggregation?)value.Variant);
+				break;
+			case "geo_line":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoLineAggregation?)value.Variant);
+				break;
+			case "geotile_grid":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeotileGridAggregation?)value.Variant);
+				break;
+			case "global":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GlobalAggregation?)value.Variant);
+				break;
+			case "histogram":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.HistogramAggregation?)value.Variant);
+				break;
+			case "inference":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.InferenceAggregation?)value.Variant);
+				break;
+			case "ip_prefix":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.IpPrefixAggregation?)value.Variant);
+				break;
+			case "ip_range":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.IpRangeAggregation?)value.Variant);
+				break;
+			case "line":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoLineAggregation?)value.Variant);
+				break;
+			case "matrix_stats":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MatrixStatsAggregation?)value.Variant);
+				break;
+			case "max":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MaxAggregation?)value.Variant);
+				break;
+			case "max_bucket":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MaxBucketAggregation?)value.Variant);
+				break;
+			case "median_absolute_deviation":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MedianAbsoluteDeviationAggregation?)value.Variant);
+				break;
+			case "min":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MinAggregation?)value.Variant);
+				break;
+			case "min_bucket":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MinBucketAggregation?)value.Variant);
+				break;
+			case "missing":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MissingAggregation?)value.Variant);
+				break;
+			case "moving_fn":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MovingFunctionAggregation?)value.Variant);
+				break;
+			case "moving_percentiles":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MovingPercentilesAggregation?)value.Variant);
+				break;
+			case "multi_terms":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MultiTermsAggregation?)value.Variant);
+				break;
+			case "nested":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.NestedAggregation?)value.Variant);
+				break;
+			case "normalize":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.NormalizeAggregation?)value.Variant);
+				break;
+			case "parent":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ParentAggregation?)value.Variant);
+				break;
+			case "percentile_ranks":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentileRanksAggregation?)value.Variant);
+				break;
+			case "percentiles":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentilesAggregation?)value.Variant);
+				break;
+			case "percentiles_bucket":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentilesBucketAggregation?)value.Variant);
+				break;
+			case "range":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.RangeAggregation?)value.Variant);
+				break;
+			case "rare_terms":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.RareTermsAggregation?)value.Variant);
+				break;
+			case "rate":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.RateAggregation?)value.Variant);
+				break;
+			case "reverse_nested":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ReverseNestedAggregation?)value.Variant);
+				break;
+			case "sampler":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SamplerAggregation?)value.Variant);
+				break;
+			case "scripted_metric":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ScriptedMetricAggregation?)value.Variant);
+				break;
+			case "serial_diff":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SerialDifferencingAggregation?)value.Variant);
+				break;
+			case "significant_terms":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SignificantTermsAggregation?)value.Variant);
+				break;
+			case "significant_text":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SignificantTextAggregation?)value.Variant);
+				break;
+			case "stats":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.StatsAggregation?)value.Variant);
+				break;
+			case "stats_bucket":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.StatsBucketAggregation?)value.Variant);
+				break;
+			case "string_stats":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.StringStatsAggregation?)value.Variant);
+				break;
+			case "sum":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SumAggregation?)value.Variant);
+				break;
+			case "sum_bucket":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SumBucketAggregation?)value.Variant);
+				break;
+			case "terms":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.TermsAggregation?)value.Variant);
+				break;
+			case "top_hits":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopHitsAggregation?)value.Variant);
+				break;
+			case "top_metrics":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsAggregation?)value.Variant);
+				break;
+			case "t_test":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.TTestAggregation?)value.Variant);
+				break;
+			case "value_count":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ValueCountAggregation?)value.Variant);
+				break;
+			case "variable_width_histogram":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.VariableWidthHistogramAggregation?)value.Variant);
+				break;
+			case "weighted_avg":
+				writer.WriteProperty(options, value.VariantType, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.WeightedAverageAggregation?)value.Variant);
+				break;
+			default:
+				throw new System.Text.Json.JsonException($"Variant '{value.VariantType}' is not supported for type '{nameof(Aggregation)}'.");
 		}
 
-		if (value.Meta is not null)
-		{
-			writer.WritePropertyName("meta");
-			JsonSerializer.Serialize(writer, value.Meta, options);
-		}
-
-		if (value.VariantName is not null && value.Variant is not null)
-		{
-			writer.WritePropertyName(value.VariantName);
-			switch (value.VariantName)
-			{
-				case "adjacency_matrix":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AdjacencyMatrixAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.AdjacencyMatrixAggregation)value.Variant, options);
-					break;
-				case "auto_date_histogram":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AutoDateHistogramAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.AutoDateHistogramAggregation)value.Variant, options);
-					break;
-				case "avg":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AverageAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.AverageAggregation)value.Variant, options);
-					break;
-				case "avg_bucket":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.AverageBucketAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.AverageBucketAggregation)value.Variant, options);
-					break;
-				case "boxplot":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BoxplotAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.BoxplotAggregation)value.Variant, options);
-					break;
-				case "bucket_script":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketScriptAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketScriptAggregation)value.Variant, options);
-					break;
-				case "bucket_selector":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketSelectorAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketSelectorAggregation)value.Variant, options);
-					break;
-				case "bucket_sort":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketSortAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.BucketSortAggregation)value.Variant, options);
-					break;
-				case "cardinality":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CardinalityAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.CardinalityAggregation)value.Variant, options);
-					break;
-				case "children":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ChildrenAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ChildrenAggregation)value.Variant, options);
-					break;
-				case "composite":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CompositeAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.CompositeAggregation)value.Variant, options);
-					break;
-				case "cumulative_cardinality":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CumulativeCardinalityAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.CumulativeCardinalityAggregation)value.Variant, options);
-					break;
-				case "cumulative_sum":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.CumulativeSumAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.CumulativeSumAggregation)value.Variant, options);
-					break;
-				case "date_histogram":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DateHistogramAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.DateHistogramAggregation)value.Variant, options);
-					break;
-				case "date_range":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DateRangeAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.DateRangeAggregation)value.Variant, options);
-					break;
-				case "derivative":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DerivativeAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.DerivativeAggregation)value.Variant, options);
-					break;
-				case "diversified_sampler":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.DiversifiedSamplerAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.DiversifiedSamplerAggregation)value.Variant, options);
-					break;
-				case "extended_stats":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ExtendedStatsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ExtendedStatsAggregation)value.Variant, options);
-					break;
-				case "extended_stats_bucket":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ExtendedStatsBucketAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ExtendedStatsBucketAggregation)value.Variant, options);
-					break;
-				case "filter":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.QueryDsl.Query>(writer, (Elastic.Clients.Elasticsearch.Serverless.QueryDsl.Query)value.Variant, options);
-					break;
-				case "filters":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.FiltersAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.FiltersAggregation)value.Variant, options);
-					break;
-				case "frequent_item_sets":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.FrequentItemSetsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.FrequentItemSetsAggregation)value.Variant, options);
-					break;
-				case "geo_bounds":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoBoundsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoBoundsAggregation)value.Variant, options);
-					break;
-				case "geo_centroid":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoCentroidAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoCentroidAggregation)value.Variant, options);
-					break;
-				case "geo_distance":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoDistanceAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoDistanceAggregation)value.Variant, options);
-					break;
-				case "geohash_grid":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeohashGridAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeohashGridAggregation)value.Variant, options);
-					break;
-				case "geohex_grid":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeohexGridAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeohexGridAggregation)value.Variant, options);
-					break;
-				case "geo_line":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoLineAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoLineAggregation)value.Variant, options);
-					break;
-				case "geotile_grid":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeotileGridAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeotileGridAggregation)value.Variant, options);
-					break;
-				case "global":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GlobalAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GlobalAggregation)value.Variant, options);
-					break;
-				case "histogram":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.HistogramAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.HistogramAggregation)value.Variant, options);
-					break;
-				case "inference":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.InferenceAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.InferenceAggregation)value.Variant, options);
-					break;
-				case "ip_prefix":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.IpPrefixAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.IpPrefixAggregation)value.Variant, options);
-					break;
-				case "ip_range":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.IpRangeAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.IpRangeAggregation)value.Variant, options);
-					break;
-				case "line":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoLineAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.GeoLineAggregation)value.Variant, options);
-					break;
-				case "matrix_stats":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MatrixStatsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MatrixStatsAggregation)value.Variant, options);
-					break;
-				case "max":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MaxAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MaxAggregation)value.Variant, options);
-					break;
-				case "max_bucket":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MaxBucketAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MaxBucketAggregation)value.Variant, options);
-					break;
-				case "median_absolute_deviation":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MedianAbsoluteDeviationAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MedianAbsoluteDeviationAggregation)value.Variant, options);
-					break;
-				case "min":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MinAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MinAggregation)value.Variant, options);
-					break;
-				case "min_bucket":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MinBucketAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MinBucketAggregation)value.Variant, options);
-					break;
-				case "missing":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MissingAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MissingAggregation)value.Variant, options);
-					break;
-				case "moving_fn":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MovingFunctionAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MovingFunctionAggregation)value.Variant, options);
-					break;
-				case "moving_percentiles":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MovingPercentilesAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MovingPercentilesAggregation)value.Variant, options);
-					break;
-				case "multi_terms":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.MultiTermsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.MultiTermsAggregation)value.Variant, options);
-					break;
-				case "nested":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.NestedAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.NestedAggregation)value.Variant, options);
-					break;
-				case "normalize":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.NormalizeAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.NormalizeAggregation)value.Variant, options);
-					break;
-				case "parent":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ParentAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ParentAggregation)value.Variant, options);
-					break;
-				case "percentile_ranks":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentileRanksAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentileRanksAggregation)value.Variant, options);
-					break;
-				case "percentiles":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentilesAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentilesAggregation)value.Variant, options);
-					break;
-				case "percentiles_bucket":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentilesBucketAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.PercentilesBucketAggregation)value.Variant, options);
-					break;
-				case "range":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.RangeAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.RangeAggregation)value.Variant, options);
-					break;
-				case "rare_terms":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.RareTermsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.RareTermsAggregation)value.Variant, options);
-					break;
-				case "rate":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.RateAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.RateAggregation)value.Variant, options);
-					break;
-				case "reverse_nested":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ReverseNestedAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ReverseNestedAggregation)value.Variant, options);
-					break;
-				case "sampler":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SamplerAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SamplerAggregation)value.Variant, options);
-					break;
-				case "scripted_metric":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ScriptedMetricAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ScriptedMetricAggregation)value.Variant, options);
-					break;
-				case "serial_diff":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SerialDifferencingAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SerialDifferencingAggregation)value.Variant, options);
-					break;
-				case "significant_terms":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SignificantTermsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SignificantTermsAggregation)value.Variant, options);
-					break;
-				case "significant_text":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SignificantTextAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SignificantTextAggregation)value.Variant, options);
-					break;
-				case "stats":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.StatsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.StatsAggregation)value.Variant, options);
-					break;
-				case "stats_bucket":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.StatsBucketAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.StatsBucketAggregation)value.Variant, options);
-					break;
-				case "string_stats":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.StringStatsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.StringStatsAggregation)value.Variant, options);
-					break;
-				case "sum":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SumAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SumAggregation)value.Variant, options);
-					break;
-				case "sum_bucket":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.SumBucketAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.SumBucketAggregation)value.Variant, options);
-					break;
-				case "terms":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TermsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.TermsAggregation)value.Variant, options);
-					break;
-				case "top_hits":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopHitsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopHitsAggregation)value.Variant, options);
-					break;
-				case "top_metrics":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsAggregation)value.Variant, options);
-					break;
-				case "t_test":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TTestAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.TTestAggregation)value.Variant, options);
-					break;
-				case "value_count":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.ValueCountAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.ValueCountAggregation)value.Variant, options);
-					break;
-				case "variable_width_histogram":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.VariableWidthHistogramAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.VariableWidthHistogramAggregation)value.Variant, options);
-					break;
-				case "weighted_avg":
-					JsonSerializer.Serialize<Elastic.Clients.Elasticsearch.Serverless.Aggregations.WeightedAverageAggregation>(writer, (Elastic.Clients.Elasticsearch.Serverless.Aggregations.WeightedAverageAggregation)value.Variant, options);
-					break;
-			}
-		}
-
+		writer.WriteProperty(options, PropAggregations, value.Aggregations);
+		writer.WriteProperty(options, PropMeta, value.Meta);
 		writer.WriteEndObject();
 	}
 }

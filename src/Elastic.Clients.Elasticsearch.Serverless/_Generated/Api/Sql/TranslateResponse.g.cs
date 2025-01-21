@@ -18,27 +18,107 @@
 #nullable restore
 
 using Elastic.Clients.Elasticsearch.Serverless.Fluent;
+using Elastic.Clients.Elasticsearch.Serverless.Next;
 using Elastic.Clients.Elasticsearch.Serverless.Serialization;
 using Elastic.Transport.Products.Elasticsearch;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Elastic.Clients.Elasticsearch.Serverless.Sql;
 
+internal sealed partial class TranslateResponseConverter : System.Text.Json.Serialization.JsonConverter<TranslateResponse>
+{
+	private static readonly System.Text.Json.JsonEncodedText PropAggregations = System.Text.Json.JsonEncodedText.Encode("aggregations");
+	private static readonly System.Text.Json.JsonEncodedText PropFields = System.Text.Json.JsonEncodedText.Encode("fields");
+	private static readonly System.Text.Json.JsonEncodedText PropQuery = System.Text.Json.JsonEncodedText.Encode("query");
+	private static readonly System.Text.Json.JsonEncodedText PropSize = System.Text.Json.JsonEncodedText.Encode("size");
+	private static readonly System.Text.Json.JsonEncodedText PropSort = System.Text.Json.JsonEncodedText.Encode("sort");
+	private static readonly System.Text.Json.JsonEncodedText PropSource = System.Text.Json.JsonEncodedText.Encode("_source");
+
+	public override TranslateResponse Read(ref System.Text.Json.Utf8JsonReader reader, System.Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+	{
+		reader.ValidateToken(System.Text.Json.JsonTokenType.StartObject);
+		LocalJsonProperty<IReadOnlyDictionary<string, Elastic.Clients.Elasticsearch.Serverless.Aggregations.Aggregation>?> propAggregations = default;
+		LocalJsonProperty<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.QueryDsl.FieldAndFormat>?> propFields = default;
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.QueryDsl.Query?> propQuery = default;
+		LocalJsonProperty<long?> propSize = default;
+		LocalJsonProperty<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.SortOptions>?> propSort = default;
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.Core.Search.SourceConfig?> propSource = default;
+		while (reader.Read() && reader.TokenType is System.Text.Json.JsonTokenType.PropertyName)
+		{
+			if (propAggregations.TryRead(ref reader, options, PropAggregations))
+			{
+				continue;
+			}
+
+			if (propFields.TryRead(ref reader, options, PropFields))
+			{
+				continue;
+			}
+
+			if (propQuery.TryRead(ref reader, options, PropQuery))
+			{
+				continue;
+			}
+
+			if (propSize.TryRead(ref reader, options, PropSize))
+			{
+				continue;
+			}
+
+			if (propSort.TryRead(ref reader, options, PropSort, typeof(SingleOrManyMarker<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.SortOptions>?, Elastic.Clients.Elasticsearch.Serverless.SortOptions>)))
+			{
+				continue;
+			}
+
+			if (propSource.TryRead(ref reader, options, PropSource))
+			{
+				continue;
+			}
+
+			throw new System.Text.Json.JsonException($"Unknown JSON property '{reader.GetString()}' for type '{typeToConvert.Name}'.");
+		}
+
+		reader.ValidateToken(System.Text.Json.JsonTokenType.EndObject);
+		return new TranslateResponse
+		{
+			Aggregations = propAggregations.Value
+,
+			Fields = propFields.Value
+,
+			Query = propQuery.Value
+,
+			Size = propSize.Value
+,
+			Sort = propSort.Value
+,
+			Source = propSource.Value
+		};
+	}
+
+	public override void Write(System.Text.Json.Utf8JsonWriter writer, TranslateResponse value, System.Text.Json.JsonSerializerOptions options)
+	{
+		writer.WriteStartObject();
+		writer.WriteProperty(options, PropAggregations, value.Aggregations);
+		writer.WriteProperty(options, PropFields, value.Fields);
+		writer.WriteProperty(options, PropQuery, value.Query);
+		writer.WriteProperty(options, PropSize, value.Size);
+		writer.WriteProperty(options, PropSort, value.Sort, typeof(SingleOrManyMarker<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.SortOptions>?, Elastic.Clients.Elasticsearch.Serverless.SortOptions>));
+		writer.WriteProperty(options, PropSource, value.Source);
+		writer.WriteEndObject();
+	}
+}
+
+[JsonConverter(typeof(TranslateResponseConverter))]
 public sealed partial class TranslateResponse : ElasticsearchResponse
 {
-	[JsonInclude, JsonPropertyName("aggregations")]
 	public IReadOnlyDictionary<string, Elastic.Clients.Elasticsearch.Serverless.Aggregations.Aggregation>? Aggregations { get; init; }
-	[JsonInclude, JsonPropertyName("fields")]
 	public IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.QueryDsl.FieldAndFormat>? Fields { get; init; }
-	[JsonInclude, JsonPropertyName("query")]
 	public Elastic.Clients.Elasticsearch.Serverless.QueryDsl.Query? Query { get; init; }
-	[JsonInclude, JsonPropertyName("size")]
 	public long? Size { get; init; }
-	[JsonInclude, JsonPropertyName("sort")]
-	[SingleOrManyCollectionConverter(typeof(Elastic.Clients.Elasticsearch.Serverless.SortOptions))]
 	public IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.SortOptions>? Sort { get; init; }
-	[JsonInclude, JsonPropertyName("_source")]
 	public Elastic.Clients.Elasticsearch.Serverless.Core.Search.SourceConfig? Source { get; init; }
 }

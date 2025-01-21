@@ -33,4 +33,6 @@ public sealed partial class RangeAggregate : IAggregate
 	public IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Aggregations.RangeBucket> Buckets { get; init; }
 	[JsonInclude, JsonPropertyName("meta")]
 	public IReadOnlyDictionary<string, object>? Meta { get; init; }
+
+	string IAggregate.Type => "range";
 }

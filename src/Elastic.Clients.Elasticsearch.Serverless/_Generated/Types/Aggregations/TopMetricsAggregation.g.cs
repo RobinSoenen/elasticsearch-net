@@ -18,6 +18,7 @@
 #nullable restore
 
 using Elastic.Clients.Elasticsearch.Serverless.Fluent;
+using Elastic.Clients.Elasticsearch.Serverless.Next;
 using Elastic.Clients.Elasticsearch.Serverless.Serialization;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,90 @@ using System.Text.Json.Serialization;
 
 namespace Elastic.Clients.Elasticsearch.Serverless.Aggregations;
 
+internal sealed partial class TopMetricsAggregationConverter : System.Text.Json.Serialization.JsonConverter<TopMetricsAggregation>
+{
+	private static readonly System.Text.Json.JsonEncodedText PropField = System.Text.Json.JsonEncodedText.Encode("field");
+	private static readonly System.Text.Json.JsonEncodedText PropMetrics = System.Text.Json.JsonEncodedText.Encode("metrics");
+	private static readonly System.Text.Json.JsonEncodedText PropMissing = System.Text.Json.JsonEncodedText.Encode("missing");
+	private static readonly System.Text.Json.JsonEncodedText PropScript = System.Text.Json.JsonEncodedText.Encode("script");
+	private static readonly System.Text.Json.JsonEncodedText PropSize = System.Text.Json.JsonEncodedText.Encode("size");
+	private static readonly System.Text.Json.JsonEncodedText PropSort = System.Text.Json.JsonEncodedText.Encode("sort");
+
+	public override TopMetricsAggregation Read(ref System.Text.Json.Utf8JsonReader reader, System.Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+	{
+		reader.ValidateToken(System.Text.Json.JsonTokenType.StartObject);
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.Field?> propField = default;
+		LocalJsonProperty<ICollection<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsValue>?> propMetrics = default;
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.FieldValue?> propMissing = default;
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.Script?> propScript = default;
+		LocalJsonProperty<int?> propSize = default;
+		LocalJsonProperty<ICollection<Elastic.Clients.Elasticsearch.Serverless.SortOptions>?> propSort = default;
+		while (reader.Read() && reader.TokenType is System.Text.Json.JsonTokenType.PropertyName)
+		{
+			if (propField.TryRead(ref reader, options, PropField))
+			{
+				continue;
+			}
+
+			if (propMetrics.TryRead(ref reader, options, PropMetrics, typeof(SingleOrManyMarker<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsValue>?, Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsValue>)))
+			{
+				continue;
+			}
+
+			if (propMissing.TryRead(ref reader, options, PropMissing))
+			{
+				continue;
+			}
+
+			if (propScript.TryRead(ref reader, options, PropScript))
+			{
+				continue;
+			}
+
+			if (propSize.TryRead(ref reader, options, PropSize))
+			{
+				continue;
+			}
+
+			if (propSort.TryRead(ref reader, options, PropSort, typeof(SingleOrManyMarker<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.SortOptions>?, Elastic.Clients.Elasticsearch.Serverless.SortOptions>)))
+			{
+				continue;
+			}
+
+			throw new System.Text.Json.JsonException($"Unknown JSON property '{reader.GetString()}' for type '{typeToConvert.Name}'.");
+		}
+
+		reader.ValidateToken(System.Text.Json.JsonTokenType.EndObject);
+		return new TopMetricsAggregation
+		{
+			Field = propField.Value
+,
+			Metrics = propMetrics.Value
+,
+			Missing = propMissing.Value
+,
+			Script = propScript.Value
+,
+			Size = propSize.Value
+,
+			Sort = propSort.Value
+		};
+	}
+
+	public override void Write(System.Text.Json.Utf8JsonWriter writer, TopMetricsAggregation value, System.Text.Json.JsonSerializerOptions options)
+	{
+		writer.WriteStartObject();
+		writer.WriteProperty(options, PropField, value.Field);
+		writer.WriteProperty(options, PropMetrics, value.Metrics, typeof(SingleOrManyMarker<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsValue>?, Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsValue>));
+		writer.WriteProperty(options, PropMissing, value.Missing);
+		writer.WriteProperty(options, PropScript, value.Script);
+		writer.WriteProperty(options, PropSize, value.Size);
+		writer.WriteProperty(options, PropSort, value.Sort, typeof(SingleOrManyMarker<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.SortOptions>?, Elastic.Clients.Elasticsearch.Serverless.SortOptions>));
+		writer.WriteEndObject();
+	}
+}
+
+[JsonConverter(typeof(TopMetricsAggregationConverter))]
 public sealed partial class TopMetricsAggregation
 {
 	/// <summary>
@@ -34,7 +119,6 @@ public sealed partial class TopMetricsAggregation
 	/// The field on which to run the aggregation.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("field")]
 	public Elastic.Clients.Elasticsearch.Serverless.Field? Field { get; set; }
 
 	/// <summary>
@@ -42,8 +126,6 @@ public sealed partial class TopMetricsAggregation
 	/// The fields of the top document to return.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("metrics")]
-	[SingleOrManyCollectionConverter(typeof(Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsValue))]
 	public ICollection<Elastic.Clients.Elasticsearch.Serverless.Aggregations.TopMetricsValue>? Metrics { get; set; }
 
 	/// <summary>
@@ -52,9 +134,7 @@ public sealed partial class TopMetricsAggregation
 	/// By default, documents without a value are ignored.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("missing")]
 	public Elastic.Clients.Elasticsearch.Serverless.FieldValue? Missing { get; set; }
-	[JsonInclude, JsonPropertyName("script")]
 	public Elastic.Clients.Elasticsearch.Serverless.Script? Script { get; set; }
 
 	/// <summary>
@@ -62,7 +142,6 @@ public sealed partial class TopMetricsAggregation
 	/// The number of top documents from which to return metrics.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("size")]
 	public int? Size { get; set; }
 
 	/// <summary>
@@ -70,8 +149,6 @@ public sealed partial class TopMetricsAggregation
 	/// The sort order of the documents.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("sort")]
-	[SingleOrManyCollectionConverter(typeof(Elastic.Clients.Elasticsearch.Serverless.SortOptions))]
 	public ICollection<Elastic.Clients.Elasticsearch.Serverless.SortOptions>? Sort { get; set; }
 
 	public static implicit operator Elastic.Clients.Elasticsearch.Serverless.Aggregations.Aggregation(TopMetricsAggregation topMetricsAggregation) => Elastic.Clients.Elasticsearch.Serverless.Aggregations.Aggregation.TopMetrics(topMetricsAggregation);

@@ -30,7 +30,6 @@ namespace Elastic.Clients.Elasticsearch.Serverless;
 public sealed partial class CompletionStats
 {
 	[JsonInclude, JsonPropertyName("fields")]
-	[ReadOnlyFieldDictionaryConverter(typeof(Elastic.Clients.Elasticsearch.Serverless.FieldSizeUsage))]
 	public IReadOnlyDictionary<Elastic.Clients.Elasticsearch.Serverless.Field, Elastic.Clients.Elasticsearch.Serverless.FieldSizeUsage>? Fields { get; init; }
 
 	/// <summary>

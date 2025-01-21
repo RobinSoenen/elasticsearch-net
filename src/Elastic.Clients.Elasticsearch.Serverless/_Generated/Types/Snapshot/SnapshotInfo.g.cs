@@ -46,7 +46,6 @@ public sealed partial class SnapshotInfo
 	[JsonInclude, JsonPropertyName("include_global_state")]
 	public bool? IncludeGlobalState { get; init; }
 	[JsonInclude, JsonPropertyName("index_details")]
-	[ReadOnlyIndexNameDictionaryConverter(typeof(Elastic.Clients.Elasticsearch.Serverless.Snapshot.IndexDetails))]
 	public IReadOnlyDictionary<Elastic.Clients.Elasticsearch.Serverless.IndexName, Elastic.Clients.Elasticsearch.Serverless.Snapshot.IndexDetails>? IndexDetails { get; init; }
 	[JsonInclude, JsonPropertyName("indices")]
 	public IReadOnlyCollection<string>? Indices { get; init; }

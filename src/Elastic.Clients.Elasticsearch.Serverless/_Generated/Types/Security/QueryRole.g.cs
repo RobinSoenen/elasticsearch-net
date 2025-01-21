@@ -18,6 +18,7 @@
 #nullable restore
 
 using Elastic.Clients.Elasticsearch.Serverless.Fluent;
+using Elastic.Clients.Elasticsearch.Serverless.Next;
 using Elastic.Clients.Elasticsearch.Serverless.Serialization;
 using System;
 using System.Collections.Generic;
@@ -27,95 +28,127 @@ using System.Text.Json.Serialization;
 
 namespace Elastic.Clients.Elasticsearch.Serverless.Security;
 
-internal sealed partial class QueryRoleConverter : JsonConverter<QueryRole>
+internal sealed partial class QueryRoleConverter : System.Text.Json.Serialization.JsonConverter<QueryRole>
 {
-	public override QueryRole Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+	private static readonly System.Text.Json.JsonEncodedText PropApplications = System.Text.Json.JsonEncodedText.Encode("applications");
+	private static readonly System.Text.Json.JsonEncodedText PropCluster = System.Text.Json.JsonEncodedText.Encode("cluster");
+	private static readonly System.Text.Json.JsonEncodedText PropDescription = System.Text.Json.JsonEncodedText.Encode("description");
+	private static readonly System.Text.Json.JsonEncodedText PropIndices = System.Text.Json.JsonEncodedText.Encode("indices");
+	private static readonly System.Text.Json.JsonEncodedText PropIndices1 = System.Text.Json.JsonEncodedText.Encode("index");
+	private static readonly System.Text.Json.JsonEncodedText PropMetadata = System.Text.Json.JsonEncodedText.Encode("metadata");
+	private static readonly System.Text.Json.JsonEncodedText PropName = System.Text.Json.JsonEncodedText.Encode("name");
+	private static readonly System.Text.Json.JsonEncodedText PropRestriction = System.Text.Json.JsonEncodedText.Encode("restriction");
+	private static readonly System.Text.Json.JsonEncodedText PropRunAs = System.Text.Json.JsonEncodedText.Encode("run_as");
+	private static readonly System.Text.Json.JsonEncodedText PropSort = System.Text.Json.JsonEncodedText.Encode("_sort");
+	private static readonly System.Text.Json.JsonEncodedText PropTransientMetadata = System.Text.Json.JsonEncodedText.Encode("transient_metadata");
+
+	public override QueryRole Read(ref System.Text.Json.Utf8JsonReader reader, System.Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
 	{
-		if (reader.TokenType != JsonTokenType.StartObject)
-			throw new JsonException("Unexpected JSON detected.");
-		IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Security.ApplicationPrivileges>? applications = default;
-		IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Security.ClusterPrivilege>? cluster = default;
-		string? description = default;
-		IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Security.IndicesPrivileges>? indices = default;
-		IReadOnlyDictionary<string, object>? metadata = default;
-		string name = default;
-		Elastic.Clients.Elasticsearch.Serverless.Security.Restriction? restriction = default;
-		IReadOnlyCollection<string>? runAs = default;
-		IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.FieldValue>? sort = default;
-		IReadOnlyDictionary<string, object>? transientMetadata = default;
-		while (reader.Read() && reader.TokenType != JsonTokenType.EndObject)
+		reader.ValidateToken(System.Text.Json.JsonTokenType.StartObject);
+		LocalJsonProperty<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Security.ApplicationPrivileges>?> propApplications = default;
+		LocalJsonProperty<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Security.ClusterPrivilege>?> propCluster = default;
+		LocalJsonProperty<string?> propDescription = default;
+		LocalJsonProperty<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Security.IndicesPrivileges>?> propIndices = default;
+		LocalJsonProperty<IReadOnlyDictionary<string, object>?> propMetadata = default;
+		LocalJsonProperty<string> propName = default;
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.Security.Restriction?> propRestriction = default;
+		LocalJsonProperty<IReadOnlyCollection<string>?> propRunAs = default;
+		LocalJsonProperty<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.FieldValue>?> propSort = default;
+		LocalJsonProperty<IReadOnlyDictionary<string, object>?> propTransientMetadata = default;
+		while (reader.Read() && reader.TokenType is System.Text.Json.JsonTokenType.PropertyName)
 		{
-			if (reader.TokenType == JsonTokenType.PropertyName)
+			if (propApplications.TryRead(ref reader, options, PropApplications))
 			{
-				var property = reader.GetString();
-				if (property == "applications")
-				{
-					applications = JsonSerializer.Deserialize<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Security.ApplicationPrivileges>?>(ref reader, options);
-					continue;
-				}
-
-				if (property == "cluster")
-				{
-					cluster = JsonSerializer.Deserialize<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Security.ClusterPrivilege>?>(ref reader, options);
-					continue;
-				}
-
-				if (property == "description")
-				{
-					description = JsonSerializer.Deserialize<string?>(ref reader, options);
-					continue;
-				}
-
-				if (property == "indices" || property == "index")
-				{
-					indices = JsonSerializer.Deserialize<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Security.IndicesPrivileges>?>(ref reader, options);
-					continue;
-				}
-
-				if (property == "metadata")
-				{
-					metadata = JsonSerializer.Deserialize<IReadOnlyDictionary<string, object>?>(ref reader, options);
-					continue;
-				}
-
-				if (property == "name")
-				{
-					name = JsonSerializer.Deserialize<string>(ref reader, options);
-					continue;
-				}
-
-				if (property == "restriction")
-				{
-					restriction = JsonSerializer.Deserialize<Elastic.Clients.Elasticsearch.Serverless.Security.Restriction?>(ref reader, options);
-					continue;
-				}
-
-				if (property == "run_as")
-				{
-					runAs = JsonSerializer.Deserialize<IReadOnlyCollection<string>?>(ref reader, options);
-					continue;
-				}
-
-				if (property == "_sort")
-				{
-					sort = JsonSerializer.Deserialize<IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.FieldValue>?>(ref reader, options);
-					continue;
-				}
-
-				if (property == "transient_metadata")
-				{
-					transientMetadata = JsonSerializer.Deserialize<IReadOnlyDictionary<string, object>?>(ref reader, options);
-					continue;
-				}
+				continue;
 			}
+
+			if (propCluster.TryRead(ref reader, options, PropCluster))
+			{
+				continue;
+			}
+
+			if (propDescription.TryRead(ref reader, options, PropDescription))
+			{
+				continue;
+			}
+
+			if (propIndices.TryRead(ref reader, options, PropIndices) || propIndices.TryRead(ref reader, options, PropIndices1))
+			{
+				continue;
+			}
+
+			if (propMetadata.TryRead(ref reader, options, PropMetadata))
+			{
+				continue;
+			}
+
+			if (propName.TryRead(ref reader, options, PropName))
+			{
+				continue;
+			}
+
+			if (propRestriction.TryRead(ref reader, options, PropRestriction))
+			{
+				continue;
+			}
+
+			if (propRunAs.TryRead(ref reader, options, PropRunAs))
+			{
+				continue;
+			}
+
+			if (propSort.TryRead(ref reader, options, PropSort))
+			{
+				continue;
+			}
+
+			if (propTransientMetadata.TryRead(ref reader, options, PropTransientMetadata))
+			{
+				continue;
+			}
+
+			throw new System.Text.Json.JsonException($"Unknown JSON property '{reader.GetString()}' for type '{typeToConvert.Name}'.");
 		}
 
-		return new QueryRole { Applications = applications, Cluster = cluster, Description = description, Indices = indices, Metadata = metadata, Name = name, Restriction = restriction, RunAs = runAs, Sort = sort, TransientMetadata = transientMetadata };
+		reader.ValidateToken(System.Text.Json.JsonTokenType.EndObject);
+		return new QueryRole
+		{
+			Applications = propApplications.Value
+,
+			Cluster = propCluster.Value
+,
+			Description = propDescription.Value
+,
+			Indices = propIndices.Value
+,
+			Metadata = propMetadata.Value
+,
+			Name = propName.Value
+,
+			Restriction = propRestriction.Value
+,
+			RunAs = propRunAs.Value
+,
+			Sort = propSort.Value
+,
+			TransientMetadata = propTransientMetadata.Value
+		};
 	}
 
-	public override void Write(Utf8JsonWriter writer, QueryRole value, JsonSerializerOptions options)
+	public override void Write(System.Text.Json.Utf8JsonWriter writer, QueryRole value, System.Text.Json.JsonSerializerOptions options)
 	{
-		throw new NotImplementedException("'QueryRole' is a readonly type, used only on responses and does not support being written to JSON.");
+		writer.WriteStartObject();
+		writer.WriteProperty(options, PropApplications, value.Applications);
+		writer.WriteProperty(options, PropCluster, value.Cluster);
+		writer.WriteProperty(options, PropDescription, value.Description);
+		writer.WriteProperty(options, PropIndices, value.Indices);
+		writer.WriteProperty(options, PropMetadata, value.Metadata);
+		writer.WriteProperty(options, PropName, value.Name);
+		writer.WriteProperty(options, PropRestriction, value.Restriction);
+		writer.WriteProperty(options, PropRunAs, value.RunAs);
+		writer.WriteProperty(options, PropSort, value.Sort);
+		writer.WriteProperty(options, PropTransientMetadata, value.TransientMetadata);
+		writer.WriteEndObject();
 	}
 }
 

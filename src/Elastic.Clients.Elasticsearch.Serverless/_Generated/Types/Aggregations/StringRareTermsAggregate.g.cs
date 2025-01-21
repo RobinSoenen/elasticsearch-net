@@ -38,4 +38,6 @@ public sealed partial class StringRareTermsAggregate : IAggregate
 	public IReadOnlyCollection<Elastic.Clients.Elasticsearch.Serverless.Aggregations.StringRareTermsBucket> Buckets { get; init; }
 	[JsonInclude, JsonPropertyName("meta")]
 	public IReadOnlyDictionary<string, object>? Meta { get; init; }
+
+	string IAggregate.Type => "srareterms";
 }

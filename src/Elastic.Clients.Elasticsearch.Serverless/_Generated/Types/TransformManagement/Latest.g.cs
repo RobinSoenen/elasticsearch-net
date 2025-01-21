@@ -18,6 +18,7 @@
 #nullable restore
 
 using Elastic.Clients.Elasticsearch.Serverless.Fluent;
+using Elastic.Clients.Elasticsearch.Serverless.Next;
 using Elastic.Clients.Elasticsearch.Serverless.Serialization;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,50 @@ using System.Text.Json.Serialization;
 
 namespace Elastic.Clients.Elasticsearch.Serverless.TransformManagement;
 
+internal sealed partial class LatestConverter : System.Text.Json.Serialization.JsonConverter<Latest>
+{
+	private static readonly System.Text.Json.JsonEncodedText PropSort = System.Text.Json.JsonEncodedText.Encode("sort");
+	private static readonly System.Text.Json.JsonEncodedText PropUniqueKey = System.Text.Json.JsonEncodedText.Encode("unique_key");
+
+	public override Latest Read(ref System.Text.Json.Utf8JsonReader reader, System.Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+	{
+		reader.ValidateToken(System.Text.Json.JsonTokenType.StartObject);
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.Field> propSort = default;
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.Fields> propUniqueKey = default;
+		while (reader.Read() && reader.TokenType is System.Text.Json.JsonTokenType.PropertyName)
+		{
+			if (propSort.TryRead(ref reader, options, PropSort))
+			{
+				continue;
+			}
+
+			if (propUniqueKey.TryRead(ref reader, options, PropUniqueKey, typeof(FieldsMarker)))
+			{
+				continue;
+			}
+
+			throw new System.Text.Json.JsonException($"Unknown JSON property '{reader.GetString()}' for type '{typeToConvert.Name}'.");
+		}
+
+		reader.ValidateToken(System.Text.Json.JsonTokenType.EndObject);
+		return new Latest
+		{
+			Sort = propSort.Value
+,
+			UniqueKey = propUniqueKey.Value
+		};
+	}
+
+	public override void Write(System.Text.Json.Utf8JsonWriter writer, Latest value, System.Text.Json.JsonSerializerOptions options)
+	{
+		writer.WriteStartObject();
+		writer.WriteProperty(options, PropSort, value.Sort);
+		writer.WriteProperty(options, PropUniqueKey, value.UniqueKey, typeof(FieldsMarker));
+		writer.WriteEndObject();
+	}
+}
+
+[JsonConverter(typeof(LatestConverter))]
 public sealed partial class Latest
 {
 	/// <summary>
@@ -34,7 +79,6 @@ public sealed partial class Latest
 	/// Specifies the date field that is used to identify the latest documents.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("sort")]
 	public Elastic.Clients.Elasticsearch.Serverless.Field Sort { get; set; }
 
 	/// <summary>
@@ -42,8 +86,6 @@ public sealed partial class Latest
 	/// Specifies an array of one or more fields that are used to group the data.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("unique_key")]
-	[JsonConverter(typeof(FieldsConverter))]
 	public Elastic.Clients.Elasticsearch.Serverless.Fields UniqueKey { get; set; }
 }
 

@@ -18,6 +18,7 @@
 #nullable restore
 
 using Elastic.Clients.Elasticsearch.Serverless.Fluent;
+using Elastic.Clients.Elasticsearch.Serverless.Next;
 using Elastic.Clients.Elasticsearch.Serverless.Serialization;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,60 @@ using System.Text.Json.Serialization;
 
 namespace Elastic.Clients.Elasticsearch.Serverless.Security;
 
+internal sealed partial class SearchAccessConverter : System.Text.Json.Serialization.JsonConverter<SearchAccess>
+{
+	private static readonly System.Text.Json.JsonEncodedText PropFieldSecurity = System.Text.Json.JsonEncodedText.Encode("field_security");
+	private static readonly System.Text.Json.JsonEncodedText PropNames = System.Text.Json.JsonEncodedText.Encode("names");
+	private static readonly System.Text.Json.JsonEncodedText PropQuery = System.Text.Json.JsonEncodedText.Encode("query");
+
+	public override SearchAccess Read(ref System.Text.Json.Utf8JsonReader reader, System.Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+	{
+		reader.ValidateToken(System.Text.Json.JsonTokenType.StartObject);
+		LocalJsonProperty<Elastic.Clients.Elasticsearch.Serverless.Security.FieldSecurity?> propFieldSecurity = default;
+		LocalJsonProperty<IReadOnlyCollection<string>> propNames = default;
+		LocalJsonProperty<object?> propQuery = default;
+		while (reader.Read() && reader.TokenType is System.Text.Json.JsonTokenType.PropertyName)
+		{
+			if (propFieldSecurity.TryRead(ref reader, options, PropFieldSecurity))
+			{
+				continue;
+			}
+
+			if (propNames.TryRead(ref reader, options, PropNames, typeof(SingleOrManyMarker<IReadOnlyCollection<string>, string>)))
+			{
+				continue;
+			}
+
+			if (propQuery.TryRead(ref reader, options, PropQuery))
+			{
+				continue;
+			}
+
+			throw new System.Text.Json.JsonException($"Unknown JSON property '{reader.GetString()}' for type '{typeToConvert.Name}'.");
+		}
+
+		reader.ValidateToken(System.Text.Json.JsonTokenType.EndObject);
+		return new SearchAccess
+		{
+			FieldSecurity = propFieldSecurity.Value
+,
+			Names = propNames.Value
+,
+			Query = propQuery.Value
+		};
+	}
+
+	public override void Write(System.Text.Json.Utf8JsonWriter writer, SearchAccess value, System.Text.Json.JsonSerializerOptions options)
+	{
+		writer.WriteStartObject();
+		writer.WriteProperty(options, PropFieldSecurity, value.FieldSecurity);
+		writer.WriteProperty(options, PropNames, value.Names, typeof(SingleOrManyMarker<IReadOnlyCollection<string>, string>));
+		writer.WriteProperty(options, PropQuery, value.Query);
+		writer.WriteEndObject();
+	}
+}
+
+[JsonConverter(typeof(SearchAccessConverter))]
 public sealed partial class SearchAccess
 {
 	/// <summary>
@@ -34,7 +89,6 @@ public sealed partial class SearchAccess
 	/// The document fields that the owners of the role have read access to.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("field_security")]
 	public Elastic.Clients.Elasticsearch.Serverless.Security.FieldSecurity? FieldSecurity { get; init; }
 
 	/// <summary>
@@ -42,8 +96,6 @@ public sealed partial class SearchAccess
 	/// A list of indices (or index name patterns) to which the permissions in this entry apply.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("names")]
-	[SingleOrManyCollectionConverter(typeof(string))]
 	public IReadOnlyCollection<string> Names { get; init; }
 
 	/// <summary>
@@ -51,6 +103,5 @@ public sealed partial class SearchAccess
 	/// A search query that defines the documents the owners of the role have access to. A document within the specified indices must match this query for it to be accessible by the owners of the role.
 	/// </para>
 	/// </summary>
-	[JsonInclude, JsonPropertyName("query")]
 	public object? Query { get; init; }
 }
